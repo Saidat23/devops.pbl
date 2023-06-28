@@ -9,3 +9,9 @@ To verify that apache2 is running as a Service on the OS, "sudo systemctl status
 In order to receive any traffic on the Web Server, TCP port 80, which is the default port that web browsers use to access web pages on the Internet needs to be opened. So a rule for EC2 configuration to open inbound connection through port 80 was added to the security rule. By default, we have TCP port 22 open on our EC2 machine to access it via SSH. 
 
 ![Screenshot 2023-06-28 203909](https://github.com/Saidat23/devops.pbl/assets/138054715/74f0bffa-4a70-42e2-8c16-e7c5556fc340)
+
+## INSTALLING MYSQ
+ MySQL is a popular relational database management system used within PHP environments to store and manage data for your site.
+ "sudo apt install mysql-server" command is used to acquire and install the software.
+ "sudo mysql" command is used to connect to the MySQL server as the administrative database user root.
+ output will look like this:
