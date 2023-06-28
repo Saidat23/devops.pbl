@@ -14,4 +14,9 @@ In order to receive any traffic on the Web Server, TCP port 80, which is the def
  MySQL is a popular relational database management system used within PHP environments to store and manage data for your site.
  "sudo apt install mysql-server" command is used to acquire and install the software.
  "sudo mysql" command is used to connect to the MySQL server as the administrative database user root.
- output will look like this:
+ Output will look like this:
+![mysql installed](https://github.com/Saidat23/devops.pbl/assets/138054715/36144c9f-6490-445b-ac37-6f6301b51f92)
+
+"ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'PASSWORD';" command was used to remove insecure default settings and lock down access to the database system. Before running the script, password for the root user was set, using mysql_native_password as default authentication method.  
+Exit the MySQL shell.
+
