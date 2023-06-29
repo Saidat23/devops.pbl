@@ -33,6 +33,8 @@ To install these 3 packages at a go, "sudo apt install php libapache2-mod-php ph
 A directory was created and ownership of the directory was assign with the current system user. Then, a new configuration file in Apache’s sites was created and opened using vim command line editor.
 With the VirtualHost configuration completed, the "a2ensite" command is used to enable the new virtual host and the default website that comes installed with Apache is disabled using "a2dissite" command.
 Then, the configuration file was checked for syntax errors by running "sudo apache2ctl configtest" command. An index.html file was created and the virtual host tested. 
+![installing Apache and updating firewall](https://github.com/Saidat23/devops.pbl/assets/138054715/41c0bd72-a351-44d6-a56e-07b4eca34f90)
+
 
 ![php](https://github.com/Saidat23/devops.pbl/assets/138054715/78462150-e2f1-4246-b4bb-8f0f3de0459c)
 
