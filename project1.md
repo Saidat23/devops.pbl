@@ -42,6 +42,7 @@ Created a PHP test script to confirm that Apache is able to handle and process r
 A new file named index.php was created inside the custom web root folder using "vim /var/www/projectlamp/index.php" command which opens a blank page to insert
 "<?php
 phpinfo();".
+The page below indicate that the PHP installation is working as expected.
 
 ![php](https://github.com/Saidat23/devops.pbl/assets/138054715/78462150-e2f1-4246-b4bb-8f0f3de0459c)
 
