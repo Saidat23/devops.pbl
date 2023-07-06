@@ -23,7 +23,13 @@ When the installation is finished, log in to the MySQL console by typing
 ![mysql installed](https://github.com/Saidat23/devops.pbl/assets/138054715/36144c9f-6490-445b-ac37-6f6301b51f92)
 
 "ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'PASSWORD';" command was used to remove insecure default settings and lock down access to the database system. Before running the script, password for the root user was set, using mysql_native_password as default authentication method.  
-Exit the MySQL shell.
+Exit the MySQL shell using "exit" command.
+The interactive script is run by  using the command "sudo mysql_secure_installation"
+This will ask if you would like to configure the VALIDATE PASSWORD PLUGIN. 
+
+If enabled, then, passwords that do not match the specified criteria will be rejected by MySQL with an error. If validation is disabled, a strong, unique passwords for database credentials should be used.
+"sudo mysql -p" is used to test if you’re able to log in to the MySQL console.
+
 
 ## INSTALLING PHP
  PHP  processes code to display dynamic content to the end user. In addition to the php package, I would need php-mysql, which allows PHP to communicate with MySQL-based databases. And also libapache2-mod-php to enable Apache to handle the PHP files. The core PHP packages will be installed as dependencies automatically.
