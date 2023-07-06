@@ -54,7 +54,10 @@ Now, the new website is active, but the web root /var/www/projectLEMP is still e
 ![Screenshot 2023-07-05 223955](https://github.com/Saidat23/devops.pbl/assets/138054715/79ee6e18-a78a-4f22-8e3f-d51976fdd993)
 
 ## TESTING PHP WITH NGINX
-The LEMP stack set up is now complete and fully functional. To validate that the Nginx can correctly hand .php files off to the PHP processor,a test PHP file in the document root would be created and a new file called info.php is opened within the document root in the text editor. 
+The LEMP stack set up is now complete and fully functional. To validate that the Nginx can correctly hand .php files off to the PHP processor,a test PHP file in the document root would be created and a new file called info.php is opened within the document root in the text editor using "sudo nano /var/www/projectLEMP/info.php" command. Then paste the command 
+"<?php
+phpinfo();". The response is shown below: 
+
 
 
 
