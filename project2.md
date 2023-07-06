@@ -29,11 +29,15 @@ This will ask if you would like to configure the VALIDATE PASSWORD PLUGIN.
 
 If enabled, then, passwords that do not match the specified criteria will be rejected by MySQL with an error. If validation is disabled, a strong, unique passwords for database credentials should be used.
 "sudo mysql -p" is used to test if you’re able to log in to the MySQL console.
-
+Exit the MySQL console with the "exit".
 
 ## INSTALLING PHP
- PHP  processes code to display dynamic content to the end user. In addition to the php package, I would need php-mysql, which allows PHP to communicate with MySQL-based databases. And also libapache2-mod-php to enable Apache to handle the PHP files. The core PHP packages will be installed as dependencies automatically.
-To install these 3 packages at a go, "sudo apt install php libapache2-mod-php php-mysql" command is used and once the installation completes, "php -v" command is used to confirm the PHP version.
+ PHP  processes code to display dynamic content to the end user.  
+While the Apache server embeds the PHP interpreter in each request, Nginx requires an external program to handle PHP processing and thus, act as a bridge between the PHP interpreter itself and the web server. This allows for a better overall performance in most of the PHP-based websites, while requiring additional configuration. I’ll need to install php-fpm, (PHP fastCGI process manager), and direct Nginx to pass the PHP requests to the software for processing. I’ll also need php-mysql, a PHP module that allows PHP to communicate with MySQL-based databases. The Core PHP packages will be installed automatically as dependencies.
 
+To install the 2 packages at once, "sudo apt install php-fpm php-mysql" is used and when prompted, type Y and press ENTER to confirm installation.
+
+Now the PHP components is installed. Next is to configure Nginx to use them.
+ 
 ![php installed](https://github.com/Saidat23/devops.pbl/assets/138054715/7632d4e1-604c-41c8-bb0d-bcbb669ea9c1)
 
