@@ -36,8 +36,21 @@ Exit the MySQL console with the "exit".
 While the Apache server embeds the PHP interpreter in each request, Nginx requires an external program to handle PHP processing and thus, act as a bridge between the PHP interpreter itself and the web server. This allows for a better overall performance in most of the PHP-based websites, while requiring additional configuration. I’ll need to install php-fpm, (PHP fastCGI process manager), and direct Nginx to pass the PHP requests to the software for processing. I’ll also need php-mysql, a PHP module that allows PHP to communicate with MySQL-based databases. The Core PHP packages will be installed automatically as dependencies.
 
 To install the 2 packages at once, "sudo apt install php-fpm php-mysql" is used and when prompted, type Y and press ENTER to confirm installation.
-
 Now the PHP components is installed. Next is to configure Nginx to use them.
  
 ![php installed](https://github.com/Saidat23/devops.pbl/assets/138054715/7632d4e1-604c-41c8-bb0d-bcbb669ea9c1)
+
+ ## CONFIGURING NGINX TO USE PHP PROCESSOR
+ When using the Nginx web server, we can create server blocks (similar to virtual hosts in Apache) to encapsulate configuration details and host more than one domain on a single server. 
+
+On Ubuntu 20.04, by default, Nginx has only one server block enabled and it is configured to serve documents out of a directory at /var/www/html. It can be difficult to manage if one is hosting multiple sites. Rather than modifying /var/www/html, I’ll create a directory structure within /var/www for the "your_domain" website, leaving /var/www/html in place as the default directory to be used if a client request does not match any other sites.
+
+To create the root web directory for the "your_domain" Website, run "sudo mkdir /var/www/projectLEMP" then, assign ownership of the directory with the $USER environment variable "sudo chown -R $USER:$USER /var/www/projectLEMP", this will reference your current system user.
+Now, We'll open a new configuration file in Nginx’s sites-available directory using any preferred command-line editor. Here, Nano editor was used with the command "sudo nano /etc/nginx/sites-available/projectLEMP". The bare-bones configuration was pasted in the blank and activated by linking it to the config file from Nginx's sites-enabled directory using "sudo ln -s /etc/nginx/sites-available/projectLEMP /etc/nginx/sites-enabled/".
+Then the configuration was tested for syntax errors with the command "sudo nginx -t"
+
+
+
+## TESTING PHP WITH NGINX
+
 
