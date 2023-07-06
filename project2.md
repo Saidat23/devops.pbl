@@ -7,3 +7,6 @@ ssh -i <Your-private-key.pem> ubuntu@<EC2-Public-IP-address>
 Nginx would be used to display our web pages to the site visitors. The apt package manager would be used to install this package.
 First, the server’s package index is updated then Nginx installed using the command "sudo apt update"  -- for updating the server package index and "sudo apt install nginx"  -- for installing the nginx.
 To check that the nginx is successfully installated and running as a service in Ubuntu, the command "sudo systemctl status nginx" is used.
+The image below indicate that your nginx web server is successfully installed and running.
+
+![Screenshot 2023-07-05 220552](https://github.com/Saidat23/devops.pbl/assets/138054715/caf4a99a-d517-43cb-b4e3-7737062433c7)
