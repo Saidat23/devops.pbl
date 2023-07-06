@@ -44,11 +44,13 @@ Now the PHP components is installed. Next is to configure Nginx to use them.
  When using the Nginx web server, we can create server blocks (similar to virtual hosts in Apache) to encapsulate configuration details and host more than one domain on a single server. 
 
 On Ubuntu 20.04, by default, Nginx has only one server block enabled and it is configured to serve documents out of a directory at /var/www/html. It can be difficult to manage if one is hosting multiple sites. Rather than modifying /var/www/html, I’ll create a directory structure within /var/www for the "your_domain" website, leaving /var/www/html in place as the default directory to be used if a client request does not match any other sites.
-
 To create the root web directory for the "your_domain" Website, run "sudo mkdir /var/www/projectLEMP" then, assign ownership of the directory with the $USER environment variable "sudo chown -R $USER:$USER /var/www/projectLEMP", this will reference your current system user.
 Now, We'll open a new configuration file in Nginx’s sites-available directory using any preferred command-line editor. Here, Nano editor was used with the command "sudo nano /etc/nginx/sites-available/projectLEMP". The bare-bones configuration was pasted in the blank and activated by linking it to the config file from Nginx's sites-enabled directory using "sudo ln -s /etc/nginx/sites-available/projectLEMP /etc/nginx/sites-enabled/".
-Then the configuration was tested for syntax errors with the command "sudo nginx -t"
+Then the configuration was tested for syntax errors with the command "sudo nginx -t". The following response (nginx: the configuration file /etc/nginx/nginx.conf syntax is ok,
+nginx: configuration file /etc/nginx/nginx.conf test is successful) indicate that there is no syntax error and the config test is ok.
+The default Nginx host currently configured to use port 80, would need to be disable for it to run. This is done by running the command "sudo unlink /etc/nginx/sites-enabled/default" and then , reload Nginx using the command "sudo systemctl reload nginx" to apply the changes. 
 
+Now, the new website is active, but the web root /var/www/projectLEMP is still empty.To test that the new server block is working as expected, an index.html file is created in same location and command "sudo echo 'Hello LEMP from hostname' $(curl -s http://169.254.169.254/latest/meta-data/public-hostname) 'with public IP' $(curl -s http://169.254.169.254/latest/meta-data/public-ipv4) > /var/www/projectLEMP/index.html" is ran. which give a response :
 
 
 ## TESTING PHP WITH NGINX
