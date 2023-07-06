@@ -58,8 +58,9 @@ The LEMP stack set up is now complete and fully functional. To validate that the
 "<?php
 phpinfo();". The response is shown below: 
 
+![Screenshot 2023-07-05 224223](https://github.com/Saidat23/devops.pbl/assets/138054715/16c5744c-3e13-4d57-a669-d235fb86e7d0)
 
-
+## RETRIEVING DATA FROM MYSQL DATABASE WITH PHP
 
 
 
