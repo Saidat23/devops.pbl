@@ -3,6 +3,7 @@
 In this project I would be implementing a similar stack, but with an alternative Web Server – NGINX, it is also popular and widely used by websites.
 With Git Bash downloaded and launched, I would ssh my EC2 instance using the command:  
 ssh -i <Your-private-key.pem> ubuntu@<EC2-Public-IP-address>
+
 ## INSTALLING THE NGINX WEB SERVER
  Nginx would be used to display our web pages to the site visitors. The apt package manager would be used to install this package.
 First, the server’s package index is updated then Nginx installed using the command "sudo apt update"  -- for updating the server package index and "sudo apt install nginx"  -- for installing the nginx.
@@ -12,9 +13,11 @@ The image below indicate that your nginx web server is successfully installed an
 ![Screenshot 2023-07-05 220552](https://github.com/Saidat23/devops.pbl/assets/138054715/caf4a99a-d517-43cb-b4e3-7737062433c7)
 
 ## INSTALLING MYSQ
-  MySQL is a popular relational database management system used within PHP environments to store and manage data for your site.
-"sudo apt install mysql-server" command is used to acquire and install the software.
-"sudo mysql" command is used to connect to the MySQL server as the administrative database user root.
+
+With the web server up and running, next is to install a Database Management System (DBMS). MySQL is a popular relational database management system used within PHP environments to store and manage data for sites.
+"sudo apt install mysql-server" command is used to acquire and install the software. 
+When the installation is finished, log in to the MySQL console by typing 
+"sudo mysql" command which is used to connect to the MySQL server as the administrative database user root.
  Output will look like this:
  
 ![mysql installed](https://github.com/Saidat23/devops.pbl/assets/138054715/36144c9f-6490-445b-ac37-6f6301b51f92)
@@ -27,3 +30,4 @@ Exit the MySQL shell.
 To install these 3 packages at a go, "sudo apt install php libapache2-mod-php php-mysql" command is used and once the installation completes, "php -v" command is used to confirm the PHP version.
 
 ![php installed](https://github.com/Saidat23/devops.pbl/assets/138054715/7632d4e1-604c-41c8-bb0d-bcbb669ea9c1)
+
