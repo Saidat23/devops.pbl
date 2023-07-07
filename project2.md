@@ -66,8 +66,7 @@ To start with, connect to the MySQL console through the root account using the c
 A new database was created using "CREATE DATABASE `example_database`;" command. A new user was also created using "CREATE USER 'example_user'@'%' IDENTIFIED WITH mysql_native_password BY 'password';" and giving full previledge on the created database with the command "GRANT ALL ON example_database.* TO 'example_user'@'%';". "Exit" command was used to exit the mysql shell.
 To test if the new database has the proper permissions, log back into the myqsl consoleusing the custom user credentials "mysql -u example_user -p". 
 It will prompt for the password used when creating the "example_user" user. After logging in to the MySQL console, confirm that you have access to the "example_database" database with the command "SHOW DATABASES;" which will give the following output.
-
-
+![Screenshot 2023-07-07 233111](https://github.com/Saidat23/devops.pbl/assets/138054715/10a05c88-627d-4682-8832-c926f794c1d9)
 
 
 
