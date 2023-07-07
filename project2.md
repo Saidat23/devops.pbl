@@ -61,9 +61,11 @@ phpinfo();". The response is shown below:
 ![Screenshot 2023-07-05 224223](https://github.com/Saidat23/devops.pbl/assets/138054715/16c5744c-3e13-4d57-a669-d235fb86e7d0)
 
 ## RETRIEVING DATA FROM MYSQL DATABASE WITH PHP
-
-
-
+A test database (DB) was create with simple “To do list” and the access configured so that the Nginx website would be able to query data from the DB and display it. We’ll need to create a new user with the "mysql_native_password" authentication method to connect to the MySQL database from PHP. We'll also create a database named "example_database" and a user named "example_user".
+To start with, connect to the MySQL console through the root account using the command "sudo mysql".
+A new database was created using "CREATE DATABASE `example_database`;" command. A new user was also created using "CREATE USER 'example_user'@'%' IDENTIFIED WITH mysql_native_password BY 'password';" and giving full previledge on the created database with the command "GRANT ALL ON example_database.* TO 'example_user'@'%';". "Exit" command was used to exit the mysql shell.
+To test if the new database has the proper permissions, log back into the myqsl consoleusing the custom user credentials "mysql -u example_user -p". 
+It will prompt for the password used when creating the "example_user" user. After logging in to the MySQL console, confirm that you have access to the "example_database" database with the command "SHOW DATABASES;" which will give the following output.
 
 
 
