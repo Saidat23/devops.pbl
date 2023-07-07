@@ -69,6 +69,9 @@ It will prompt for the password used when creating the "example_user" user. Afte
 
 ![Screenshot 2023-07-07 233111](https://github.com/Saidat23/devops.pbl/assets/138054715/10a05c88-627d-4682-8832-c926f794c1d9)
 
+Next we need to create a test table named "todo_list" using the mysql console by running the command "CREATE TABLE example_database.todo_list (item_id INT AUTO_INCREMENT,content VARCHAR(255),PRIMARY KEY(item_id));".
+Insert few rows of content into the test teble using the command "INSERT INTO example_database.todo_list (content) VALUES ("My first important item");" changing values for each row.
+To comfirm that the data was succesfully saved in the table, run the command "SELECT * FROM example_database.todo_list;". Exit mysql with the "exit" command. 
 
 
 
