@@ -74,11 +74,10 @@ Insert few rows of content into the test teble using the command "INSERT INTO ex
 To comfirm that the data was succesfully saved in the table, run the command "SELECT * FROM example_database.todo_list;". Exit mysql with the "exit" command. 
 Now we need to create a PHP script that will connect to MySQL database and query content. To do this we have to create new PHPfile in the custom web root directory using vi editor with the command "vim /var/www/projectLEMP/todo_list.php". Insert your PHP script, save and close the file.
 Now, we can access the page on the web browser by visiting the domain name or public IP address configured for the website, followed by /todo_list.php i.e "http://<Public_domain_or_IP>/todo_list.php"
-You should see a page like this,
+You would see a page like this, showing the content inserted in your test table. This means the PHP environment is ready to connect and interact with your MySQL server.
+![Screenshot 2023-07-05 232212](https://github.com/Saidat23/devops.pbl/assets/138054715/9dc82552-32e8-4236-9ce7-3a61a1a303cc)
 
 
-showing the content inserted in your test table:
-That means your PHP environment is ready to connect and interact with your MySQL server.
 
 
 
