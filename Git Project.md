@@ -12,6 +12,8 @@
   -- Using the touch command, create a file "index.txt" inside your working directory. eg touch index.txt.
   
   -- Write any sentence of your choice inside the text file and save changes.
+
   -- Add the changes to git staging area using the command "git add ."
+
   -- To commit your changes sto git, run the command "git commit -m "initial commit".
 
