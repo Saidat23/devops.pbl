@@ -7,7 +7,7 @@
 ## MAKING YOUR FIRST COMMIT  
   In the last section, we succesfully created our working directory and initialized a git repository. We are now going to make our first commit. In git, commit is saving the changes made to the files which could be adding, modifying or deleting text or files.
   
-  Let us make our first commit following these steps:
+  Let's make our first commit following these steps:
     
   -- Using the touch command, create a file "index.txt" inside your working directory. eg touch index.txt.
   
