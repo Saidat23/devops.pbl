@@ -16,5 +16,9 @@
   -- Add the changes to Git staging area using the command "git add ."
 
   -- To commit your changes to Git, run the command git commit -m "initial commit".
+## WORKING WITH BRANCHES  
+  Git branches helps to create a different copy of the source code. They are used to develop new feature of the application. As many as possible changes can be made on the new branch. All these changes are independent of what is available in the main copy.
+
+  Git branch is an important tool for collaboration within teams working remotely. They can make different branches while working on same featurE and converge their code to one branch at the end of the day.
   
 
