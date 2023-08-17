@@ -5,7 +5,7 @@
 ## INITIALIZING A GIT REPOSITORY
   You have to install Git on your computer before initializing the Git repository. Select your desired operating system when you want to install your Git. It could be a windows, Mac or Linux operating system. To initialize the Git repository, open your prefered terminal on your computer which could  be Git bash, Visual studio, Mac terminal etc. On the terminal, create your working folder or directory using the mkdir command eg (mkdir Devops). Change into your working directory using the command (cd Devops) then run the "git init" command while you are in the Devops directory.
 ## MAKING YOUR FIRST COMMIT  
-  In the last section, we succesfully created our working directory and initialized a git repository. We are now going to make our first commit. In Git, commit is saving the changes made to the files which could be adding, modifying or deleting text or files. When we commit, Git takes a snapshot of the current state of the repository and saves the copy in the .git folder inside the working directory.
+  In the last section, we succesfully created our working directory and initialized a git repository. We are now going to make our first commit. In Git, commit is saving the changes made to the files which could be adding, modifying or deleting text or files. When we commit, Git takes a snapshot of the current state of the repository and saves the copy in the .git folder inside the working directory. The -m flag is used to provide a commit message which should be as descriptive as possible to give an understanding on the commit.
   
   Let's make our first commit following these steps:
     
@@ -16,4 +16,5 @@
   -- Add the changes to Git staging area using the command "git add ."
 
   -- To commit your changes to Git, run the command git commit -m "initial commit".
+  
 
