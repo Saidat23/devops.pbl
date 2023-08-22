@@ -69,7 +69,7 @@ Step 2. After commiting your changes in your local repository, push the content 
 
 ### CLONING YOUR REMOTE GIT REPOSITORY.
 
-We have successfully added a remote git repository and pushed our document in the local repository to the remote repository. Now our collegue can make changes to them but not directly on the github.It is best practice that he makes a copy of the document on his local machine, create a branch where he can make all modification he deems fit. To make a copy of the document, he would run the git clone command which makes a copy of remote repository into local machine. Run the command "git clone < link to your remote repository > ".
+We have successfully added a remote git repository and pushed our document in the local repository to the remote repository. Now our collegue can make changes to them but not directly on the github.It is best practice that he makes a copy of the document on his local machine, create a branch where he can make all modification he deems fit. To make a copy of the document, he would run the git clone command which makes a copy of remote repository into local machine. Run the command "git clone < link to your remote repository >".
 
 
 
