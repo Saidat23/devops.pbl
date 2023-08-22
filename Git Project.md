@@ -33,6 +33,34 @@
 
   ## COLLABORATION AND REMOTE REPOSITORIES
 
+  Git, as we learnt earlier is a distributed version control system, that essentially solves the problem source code and tracking of changes made to the source code. Carrying out operations like initializing git repository in our local machine, creating commits and branches amongst others, enable collaboration amongst developers residing in different locations. For developers working remotely on the same code base on their local machine to be able to collaborate, there has to be a place where all these codes are stored for everyone involved to access. This is where Github comes in. 
+
+  Github is a web based plateform where git repositories are hosted. Hosting our local repositories on github, makes it available in the public and can be accessed. we can also make it private which can only be accessed by selected people. Remote teams can now view update,  and make changesto the same repository.
+
+  ### CREATING A GITHUB ACCOUNT
+  Step 1. Go to www.github.com
+
+  Step 2. Fill in your username, password and email address to creat your user account.
+
+  Step 3. Click on the verify button to verify your identity.
+
+  Step 4. Click on the creat button to create your account.
+
+  Step 5. Enter the activation code sent to your email in the textboxes provided, then click on continue.
+
+   Step 6. Select how many people will be in your team and click continue.
+
+   Step 7. Alist of github plans will be displayed, click on continue for free.
+
+   ### CREATING YOUR FIRST REPOSITORY
+Step 1. Click on the plus sign at the top right corner of your github account. A drop down menu will appear, select new repository.
+
+Step 2. Fill out the form by adding a unique name for your repository, description, you can make it public or private depending on your preference than tick the box to add a ReadMe.md file.
+
+Step 3. Click the Create repository button. 
+
+### PUSHING YOUR LOCAL GIT REPOSITORY TO YOUR REMOTE GITHUB REPOSITORY.
+
 
 
    
