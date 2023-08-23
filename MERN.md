@@ -42,6 +42,15 @@ Verify the node installation by runing the command " node -v ".
 
 Verify the npm installation by runing the command " npm -v ".
 
+#### Application Code Setup.
+
+Create a new directory for the To-Do Project by running the command " mkdir Todo "
+
+Verify the Todo directory by runing the command " ls ".
+
+Change the current directory to the new directory by runing the command " cd Todo "
+
+
 
 
 
