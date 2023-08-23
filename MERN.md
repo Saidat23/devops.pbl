@@ -15,7 +15,7 @@ ReactJS: is a frontend framework developed by Facebook. It is based on JavaScrip
 Node.js: is a JavaScript runtime environment. It is used to run JavaScript on a machine.
 
 
-The diagram below illustrate how the MERN Stack work.
+The diagram below illustrate how the MERN Stack works.
 <img width="638" alt="MERN-stack" src="https://github.com/Saidat23/devops.pbl/assets/138054715/5cde0948-b568-4b85-80ef-62dbfe64a652">
 
 
@@ -48,7 +48,9 @@ Create a new directory for the To-Do Project by running the command " mkdir Todo
 
 Verify the Todo directory by runing the command " ls ".
 
-Change the current directory to the new directory by runing the command " cd Todo "
+Change the current directory to the new directory by runing the command " cd Todo ".
+
+When we initialise the project by runing the command " npm init " , a new file named package.json will be created. This file contain the information about the application and the dependencies it needs to run. Follow the prompts after runing the command. You might have to press Enter several times to accept default values, then type yes to accept to write out the package.json file. 
 
 
 
