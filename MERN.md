@@ -60,5 +60,15 @@ Express is a framework for Node.js, it simplifies development, and abstracts a l
 
 Install ExpressJS with the command " npm install express "
 
+Create a file named index.js with the commamnd " touch index.js " 
+
+Run " ls " command to confirm that the file is created.
+
+Install the dotenv by running the command " npm instal dotenv "
+
+
+
+
+
 
 
