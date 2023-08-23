@@ -52,9 +52,13 @@ Change the current directory to the new directory by runing the command " cd Tod
 
 When we initialise the project by runing the command " npm init " , a new file named package.json will be created. This file contain the information about the application and the dependencies it needs to run. Follow the prompts after runing the command. You might have to press Enter several times to accept default values, then type yes to accept to write out the package.json file. 
 
-Run the ls command to verify that you have the package.json file created.
+Run the " ls " command to verify that you have the package.json file created.
 
 
+#### INSTALLING EXPRESSJS
+Express is a framework for Node.js, it simplifies development, and abstracts a lot of low level details. For example, Express helps to define routes of the application based on HTTP methods and URLs.
+
+Install ExpressJS with the command " npm install express "
 
 
 
