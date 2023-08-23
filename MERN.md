@@ -31,6 +31,10 @@ Upgrade Ubuntu by runing the command " sudo apt upgrade "
 
 To check the location of the Node.js software run the command " curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash - "
 
+
+#### Installing Node.js on the server.
+
+
 Install Node.js and npm with the command " sudo apt-get install -y nodejs " .
 NPM is a Node package manager used to install Node modules and packages and also to manage dependency conflicts.
 
