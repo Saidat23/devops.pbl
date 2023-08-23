@@ -9,3 +9,4 @@ MongoDB: is a document-based, No-SQL database, used to store application data in
 ExpressJS: is a server side Web Application framework for Node.js.
 ReactJS: is a frontend framework developed by Facebook. It is based on JavaScript and used to build User Interface (UI) components.
 Node.js: is a JavaScript runtime environment. It is used to run JavaScript on a machine.
+The diagrame below shows how the 
