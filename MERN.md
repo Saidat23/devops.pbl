@@ -55,7 +55,7 @@ When we initialise the project by runing the command " npm init " , a new file n
 Run the " ls " command to verify that you have the package.json file created.
 
 
-#### INSTALLING EXPRESSJS
+#### Installing ExpressJS
 Express is a framework for Node.js, it simplifies development, and abstracts a lot of low level details. For example, Express helps to define routes of the application based on HTTP methods and URLs.
 
 Install ExpressJS with the command " npm install express "
