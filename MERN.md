@@ -25,7 +25,7 @@ Any interaction that causes a data change request is sent to the NodeJS based Ex
 
 ## DEPLOYING A SIMPLE APPLICATION THAT CREATES A TO-DO LIST.
 ### Step 1. BACKEND CONFIGURATION
-Update Ubuntu runing the command " sudo apt update "
+Update Ubuntu by runing the command " sudo apt update "
 
 Upgrade Ubuntu by runing the command " sudo apt upgrade "
 
@@ -33,5 +33,11 @@ To check the location of the Node.js software run the command " curl -fsSL https
 
 Install Node.js and npm with the command " sudo apt-get install -y nodejs " .
 NPM is a Node package manager used to install Node modules and packages and also to manage dependency conflicts.
+
+Verify the node installation by runing the command " node -v ".
+
+Verify the npm installation by runing the command " npm -v ".
+
+
 
 
