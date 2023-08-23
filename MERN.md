@@ -24,3 +24,11 @@ When a user interacts with the ReactJS UI components at the application front-en
 Any interaction that causes a data change request is sent to the NodeJS based Express server, which request for data from the MongoDB database. The data received is sent back to the frontend application, and presented to the user.
 
 ## DEPLOYING A SIMPLE APPLICATION THAT CREATES A TO-DO LIST.
+### Step 1.
+Update Ubuntu runing the command " sudo apt update "
+
+Upgrade Ubuntu by runing the command " sudo apt upgrade "
+
+To check the location of the Node.js software run the command " curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash - "
+
+Install Node.js with the command " sudo apt-get install -y nodejs "
