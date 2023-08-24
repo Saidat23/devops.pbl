@@ -150,6 +150,59 @@ Open the file with the command " vim api.js " then copy and paste the code below
  
  Inside the models folder, create a file and name it todo.js using " touch todo.js " command.
 
+ Open the file created with the command " vim todo.js " and type in the codes below.
+
+" const mongoose = require('mongoose');
+  const Schema = mongoose.Schema;
+
+  //create schema for todo
+  const TodoSchema = new Schema({
+  action: {
+  type: String,
+  required: [true, 'The todo text field is required']
+  }
+  })
+
+  //create model for todo
+  const Todo = mongoose.model('todo', TodoSchema);
+
+  module.exports = Todo; ".
+
+  With this done, we have to update the routes from the file " api.js " in the routes directory to make use of the new models.
+
+Change into the routes directory, open the api.js with " vim api.js ". Delete the code inside with the " :%d " command, paste the code below, save and exit.
+
+" const express = require ('express');
+ const router = express.Router();
+ const Todo = require('../models/todo');
+
+ router.get('/todos', (req, res, next) => {
+
+ //this will return all the data, exposing only the id and action field to the client
+ Todo.find({}, 'action')
+ .then(data => res.json(data))
+ .catch(next)
+ });
+
+ router.post('/todos', (req, res, next) => {
+ if(req.body.action){
+ Todo.create(req.body)
+ .then(data => res.json(data))
+ .catch(next)
+ }else {
+ res.json({
+ error: "The input field is empty"
+ })
+ }
+ });
+
+ router.delete('/todos/:id', (req, res, next) => {
+ Todo.findOneAndDelete({"_id": req.params.id})
+ .then(data => res.json(data))
+ .catch(next)
+ })
+
+ module.exports = router; ".
  
 
  
