@@ -91,7 +91,55 @@ Type in letter "I" to switch to insert mode and then type in the code below and 
   console.log(`Server running on port ${port}`)
   });  "
 
+  Click esc button and type in :w to save the code in Vim and :qa to exit Vim.
 
+  To test if the server works, open the terminal in the same directory as the index.js file and type " node index.js "
+  If everything goes well, it should read " Server running on port 5000 "
+  
+![Screenshot 2023-07-16 203916](https://github.com/Saidat23/devops.pbl/assets/138054715/cc1a86e3-d1b4-4721-aebf-74fba21a6000)
+
+
+  Open the Security Group in your EC2 to edit the Inbound rules by creating an inbound rule to open TCP port 5000. 
+  
+![Screenshot 2023-08-24 174853](https://github.com/Saidat23/devops.pbl/assets/138054715/f5df2ad7-036a-4117-8c7c-835eb02dd501)
+
+  Open the browser and try to access the server's public IP followed by port 5000. 
+  i.e http://< Public IP >:5000 You should get " Welcome to Express " on your browser. 
+  
+
+![Screenshot 2023-07-17 211657](https://github.com/Saidat23/devops.pbl/assets/138054715/875a9f61-0924-4c64-8700-e57c631fc817)
+
+This To-Do application should be able to create a new task, display list of all tasks and delete a completed task. Each task will be associated with endpoint using different http request methods: POST, GET and DELETE. For each task, we have to create route that will define various endpoints that the To-do application will depend on.
+
+Create the routes directory using the " mkdir routes " command.
+
+Change the directory to routes folder using "cd routes " command
+
+Create a api.js file with the " touch api.js " command
+
+Open the file with the command " vim api.js " then copy and paste the code below in the file. Save and exit the file.
+
+" const express = require ('express');
+  const router = express.Router();
+
+ router.get('/todos', (req, res, next) => {
+
+ });
+
+ router.post('/todos', (req, res, next) => {
+
+ });
+
+ router.delete('/todos/:id', (req, res, next) => {
+
+ })
+
+ module.exports = router; ".
+
+ #### MODELS 
+
+ we have to create a model since we would be using Mongodb: a NoSQL database. A model is what makes JavaScript interactive and it is the heart of JavaScript. 
+ 
 
 
 
