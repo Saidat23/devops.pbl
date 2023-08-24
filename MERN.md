@@ -66,7 +66,9 @@ Run " ls " command to confirm that the file is created.
 
 Install the dotenv module by running the command " npm instal dotenv " 
 
-Open the index.js file with the command " vim index.js ". Type in the code below and save.
+Open the index.js file with the command " vim index.js ". 
+
+Type in letter "I" to switch to insert mode and then type in the code below and save.
 
 " const express = require('express');
   require('dotenv').config();
