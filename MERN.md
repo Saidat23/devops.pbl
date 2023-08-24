@@ -138,7 +138,7 @@ Open the file with the command " vim api.js " then copy and paste the code below
 
  #### MODELS 
 
- we have to create a model since we would be using Mongodb: a NoSQL database. A model is what makes JavaScript interactive and it is the heart of JavaScript. 
+ we have to create a model since we would be using Mongodb: a NoSQL database. A model is what makes JavaScript interactive and it is the heart of JavaScript.  
  
 
 
