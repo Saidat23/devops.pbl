@@ -64,7 +64,30 @@ Create a file named index.js with the commamnd " touch index.js "
 
 Run " ls " command to confirm that the file is created.
 
-Install the dotenv by running the command " npm instal dotenv "
+Install the dotenv module by running the command " npm instal dotenv " 
+
+Open the index.js file with the command " vim index.js ". Type in the code below and save.
+
+" const express = require('express');
+  require('dotenv').config();
+
+  const app = express();
+
+  const port = process.env.PORT || 5000;
+
+  app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "\*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+  });
+
+  app.use((req, res, next) => {
+  res.send('Welcome to Express');
+  });
+
+  app.listen(port, () => {
+  console.log(`Server running on port ${port}`)
+  });  "
 
 
 
