@@ -138,7 +138,21 @@ Open the file with the command " vim api.js " then copy and paste the code below
 
  #### MODELS 
 
- we have to create a model since we would be using Mongodb: a NoSQL database. A model is what makes JavaScript interactive and it is the heart of JavaScript.  
+ We have to create a model since we would be using Mongodb: a NoSQL database. A model makes JavaScript interactive and defines the database schema which is a blueprint of how the database would be constructed. 
+
+ To create a Schema and a model, we would install mongoose which is a Node.js package that makes it easy to work with mongodb. 
+ 
+ Change the directory back to To-Do folder with " cd .. " and install Mongoose with " npm install mongoose "
+
+ Create a new folder named models by running the command " mkdir models ".
+
+ Change directory into the newly created 'models' folder with " cd models "
+ 
+ Inside the models folder, create a file and name it todo.js using " touch todo.js " command.
+
+ 
+
+ 
  
 
 
