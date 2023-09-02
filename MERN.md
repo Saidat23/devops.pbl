@@ -205,13 +205,7 @@ Change into the routes directory, open the api.js with " vim api.js ". Delete th
  module.exports = router; ".
 
  #### Mongodb Database
- We would need a database to store our data in . For this, we would use mLab which provides Mongodb database as a service solution (DBaaS).
- 
-
- 
- 
-
-
+ We would need a database to store our data in. For this, we would use mLab which provides Mongodb database as a service solution (DBaaS).Sign up for a shared cluster free account on MongoDB Atlas, follow the sign up process, select AWS as the cloud provider and choose a region near you. Allow access to the MongoDB database from anywhere and change the time of deleting the entry from 6 Hours to 1 Week.
 
 
 
