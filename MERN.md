@@ -293,12 +293,14 @@ console.log(`Server running on port ${port}`)
 
 });"
 
-Start the server using the command "
+Start the server using the command " node index.js " and you will see a message that says "Database connected successfully" which indicate that the backend has been configured.
 
 
 ![screenshot mongoDB connection string](https://github.com/Saidat23/devops.pbl/assets/138054715/49851b37-ef2b-4418-b106-fdc9aaff3f97)
 
+Next thing is to test it.
 
+#### Testing Backend Code without Frontend using RESTful API
 
 
 
