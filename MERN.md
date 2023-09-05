@@ -302,6 +302,18 @@ Next thing is to test it.
 
 #### Testing Backend Code without Frontend using RESTful API
 
+Presently, we have written the backend part of our To-Do application, and configured a database, but we do not have a frontend User Interface yet. We need a ReactJS code to achieve this. But during development, we will need a way to test our code using RESTfull API. Therefore, we will need to make use of some API development client to test our code.
+We would make use of Postman to test our API.
+
+Click on Install Postman to download and install postman on your machine.
+
+
+You should test all the API endpoints and make sure they are working. For the endpoints that require body, you should send JSON back with the necessary fields since it’s what we setup in our code.
+
+Now open your Postman, create a POST request to the API http://<PublicIP-or-PublicDNS>:5000/api/todos. This request sends a new task to our To-Do list so the application could store it in the database.
+
+Note: make sure your set header key Content-Type as application/json
+
 
 
 
