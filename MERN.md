@@ -293,8 +293,10 @@ console.log(`Server running on port ${port}`)
 
 });"
 
+Start the server using the command "
 
 
+![screenshot mongoDB connection string](https://github.com/Saidat23/devops.pbl/assets/138054715/49851b37-ef2b-4418-b106-fdc9aaff3f97)
 
 
 
