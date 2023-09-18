@@ -1,5 +1,15 @@
 # WEB STACK IMPLEMENTATION (LAMP STACK) IN AWS
- A technology stack is a set of frameworks and tools used to develop a software product. This set of frameworks and tools are specifically chosen to work together in creating a well-functioning software. LAMP is an acronymn for Linux, Apache, MySQL, PHP or Python, or Perl which are individual technologies used together for a specific technology product.
+ A technology stack is a set of frameworks and tools used to develop a software product. This set of frameworks and tools are specifically chosen to work together in creating a well-functioning software. the stack include LAMP Stack, LEMP Stack. MEAN Stack and MERN Stack. LAMP stack is an acronymn for:
+ 
+ Linux - operating sysytem
+ 
+ Apache - a web server
+ 
+ MySQL - a database server and
+ 
+ PHP or Python, or Perl - programming language. 
+ 
+ These are open source technologies used by developers for a specific technology product. 
 
 ## INSTALLING APACHE AND UPDATING THE FIREWALL
  Apache HTTP Server is the most widely used web server software. Developed and maintained by Apache Software Foundation, Apache is an open source software available for free. It runs on 67% of all webservers in the world. It is fast, reliable, and secure. It can be highly customized to meet the needs of many different environments by using extensions and modules. Most WordPress hosting providers use Apache as their web server software. High-profile companies such as Cisco, IBM, LinkedIn, Facebook, Hewlett-Packard, AT&T, Siemens, eBay and many more use Apache.The Apache web server is among the most popular web servers in the world. It is well documented, has an active community of users, and has been in wide use for much of the history of the web, which makes it a great default choice for hosting a website.  
