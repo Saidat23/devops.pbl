@@ -11,6 +11,10 @@
  
  These are open source technologies used by developers for a specific technology product. 
 
+## PREREQUISITE FOR IMPLEMENTING LAMP STACK.
+1. An Aws account to launch your virtual server
+2. An Ubuntu server. 
+
 ## INSTALLING APACHE AND UPDATING THE FIREWALL
  Apache HTTP Server is the most widely used web server software. Developed and maintained by Apache Software Foundation, Apache is an open source software available for free. It runs on 67% of all webservers in the world. It is fast, reliable, and secure. It can be highly customized to meet the needs of many different environments by using extensions and modules. Most WordPress hosting providers use Apache as their web server software. High-profile companies such as Cisco, IBM, LinkedIn, Facebook, Hewlett-Packard, AT&T, Siemens, eBay and many more use Apache.The Apache web server is among the most popular web servers in the world. It is well documented, has an active community of users, and has been in wide use for much of the history of the web, which makes it a great default choice for hosting a website.  
 
