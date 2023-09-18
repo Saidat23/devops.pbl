@@ -18,19 +18,23 @@ In order to receive any traffic on the Web Server, TCP port 80, which is the def
  
 ![mysql installed](https://github.com/Saidat23/devops.pbl/assets/138054715/36144c9f-6490-445b-ac37-6f6301b51f92)
 
-"ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'PASSWORD';" command was used to remove insecure default settings and lock down access to the database system. Before running the script, password for the root user was set, using mysql_native_password as default authentication method.  
+< ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'PASSWORD'; > command was used to remove insecure default settings and lock down access to the database system. Before running the script, password for the root user was set, using mysql_native_password as default authentication method.  
 Exit the MySQL shell.
 
 ## INSTALLING PHP
  PHP  processes code to display dynamic content to the end user. In addition to the php package, I would need php-mysql, which allows PHP to communicate with MySQL-based databases. And also libapache2-mod-php to enable Apache to handle the PHP files. The core PHP packages will be installed as dependencies automatically.
-To install these 3 packages at a go, "sudo apt install php libapache2-mod-php php-mysql" command is used and once the installation completes, "php -v" command is used to confirm the PHP version.
+To install these 3 packages at a go, < sudo apt install php libapache2-mod-php php-mysql > command is used and once the installation completes, < php -v > command is used to confirm the PHP version.
 
 ![php installed](https://github.com/Saidat23/devops.pbl/assets/138054715/7632d4e1-604c-41c8-bb0d-bcbb669ea9c1)
 
 ## CREATING A VIRTUAL HOST FOR YOUR WEBSITE USING APACHE  
 
 
-A directory was created and ownership of the directory was assign with the current system user. Then, a new configuration file in Apache’s sites was created and opened using vim command line editor.
+A directory was created with the command < sudo mkdir /var/www/projectlamp > and ownership of the directory was assign with the $USER environment variable to reference the current system user. This is done with the command < sudo chown -R $USER:$USER /var/www/projectlamp >.
+
+Then, a new configuration file in Apache’s sites-available directory was created and opened using vim command line editor with the command < sudo vi /etc apache2/sites-available/projectlamp.conf >.
+
+
 With the VirtualHost configuration completed, the "a2ensite" command is used to enable the new virtual host and the default website that comes installed with Apache is disabled using "a2dissite" command.
 Then, the configuration file was checked for syntax errors by running "sudo apache2ctl configtest" command. An index.html file was created and the virtual host tested. 
 
