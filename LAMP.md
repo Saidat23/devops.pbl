@@ -57,6 +57,7 @@ Then < sudo a2ensite projectlamp > command was used to enable the new virtual ho
 The configuration file was checked for syntax errors by running < sudo apache2ctl configtest > command.Then, Apache was reloaded with the command < sudo systenctl reload apache2 > to effect the changes. Now our new website is active but the web root /var/www/projectlamp was still empty. An index.html file was created to test that the virtual host works as expected using the command below.
 
 < sudo echo 'Hello LAMP from hostname' $(curl -s http://169.254.169.254/latest/meta-data/public-hostname) 'with public IP' $(curl -s http://169.254.169.254/latest/meta-data/public-ipv4) > /var/www/projectlamp/index.html >
+The text from the " echo " command was displayed on the browser,
 
 ![installing Apache and updating firewall](https://github.com/Saidat23/devops.pbl/assets/138054715/41c0bd72-a351-44d6-a56e-07b4eca34f90)
 
