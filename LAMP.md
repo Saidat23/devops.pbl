@@ -1,5 +1,7 @@
 # WEB STACK IMPLEMENTATION (LAMP STACK) IN AWS
- A technology stack is a set of frameworks and tools used to develop a software product. This set of frameworks and tools are specifically chosen to work together in creating a well-functioning software. the stack include LAMP Stack, LEMP Stack. MEAN Stack and MERN Stack. LAMP stack is an acronymn for:
+ A technology stack is a set of frameworks and tools used to develop a software product. This set of frameworks and tools are specifically chosen to work together in creating a well-functioning software. the stack include LAMP Stack, LEMP Stack. MEAN Stack and MERN Stack. 
+ 
+ LAMP stack is an acronymn for:
  
  Linux - operating sysytem
  
