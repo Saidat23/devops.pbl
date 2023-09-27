@@ -21,11 +21,18 @@
 1. An Ubuntu server. 
 
 ##  APACHE
+---
 <P>Apache HTTP Server is the most widely used web server software. Developed and maintained by Apache Software Foundation, Apache is an open source software available for free. It runs on about 67% of all webservers in the world. It is fast, reliable, and secure. It can be highly customized to meet the needs of different environments by using extensions and modules. Most WordPress hosting providers use Apache as their webserver software. High-profile companies such as Cisco, IBM, LinkedIn, Facebook, Hewlett-Packard, AT&T, Siemens, eBay and many more make use of Apache. It is well documented with has an active community of users, and has been in wide use for much of the history of the web, which makes it a great default choice for hosting a website</P>
 
 ## INSTALLING APACHE AND UPDATING THE FIREWALL
-The EC2 instance was launched on AWS server, the terminal was opened and the directory was changed to Downloads folder using the ccommand < cd Downloads >. The EC2 server was connected to the operating system using the command < ssh -i < "access key" > Ubuntu@< public ip address >.  Apache was installed using Ubuntu’s package manager ‘apt’.
-To verify that apache2 is running as a Service on the OS, < "sudo systemctl status apache2"> command was used.
+---
+<p>Launch EC2 instance on AWS server. Open your terminal on your computer. Select your EC2 instance and click on connect. Click on SSH client and Copy the SSH link of your EC2 instance. 
+On your terminal, paste your copied SSH link. 
+ 
+ change the directory to  Downloads folder using the ccommand < cd Downloads >. The EC2 server was connected to the operating system using the command < ssh -i < "access key" > Ubuntu@< public ip address >.  Apache was installed using Ubuntu’s package manager ‘apt’.
+To verify that apache2 is running as a Service on the OS with the command
+< "sudo systemctl status apache2"> command was used.
+
 In order to receive any traffic on the Web Server, TCP port 80, which is the default port that web browsers use to access web pages on the Internet, needs to be opened. So a rule for EC2 configuration to open inbound connection through port 80 was added to the security rule. By default, we have TCP port 22 open on our EC2 machine to access it via SSH. 
 
 ![Screenshot 2023-06-28 203909](https://github.com/Saidat23/devops.pbl/assets/138054715/74f0bffa-4a70-42e2-8c16-e7c5556fc340)
