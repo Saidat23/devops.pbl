@@ -15,6 +15,7 @@
  These are open source technologies used by developers for a specific technology product. 
 
 ## PREREQUISITE FOR IMPLEMENTING LAMP STACK.
+---
 <!-- OL -->
 1. An Aws account to launch your virtual server
 1. An Ubuntu server. 
