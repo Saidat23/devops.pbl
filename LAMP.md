@@ -160,11 +160,12 @@ Exit the MySQL shell with
 ```
 mysql> exit
 ```
-To start the interactive script run:
+To start the interactive script, run:
 ```
 sudo mysql_secure_installation
 ```
-You would be asked if you want to configurethe validate password plugin.
+You would be asked if you want to configure the VALIDATE PASSWORD PLUGIN.
+If it is enabled, the passwords that does not match the specified criteria will be rejected by MYSQL. It is save to leave validation disabled but you should always use a strong and unique password for the database credentials. You can answer Y for yes or anything else to continue without enabling it.
 
 ## INSTALLING PHP
  PHP  processes code to display dynamic content to the end user. In addition to the php package, I would need php-mysql, which allows PHP to communicate with MySQL-based databases. And also libapache2-mod-php to enable Apache to handle the PHP files. The core PHP packages will be installed as dependencies automatically.
