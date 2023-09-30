@@ -173,37 +173,65 @@ LOW    Length >= 8
 MEDIUM Length >= 8, numeric, mixed case, and special characters
 STRONG Length >= 8, numeric, mixed case, and special characters and dictionary file
 
-Please enter 0 = LOW, 1 = MEDIUM and 2 = STRONG : 
+Please enter 0 = LOW, 1 = MEDIUM and 2 = STRONG : 1
 "</P>
 
 Regardless of whether we chose to set up the VALIDATION PASSWORD PLUGIN, the server will next time ask us to select and confirm a password for the **MYSQL root user** which is different from the **System root**. The **database root user** is an administrative user with a full privilege over the database system. A strong password should be set up as an additional safety measure.
 <P> If password validation is enabled, you'll  be shown the password strenght for the  root password you just set and your server will ask if you want to continue with the password. </P>
 <P> 
  " Estimate strength of the password: 100
- 
-Do you wish to continue with the password provided? (Press y/Y for Yes, any other key for NO) : y"  </P>
+ Do you wish to continue with the password provided? (Press y/Y for Yes, any other key for NO) : y"  
+</P> 
+
 For the rest of the questions, press **Y** and then hit **Enter** key at each prompt. This will prompt you to change the root password, remove some anonymous users, test the database, disable remote root logins and load the new rules so that MySQL will immediately start responding to the changes made. Test if you're able to log in to the  MySQL console with this command:
 ```
 sudo mysql -p
 ```
-<P> The **-p** flag in the command will prompt you for the password used after changing the **root** user password.</P>
+ The **-p** flag in the command will prompt you for the password used after changing the **root** user password.
+ 
 To exit MySQL console, Type:
 ```
 mysql> exit
+```
 
 ## INSTALLING PHP
- PHP  processes code to display dynamic content to the end user. In addition to the php package, I would need php-mysql, which allows PHP to communicate with MySQL-based databases. And also libapache2-mod-php to enable Apache to handle the PHP files. The core PHP packages will be installed as dependencies automatically.
-To install these 3 packages at a go, < sudo apt install php libapache2-mod-php php-mysql > command is used and once the installation completes, < php -v > command is used to confirm the PHP version. This shows the version of the PHP.
+ PHP  processes code to display dynamic content to the end user. In addition to the PHP package, we would need php-mysql, which allows PHP to communicate with MySQL-based databases. We also need **libapache2-mod-php** to enable Apache to handle the PHP files. The core PHP packages will be installed as dependencies automatically.
+
+ To install these 3 packages at a go, use the command:
+ 
+ ```
+ sudo apt install php libapache2-mod-php php-mysql 
+ ```
+ Once the installation completes, run the command below to confirm the PHP version.
+ ```
+ php -v 
+ ```
+   This shows the version of the PHP.
 
 ![php installed](https://github.com/Saidat23/devops.pbl/assets/138054715/7632d4e1-604c-41c8-bb0d-bcbb669ea9c1)
 
+At this point, our LAMP stack is completely installed and fully operational. To test it, we need to set up a proper **Apache Vitual Host** to hold the website's files and folders. Virtual host allows one to have multiple websites on a single machine which is not noticed by the users of that website.
+
 ## CREATING A VIRTUAL HOST FOR YOUR WEBSITE USING APACHE  
+In this project we will set up a domain called **projectlamp**. On Ubuntu 20.04 Apache has one server block enabled by default configure to serve documents from the **var/www/html** directory. We will add our own directory next to the default one.
 
+Creat a directory for **project** with the **mkdir** command:
+```
+ sudo mkdir /var/www/projectlamp
+```
+ Assign ownership of the directory with the **$USER** environment variable to reference the current system user with the command 
+ ```
+sudo chown -R $USER:$USER /var/www/projectlamp
+```
 
-A directory was created with the command < sudo mkdir /var/www/projectlamp > and ownership of the directory was assign with the $USER environment variable to reference the current system user. This was done with the command < sudo chown -R $USER:$USER /var/www/projectlamp >.
+Create and open a new configuration file in Apache’s **sites-available** directory using vim or nano command line editor with the command:
 
-Then, a new configuration file in Apache’s sites-available directory was created and opened using vim command line editor with the command < sudo vi /etc apache2/sites-available/projectlamp.conf >. The bare-bones configuration below was pasted in the new blank file created. The file should be in the insert mode: click " i " to move into the insert mode.
+```
+sudo vi /etc apache2/sites-available/projectlamp.conf
+```
+Hit **i** on the keyboard to enter into the insert mode. Paste the bare-bones configuration below in the new blank file opened.
 
+```
 <VirtualHost *:80>
     ServerName projectlamp
     ServerAlias www.projectlamp 
@@ -212,31 +240,98 @@ Then, a new configuration file in Apache’s sites-available directory was creat
     ErrorLog ${APACHE_LOG_DIR}/error.log
     CustomLog ${APACHE_LOG_DIR}/access.log combined
 </VirtualHost>
+```
+Follow the steps below to save and close the file:
+1. Hit the **esc** button on the keybord
+2. Type **:**
+3. Type **wq**. **w** indicate write and **q** indicate quit.
+4. Hit **ENTER** to save the file.
 
-The file was saved with closed following the steps below:
-1. Hit the esc button on the keybord
-2. Type :
-3. Type wq. w indicate write and q indicate quit.
-4. Hit ENTER to save the file.
+Use the ls command:
+```
+sudo ls /etc/apache2/sites-available
+```
+ to check the new file in the **sites-available** directory.
+ 
+ With the virtual host configuration, Apache will serve the **projectlamp** by using **/var/etc/projectlamp** as the web root directory. 
 
-The ls command < sudo ls /etc/apache2/sites-available > was used to check the new file in the sites-available directory. With the virtualHost configuration, Apache will serve the projectlamp by using /var/etc/projectlamp as the web root directory. 
+To enable the new virtual host use the command: 
+```
+sudo a2ensite projectlamp
+```
+If you are not using the custom domain name use the command below to prevent Apache's default configuration from overwriting the virtual host.
 
+```
+ sudo a2dissite 000-default
+ ```
 
+To check for syntax errors in the configuration file, run the command:
 
-Then < sudo a2ensite projectlamp > command was used to enable the new virtual host and the default website that was installed with Apache is disabled using < sudo a2dissite 000-default > command. This is required if we are not using the custom domain name to prevent Apache's default configuration from overwriting our virtual host. 
-The configuration file was checked for syntax errors by running < sudo apache2ctl configtest > command.Then, Apache was reloaded with the command < sudo systenctl reload apache2 > to effect the changes. Now our new website is active but the web root /var/www/projectlamp was still empty. An index.html file was created to test that the virtual host works as expected using the command below.
+```
+ sudo apache2ctl configtest
+ ```
+Then, reload Apache by running the command:
 
-< sudo echo 'Hello LAMP from hostname' $(curl -s http://169.254.169.254/latest/meta-data/public-hostname) 'with public IP' $(curl -s http://169.254.169.254/latest/meta-data/public-ipv4) > /var/www/projectlamp/index.html >
-The text from the " echo " command was displayed on the browser.
+```
+ sudo systenctl reload apache2
+ ```
+ Now our new website is active but the web root **/var/www/projectlamp** is empty.
+ 
+Create  an **index.html** file in the same location to test that the virtual host works perfectly well with command below:
 
+```
+sudo echo 'Hello LAMP from hostname' $(curl -s http://169.254.169.254/latest/meta-data/public-hostname)
+```
+with public IP
+
+```
+$(curl -s http://169.254.169.254/latest/meta-data/public-ipv4) > /var/www/projectlamp/index.html
+```
+The text from the " echo " command was displayed on the browser by running the command: 
+```
+http://<Public-IP-Address>:80
+```
+or 
+```
+http://Public-DNS-NAME>:80
+```
 ![installing Apache and updating firewall](https://github.com/Saidat23/devops.pbl/assets/138054715/41c0bd72-a351-44d6-a56e-07b4eca34f90)
 
 ## ENABLE PHP ON THE WEBSITE
-Finally, PHP script was created to test that PHP is correctly installed and configured on your server.
-Created a PHP test script to confirm that Apache is able to handle and process requests for PHP files.
-A new file named index.php was created inside the custom web root folder using "vim /var/www/projectlamp/index.php" command which opens a blank page to insert
-"<?php
-phpinfo();".
+With the default **DirectoryIndex** setting on Apache, a file named **index.html** will always take precedence over an **index.php** file. 
+
+This is used for setting up maintenance page in **PHP** applications by creating a temporary **index.html** file containing an informative message to visitors. Once the maintenence is over, the **index.html** is renamed or removed from the document root to bring back the regular application page.
+To change this behavior, you have to edit the **/etc/apache2/mods-enabled/dir.conf** file and change the order in which the **index.php** file is listed within the **DirectoryIndex** directive with the command below:
+
+```
+sudo vim /etc/apache2/mods-enabled/dir.conf
+```
+
+```
+<IfModule mod_dir.c>
+        #Change this:
+        #DirectoryIndex index.html index.cgi index.pl index.php index.xhtml index.htm
+        #To this:
+        DirectoryIndex index.php index.html index.cgi index.pl index.xhtml index.htm
+</IfModule>
+```
+Save and close the file then, reload Apache to effect the changes.
+```
+$ sudo systemctl reload apache2
+```
+Finally, create a **PHP** script to test that **PHP** is correctly installed and configured on your server.
+
+Created a PHP test script to confirm that Apache is able to handle and process requests for **PHP** files.
+
+Create a new file named **index.php** inside the custom web root folder using the command:
+```
+vim /var/www/projectlamp/index.php
+```
+ Insert the command below into the blank page 
+ ```
+<?php
+phpinfo();
+```
 The page below indicate that the PHP installation is working as expected.
 
 ![php](https://github.com/Saidat23/devops.pbl/assets/138054715/78462150-e2f1-4246-b4bb-8f0f3de0459c)
