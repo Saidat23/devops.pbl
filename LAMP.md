@@ -165,7 +165,31 @@ To start the interactive script, run:
 sudo mysql_secure_installation
 ```
 You would be asked if you want to configure the VALIDATE PASSWORD PLUGIN.
-If it is enabled, the passwords that does not match the specified criteria will be rejected by MYSQL. It is save to leave validation disabled but you should always use a strong and unique password for the database credentials. You can answer Y for yes or anything else to continue without enabling it.
+If it is enabled, the passwords that does not match the specified criteria will be rejected by MYSQL. It is save to leave validation disabled but you should always use a strong and unique password for the database credentials. You can answer Y for yes or anything else to continue without enabling it. If you answer "YES", you'll need to select a level of password validation. Selecting "2", which is the strongest level, means when you attempt to set any password which dose not contain upper and lowercase letters,numbers and special characters or common dictionary words will give you an error message. You will see something like the message below.
+<P>"
+There are three levels of password validation policy:
+
+LOW    Length >= 8
+MEDIUM Length >= 8, numeric, mixed case, and special characters
+STRONG Length >= 8, numeric, mixed case, and special characters and dictionary file
+
+Please enter 0 = LOW, 1 = MEDIUM and 2 = STRONG : 
+"</P>
+
+Regardless of whether we chose to set up the VALIDATION PASSWORD PLUGIN, the server will next time ask us to select and confirm a password for the **MYSQL root user** which is different from the **System root**. The **database root user** is an administrative user with a full privilege over the database system. A strong password should be set up as an additional safety measure.
+<P> If password validation is enabled, you'll  be shown the password strenght for the  root password you just set and your server will ask if you want to continue with the password. </P>
+<P> 
+ " Estimate strength of the password: 100
+ 
+Do you wish to continue with the password provided? (Press y/Y for Yes, any other key for NO) : y"  </P>
+For the rest of the questions, press **Y** and then hit **Enter** key at each prompt. This will prompt you to change the root password, remove some anonymous users, test the database, disable remote root logins and load the new rules so that MySQL will immediately start responding to the changes made. Test if you're able to log in to the  MySQL console with this command:
+```
+sudo mysql -p
+```
+<P> The **-p** flag in the command will prompt you for the password used after changing the **root** user password.</P>
+To exit MySQL console, Type:
+```
+mysql> exit
 
 ## INSTALLING PHP
  PHP  processes code to display dynamic content to the end user. In addition to the php package, I would need php-mysql, which allows PHP to communicate with MySQL-based databases. And also libapache2-mod-php to enable Apache to handle the PHP files. The core PHP packages will be installed as dependencies automatically.
