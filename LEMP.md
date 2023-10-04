@@ -60,29 +60,52 @@ ssh -i "EC2-key-pair.pem" ubuntu@ec2-51-20-73-26.eu-north-1.compute.amazonaws.co
 
 
 ## INSTALLING THE NGINX WEB SERVER
- Nginx would be used to display our web pages to the site visitors. The apt package manager would be used to install this package.
-First, the server’s package index is updated then Nginx installed using the command "sudo apt update"  -- for updating the server package index and "sudo apt install nginx"  -- for installing the nginx.
-To check that the nginx is successfully installated and running as a service in Ubuntu, the command "sudo systemctl status nginx" is used.
-The image below indicate that your nginx web server is successfully installed and running.
+---
+ Nginx is used to display our web pages to the site visitors. The apt package manager would be used to install this package.
+ 
+Update the server’s package index with the command:
+```
+sudo apt update
+```
+Then install Nginx using the command:
+```
+sudo apt install nginx
+```
+To check that the nginx is successfully installated and running as a service in Ubuntu, Run the command: 
+
+```
+sudo systemctl status nginx
+```
+
+The image below indicate that the nginx web server is successfully installed and running.
 
 ![Screenshot 2023-07-05 220552](https://github.com/Saidat23/devops.pbl/assets/138054715/caf4a99a-d517-43cb-b4e3-7737062433c7)
 
-## INSTALLING MYSQ
+## INSTALLING MYSQL
 ---
-With the web server up and running, next is to install a Database Management System (DBMS). MySQL is a popular relational database management system used within PHP environments to store and manage data for sites.
-"sudo apt install mysql-server" command is used to acquire and install the software. 
-When the installation is finished, log in to the MySQL console by typing 
-"sudo mysql" command which is used to connect to the MySQL server as the administrative database user root.
+With the web server up and running, next is to install a Database Management System (DBMS). MySQL is a popular relational database management system used within PHP environments to store and manage data for websites.
+To install the MYSQL software, run the command:
+```
+sudo apt install mysql-server
+```
+When the installation is finished, log in to the MySQL console by typing the command below to connect to the MySQL server as the administrative database user root.
+```
+sudo mysql
+```
  Output will look like this:
  
 ![mysql installed](https://github.com/Saidat23/devops.pbl/assets/138054715/36144c9f-6490-445b-ac37-6f6301b51f92)
 
-"ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'PASSWORD';" command was used to remove insecure default settings and lock down access to the database system. Before running the script, password for the root user was set, using mysql_native_password as default authentication method.  
+To remove insecure default settings and lock down access to the database system run the command:
+
+``ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'PASSWORD'
+```
+;" command was used . Before running the script, password for the root user was set, using mysql_native_password as default authentication method.  
 Exit the MySQL shell using "exit" command.
 The interactive script is run by  using the command "sudo mysql_secure_installation"
 This will ask if you would like to configure the VALIDATE PASSWORD PLUGIN. 
 
-If enabled, then, passwords that do not match the specified criteria will be rejected by MySQL with an error. If validation is disabled, a strong, unique passwords for database credentials should be used.
+If enabled, then, passwords that do not match the specified criteria will be rejected by MySQL with an error message. If validation is disabled, a strong, unique passwords for database credentials should be used.
 "sudo mysql -p" is used to test if you’re able to log in to the MySQL console.
 Exit the MySQL console with the "exit".
 
@@ -97,6 +120,7 @@ Now the PHP components is installed. Next is to configure Nginx to use them.
 ![php installed](https://github.com/Saidat23/devops.pbl/assets/138054715/7632d4e1-604c-41c8-bb0d-bcbb669ea9c1)
 
  ## CONFIGURING NGINX TO USE PHP PROCESSOR
+ ---
  When using the Nginx web server, we can create server blocks (similar to virtual hosts in Apache) to encapsulate configuration details and host more than one domain on a single server. 
 
 On Ubuntu 20.04, by default, Nginx has only one server block enabled and it is configured to serve documents out of a directory at /var/www/html. It can be difficult to manage if one is hosting multiple sites. Rather than modifying /var/www/html, I’ll create a directory structure within /var/www for the "your_domain" website, leaving /var/www/html in place as the default directory to be used if a client request does not match any other sites.
@@ -110,6 +134,7 @@ Now, the new website is active, but the web root /var/www/projectLEMP is still e
 ![Screenshot 2023-07-05 223955](https://github.com/Saidat23/devops.pbl/assets/138054715/79ee6e18-a78a-4f22-8e3f-d51976fdd993)
 
 ## TESTING PHP WITH NGINX
+---
 The LEMP stack set up is now complete and fully functional. To validate that the Nginx can correctly hand .php files off to the PHP processor,a test PHP file in the document root would be created and a new file called info.php is opened within the document root in the text editor using "sudo nano /var/www/projectLEMP/info.php" command. Then paste the command 
 "<?php
 phpinfo();". The response is shown below: 
@@ -117,6 +142,7 @@ phpinfo();". The response is shown below:
 ![Screenshot 2023-07-05 224223](https://github.com/Saidat23/devops.pbl/assets/138054715/16c5744c-3e13-4d57-a669-d235fb86e7d0)
 
 ## RETRIEVING DATA FROM MYSQL DATABASE WITH PHP
+---
 A test database (DB) was create with simple “To do list” and the access configured so that the Nginx website would be able to query data from the DB and display it. We’ll need to create a new user with the "mysql_native_password" authentication method to connect to the MySQL database from PHP. We'll also create a database named "example_database" and a user named "example_user".
 To start with, connect to the MySQL console through the root account using the command "sudo mysql".
 A new database was created using "CREATE DATABASE `example_database`;" command. A new user was also created using "CREATE USER 'example_user'@'%' IDENTIFIED WITH mysql_native_password BY 'password';" and giving full previledge on the created database with the command "GRANT ALL ON example_database.* TO 'example_user'@'%';". "Exit" command was used to exit the mysql shell.
