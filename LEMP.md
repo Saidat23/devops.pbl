@@ -1,7 +1,8 @@
 # WEB STACK IMPLEMENTATION (LEMP STACK)
 ---
-  This project is similar to Project 1. LEMP is an acronymn for Linux, Nginx, MySQL, PHP or Python, or Perl. This are individual technologies used together for a specific technology product.
-In this project, Similar stack would be implemented, using an alternative Web Server – NGINX, to create a dynamic and high-performing websites. We would dive into the architecture of the LEMP stack, understanding how Linux provides a solid foundation, Nginx serves as a Powerful web server, Database is handled by MySQL and PHP empowers server-side. In this project, we would set up a Linux environment, configure Nginx for optimal performance, manage MySQL databases and develop PHP code to bring the applications to life. Through this exercise, we would explore techniques for handling user requests, interact with databases, process forms and implement robust security measures. Also work with popular development frameworks and tools that elevates productivity and simplify the web application development process. 
+  This project is similar to Project 1. LEMP is an acronymn for **Linux**, **Nginx**, **MySQL**, **PHP** or **Python**, or **Perl**. This are individual technologies used together for a specific technology product.
+In this project, Similar stack would be implemented, using an alternative Web Server – **NGINX**, to create a dynamic and high-performing websites. We would be looking into the architecture of the **LEMP** stack, understanding how **Linux** provides a solid foundation, **Nginx** serves as a Powerful web server, Database is handled by **MySQL** and **PHP** empowers server-side. In this project, we would set up a **Linux** environment, configure **Nginx** for optimal performance, manage **MySQL** databases and develop 
+**PHP** code to bring the applications to life. Through this exercise, we would explore techniques for handling user requests, interact with databases, process forms and implement robust security measures. We would work with popular development frameworks and tools that elevates productivity and simplify the web application development process. 
 
 
 
