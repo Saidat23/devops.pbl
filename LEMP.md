@@ -1,4 +1,5 @@
 # WEB STACK IMPLEMENTATION (LEMP STACK)
+---
   This is a similar stack to Project 1. LEMP is an acronymn for Linux, Nginx, MySQL, PHP or Python, or Perl. This are individual technologies used together for a specific technology product.
 In this project, Similar stack would be implemented, using an alternative Web Server – NGINX, it is also popular and widely used by websites.
 
@@ -67,7 +68,7 @@ The image below indicate that your nginx web server is successfully installed an
 ![Screenshot 2023-07-05 220552](https://github.com/Saidat23/devops.pbl/assets/138054715/caf4a99a-d517-43cb-b4e3-7737062433c7)
 
 ## INSTALLING MYSQ
-
+---
 With the web server up and running, next is to install a Database Management System (DBMS). MySQL is a popular relational database management system used within PHP environments to store and manage data for sites.
 "sudo apt install mysql-server" command is used to acquire and install the software. 
 When the installation is finished, log in to the MySQL console by typing 
@@ -86,6 +87,7 @@ If enabled, then, passwords that do not match the specified criteria will be rej
 Exit the MySQL console with the "exit".
 
 ## INSTALLING PHP
+---
  PHP  processes code to display dynamic content to the end user.  
 While the Apache server embeds the PHP interpreter in each request, Nginx requires an external program to handle PHP processing and thus, act as a bridge between the PHP interpreter itself and the web server. This allows for a better overall performance in most of the PHP-based websites, while requiring additional configuration. I’ll need to install php-fpm, (PHP fastCGI process manager), and direct Nginx to pass the PHP requests to the software for processing. I’ll also need php-mysql, a PHP module that allows PHP to communicate with MySQL-based databases. The Core PHP packages will be installed automatically as dependencies.
 
