@@ -1,8 +1,62 @@
 # WEB STACK IMPLEMENTATION (LEMP STACK)
   This is a similar stack to Project 1. LEMP is an acronymn for Linux, Nginx, MySQL, PHP or Python, or Perl. This are individual technologies used together for a specific technology product.
 In this project, Similar stack would be implemented, using an alternative Web Server – NGINX, it is also popular and widely used by websites.
-With Git Bash downloaded and launched, SSH into the EC2 instance using the command:  
-ssh -i <Your-private-key.pem> ubuntu@<EC2-Public-IP-address>
+
+## LAUNCHING YOUR INSTANCE.
+---
+Log into your AWS account to launch an EC2 instance.
+<P>Click on EC2. Then Click on Launch Instance.</P>
+
+
+![Screenshot 2023-09-27 175849](https://github.com/Saidat23/devops.pbl/assets/138054715/68acf810-60a0-47dd-9d41-a9ca0271b009)
+
+Fill in the Name, select Ubuntu under the Quick Start section and select an Amazon Machine Image (AMI).
+
+![Screenshot 2023-09-27 182258](https://github.com/Saidat23/devops.pbl/assets/138054715/23c703ff-1104-47d4-b4eb-6f690a2ce43f)
+
+Select a free tier Instance type and your key pair if you have one or click on create new key pair. 
+
+![Screenshot 2023-09-27 182348](https://github.com/Saidat23/devops.pbl/assets/138054715/ec602634-9b42-494c-9fcf-c8f38133a5ad)
+
+ To create key pair:
+<P> Type in your key pair name,</P>
+ <P>Select key pair type ( .pem for Windows 10 above & Mac and .ppk for Windows lower than 10.)</P> 
+ <P>Then click on Create key pair.</P>
+ 
+![Screenshot 2023-09-27 184021](https://github.com/Saidat23/devops.pbl/assets/138054715/971ad914-3c0c-42c7-be4c-cd80d6087977)
+
+Click on Launch Instance.
+
+![Screenshot 2023-09-27 184118](https://github.com/Saidat23/devops.pbl/assets/138054715/df19dc31-ca77-46f6-ba4c-26ef34425836)
+
+Click on the box in front of your EC2 instance. Then click on connect at the top right corner of the page. 
+
+![Screenshot 2023-09-27 220333](https://github.com/Saidat23/devops.pbl/assets/138054715/7bc40df2-df3c-4967-84de-9534cd8a53a3)
+
+<P>Click on SSH Client and copy the SSH Command.</P>
+
+![Screenshot 2023-09-27 184231](https://github.com/Saidat23/devops.pbl/assets/138054715/bc9a4597-31e1-4ef7-a47e-d4cafe116623)
+
+Open your terminal on your computer and change the directory to the folder where you have your key pair using the command below. 
+```bash
+cd <key pair location>.
+```
+I have mine in the Downloads folder hence,
+
+```bash
+ cd Downloads 
+```
+ The command below is used to connect to your EC2 Instance.
+ ```bash
+ < ssh -i < "access key" > Ubuntu@< public ip address >.
+```
+On your terminal, paste the copied EC2 SSH link and click enter to connect to your instance. Mine is shown below:
+```bash
+ssh -i "EC2-key-pair.pem" ubuntu@ec2-51-20-73-26.eu-north-1.compute.amazonaws.com
+```
+
+ ![Screenshot 2023-09-27 184413](https://github.com/Saidat23/devops.pbl/assets/138054715/96b2718f-6412-4dfa-a1ef-8edae2fadca1)
+
 
 ## INSTALLING THE NGINX WEB SERVER
  Nginx would be used to display our web pages to the site visitors. The apt package manager would be used to install this package.
