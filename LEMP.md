@@ -1,7 +1,10 @@
 # WEB STACK IMPLEMENTATION (LEMP STACK)
 ---
-  This is a similar stack to Project 1. LEMP is an acronymn for Linux, Nginx, MySQL, PHP or Python, or Perl. This are individual technologies used together for a specific technology product.
-In this project, Similar stack would be implemented, using an alternative Web Server – NGINX, it is also popular and widely used by websites.
+  This project is similar to Project 1. LEMP is an acronymn for Linux, Nginx, MySQL, PHP or Python, or Perl. This are individual technologies used together for a specific technology product.
+In this project, Similar stack would be implemented, using an alternative Web Server – NGINX, to create a dynamic and high-performing websites. We would dive into the architecture of the LEMP stack, understanding how Linux provides a solid foundation, Nginx serves as a Powerful web server, Database is handled by MySQL and PHP empowers server-side. In this project, we would set up a Linux environment, configure Nginx for optimal performance, manage MySQL databases and develop PHP code to bring the applications to life. Through this exercise, we would explore techniques for handling user requests, interact with databases, process forms and implement robust security measures. Also work with popular development frameworks and tools that elevates productivity and simplify the web application development process. 
+
+
+
 
 ## LAUNCHING YOUR INSTANCE.
 ---
@@ -98,7 +101,8 @@ sudo mysql
 
 To remove insecure default settings and lock down access to the database system run the command:
 
-``ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'PASSWORD'
+```
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'PASSWORD'
 ```
 ;" command was used . Before running the script, password for the root user was set, using mysql_native_password as default authentication method.  
 Exit the MySQL shell using "exit" command.
