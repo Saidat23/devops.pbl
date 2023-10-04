@@ -19,7 +19,7 @@ Fill in the Name, select Ubuntu under the Quick Start section and select an Amaz
 
 ![Screenshot 2023-09-27 182258](https://github.com/Saidat23/devops.pbl/assets/138054715/23c703ff-1104-47d4-b4eb-6f690a2ce43f)
 
-Select a free tier Instance type and your key pair if you have one or click on create new key pair. 
+Select a free tier Instance type and your key pair, if you have one already or click on create new key pair. 
 
 ![Screenshot 2023-09-27 182348](https://github.com/Saidat23/devops.pbl/assets/138054715/ec602634-9b42-494c-9fcf-c8f38133a5ad)
 
@@ -87,34 +87,67 @@ The image below indicate that the nginx web server is successfully installed and
 
 ## INSTALLING MYSQL
 ---
-With the web server up and running, next is to install a Database Management System (DBMS). MySQL is a popular relational database management system used within PHP environments to store and manage data for websites.
-To install the MYSQL software, run the command:
+  MySQL is a popular relational database management system used within PHP environments to store and manage data for your site.
+  Install MYSQL with the command:
+  ```
+ sudo apt install mysql-server
 ```
-sudo apt install mysql-server
-```
-When the installation is finished, log in to the MySQL console by typing the command below to connect to the MySQL server as the administrative database user root.
-```
-sudo mysql
+ Connect to MySQL server as the administrative database user root using the command:
+ ```
+ sudo mysql
 ```
  Output will look like this:
  
 ![mysql installed](https://github.com/Saidat23/devops.pbl/assets/138054715/36144c9f-6490-445b-ac37-6f6301b51f92)
 
-To remove insecure default settings and lock down access to the database system run the command:
-
+It is recommended that we run a security script that comes pre-installed with MYSQL. This script will remove insecure default settings and lock down access to your database system.
+Set a password for the root user before running the script with the command:
 ```
-ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'PASSWORD'
+  ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'PASSWORD';
 ```
-;" command was used . Before running the script, password for the root user was set, using mysql_native_password as default authentication method.  
-Exit the MySQL shell using "exit" command.
-The interactive script is run by  using the command "sudo mysql_secure_installation"
-This will ask if you would like to configure the VALIDATE PASSWORD PLUGIN. 
+ Before running the script, set password for the root user , using
+ ```
+ mysql_native_password
+``` 
+Exit the MySQL shell with
+```
+mysql> exit
+```
+To start the interactive script, run:
+```
+sudo mysql_secure_installation
+```
+You would be asked if you want to configure the VALIDATE PASSWORD PLUGIN.
+If it is enabled, the passwords that does not match the specified criteria will be rejected by MYSQL. It is save to leave validation disabled but you should always use a strong and unique password for the database credentials. You can answer Y for yes or anything else to continue without enabling it. If you answer "YES", you'll need to select a level of password validation. Selecting "2", which is the strongest level, means when you attempt to set any password which dose not contain upper and lowercase letters,numbers and special characters or common dictionary words will give you an error message. You will see something like the message below.
 
-If enabled, then, passwords that do not match the specified criteria will be rejected by MySQL with an error message. If validation is disabled, a strong, unique passwords for database credentials should be used.
-"sudo mysql -p" is used to test if you’re able to log in to the MySQL console.
-Exit the MySQL console with the "exit".
+**There are three levels of password validation policy:
 
-## INSTALLING PHP
+LOW    Length >= 8
+MEDIUM Length >= 8, numeric, mixed case, and special characters
+STRONG Length >= 8, numeric, mixed case, and special characters and dictionary file
+
+Please enter 0 = LOW, 1 = MEDIUM and 2 = STRONG :1**
+
+
+Regardless of whether we chose to set up the VALIDATION PASSWORD PLUGIN, the server will next time ask us to select and confirm a password for the **MYSQL root user** which is different from the **System root**. The **database root user** is an administrative user with a full privilege over the database system. A strong password should be set up as an additional safety measure.
+<P> If password validation is enabled, you'll  be shown the password strenght for the  root password you just set and your server will ask if you want to continue with the password. </P>
+<P> 
+ " Estimate strength of the password: 100
+ Do you wish to continue with the password provided? (Press y/Y for Yes, any other key for NO) : y"  
+</P> 
+
+For the rest of the questions, press **Y** and then hit **Enter** key at each prompt. This will prompt you to change the root password, remove some anonymous users, test the database, disable remote root logins and load the new rules so that MySQL will immediately start responding to the changes made. Test if you're able to log in to the  MySQL console with this command:
+```
+sudo mysql -p
+```
+ The **-p** flag in the command will prompt you for the password used after changing the **root** user password.
+ 
+To exit MySQL console, Type:
+```
+mysql> exit
+```
+
+ ## INSTALLING PHP
 ---
  PHP  processes code to display dynamic content to the end user.  
 While the Apache server embeds the PHP interpreter in each request, Nginx requires an external program to handle PHP processing and thus, act as a bridge between the PHP interpreter itself and the web server. This allows for a better overall performance in most of the PHP-based websites, while requiring additional configuration. I’ll need to install php-fpm, (PHP fastCGI process manager), and direct Nginx to pass the PHP requests to the software for processing. I’ll also need php-mysql, a PHP module that allows PHP to communicate with MySQL-based databases. The Core PHP packages will be installed automatically as dependencies.
