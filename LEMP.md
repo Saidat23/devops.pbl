@@ -229,11 +229,21 @@ Test for syntax errors with the command:
 You will get the following response:
 
 *nginx: the configuration file /etc/nginx/nginx.conf syntax is ok,* 
-
 *nginx: configuration file /etc/nginx/nginx.conf test is successful*
 
-indicate that there is no syntax error and the config test is ok.
-The default Nginx host currently configured to use port 80, would need to be disable for it to run. This is done by running the command "sudo unlink /etc/nginx/sites-enabled/default" and then , reload Nginx using the command "sudo systemctl reload nginx" to apply the changes. 
+This indicate that there is no syntax error and the config test is ok.
+
+Disable the default Nginx host currently configured to use port 80. This is achieved by running the command:
+
+```
+sudo unlink /etc/nginx/sites-enabled/default
+```
+and then , reload Nginx using the command:
+```
+sudo systemctl reload nginx
+```
+to apply the changes. 
+
 
 Now, the new website is active, but the web root /var/www/projectLEMP is still empty.To test that the new server block is working as expected, an index.html file is created in same location and command "sudo echo 'Hello LEMP from hostname' $(curl -s http://169.254.169.254/latest/meta-data/public-hostname) 'with public IP' $(curl -s http://169.254.169.254/latest/meta-data/public-ipv4) > /var/www/projectLEMP/index.html" is ran. which give a response :
 ![Screenshot 2023-07-05 223955](https://github.com/Saidat23/devops.pbl/assets/138054715/79ee6e18-a78a-4f22-8e3f-d51976fdd993)
