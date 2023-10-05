@@ -1,11 +1,8 @@
 # WEB STACK IMPLEMENTATION (LEMP STACK)
 ---
   This project is similar to Project 1. LEMP is an acronymn for **Linux**, **Nginx**, **MySQL**, **PHP** or **Python**, or **Perl**. This are individual technologies used together for a specific technology product.
-In this project, Similar stack would be implemented, using an alternative Web Server – **NGINX**, to create a dynamic and high-performing websites. We would be looking into the architecture of the **LEMP** stack, understanding how **Linux** provides a solid foundation, **Nginx** serves as a Powerful web server, Database is handled by **MySQL** and **PHP** empowers server-side. In this project, we would set up a **Linux** environment, configure **Nginx** for optimal performance, manage **MySQL** databases and develop 
-**PHP** code to bring the applications to life. Through this exercise, we would explore techniques for handling user requests, interact with databases, process forms and implement robust security measures. We would work with popular development frameworks and tools that elevates productivity and simplify the web application development process. 
-
-
-
+In this project, Similar stack would be implemented, using an alternative Web Server – **NGINX**, to create a dynamic and high-performing websites. We would be looking into the architecture of the **LEMP** stack, understanding how Linux provides a solid foundation, Nginx serves as a Powerful web server, Database is handled by MySQL and PHP empowers server-side. In this project, we would set up a Linux environment, configure Nginx for optimal performance, manage MySQL databases and develop 
+PHP code to bring the applications to life. Through this exercise, we would explore techniques for handling user requests, interact with databases, process forms and implement robust security measures. We would work with popular development frameworks and tools that elevates productivity and simplify the web application development process. 
 
 ## LAUNCHING YOUR INSTANCE.
 ---
@@ -122,20 +119,20 @@ To start the interactive script, run:
 sudo mysql_secure_installation
 ```
 You would be asked if you want to configure the **VALIDATE PASSWORD PLUGIN**.
-If it is enabled, any password that does not match the specified criteria will be rejected by **MYSQL**. It is save to leave validation disabled but you should always use a strong and unique password for the database credentials. You can answer **Y** for **Yes** or anything else to continue without enabling it. If you answer **YES**, you'll need to select a level of password validation. Selecting **2**, which is the strongest level, means that when you attempt to set any password which dose not contain upper and lowercase letters, numbers and special characters or common dictionary words it will give you an error message. You will see something like the message below.
+If it is enabled, any password that does not match the specified criteria will be rejected by **MYSQL**. It is save to leave validation disabled but you should always use a strong and unique password for the database credentials. You can answer **Y** for **Yes** or anything else to continue without enabling it. If you answer YES, you'll need to select a level of password validation. Selecting **2**, which is the strongest level, means that when you attempt to set any password which dose not contain upper and lowercase letters, numbers and special characters or common dictionary words it will give you an error message. You will see something like the message below.
 
-**There are three levels of password validation policy:
+*There are three levels of password validation policy:
 LOW    Length >= 8
 MEDIUM Length >= 8, numeric, mixed case, and special characters
 STRONG Length >= 8, numeric, mixed case, and special characters and dictionary file
-Please enter 0 = LOW, 1 = MEDIUM and 2 = STRONG :1**
+Please enter 0 = LOW, 1 = MEDIUM and 2 = STRONG :1*
 
 Regardless of whether we chose to set up the **VALIDATION PASSWORD PLUGIN**, the server will next time ask us to select and confirm a password for the **MYSQL root user** which is different from the **System root**. The **database root user** is an administrative user with a full privilege over the database system. A strong password should be set up as an additional safety measure.
 
 <P> If password validation is enabled, you'll  be shown the password strenght for the root password you just set and your server will ask if you want to continue with the password. </P>
  
-  **Estimate strength of the password: 100
- Do you wish to continue with the password provided? (Press y/Y for Yes, any other key for NO):y**
+  *Estimate strength of the password: 100
+ Do you wish to continue with the password provided? (Press y/Y for Yes, any other key for NO):y*
 
 For the rest of the questions, press **Y** and then hit **Enter** key at each prompt. This will prompt you to change the root password, remove some anonymous users, test the database, disable remote root logins and load the new rules so that MySQL will immediately start responding to the changes made. Test if you're able to log in to the  MySQL console with this command:
 ```
@@ -150,23 +147,92 @@ mysql> exit
 
  ## INSTALLING PHP
 ---
- PHP  processes code to display dynamic content to the end user.  
-While the Apache server embeds the PHP interpreter in each request, Nginx requires an external program to handle PHP processing and thus, act as a bridge between the PHP interpreter itself and the web server. This allows for a better overall performance in most of the PHP-based websites, while requiring additional configuration. I’ll need to install php-fpm, (PHP fastCGI process manager), and direct Nginx to pass the PHP requests to the software for processing. I’ll also need php-mysql, a PHP module that allows PHP to communicate with MySQL-based databases. The Core PHP packages will be installed automatically as dependencies.
+ We would be installing PHP to process the codes and display dynamic content to the end users.  
+In the Apache server, PHP interpreter is embeded in each request while Nginx requires an external program to handle PHP processing. Thus, act as a bridge between the PHP interpreter itself and the Webserver. This allows for a better overall performance in most of the PHP-based websites, while requiring additional configuration. 
 
-To install the 2 packages at once, "sudo apt install php-fpm php-mysql" is used and when prompted, type Y and press ENTER to confirm installation.
+Install **php-fpm**; a PHP fastCGI process manager and direct Nginx to pass the PHP requests to the software for processing. Also, we would need **php-mysql**; a PHP module that allows PHP to communicate with MySQL-based databases. The **Core PHP packages** will be installed automatically as dependencies.
+
+To install the 2 packages at once, run the command: 
+```
+sudo apt install php-fpm php-mysql
+```
+ When prompted, type **Y** and press **ENTER** to confirm installation.
 Now the PHP components is installed. Next is to configure Nginx to use them.
  
 ![php installed](https://github.com/Saidat23/devops.pbl/assets/138054715/7632d4e1-604c-41c8-bb0d-bcbb669ea9c1)
 
  ## CONFIGURING NGINX TO USE PHP PROCESSOR
  ---
- When using the Nginx web server, we can create server blocks (similar to virtual hosts in Apache) to encapsulate configuration details and host more than one domain on a single server. 
+ In Nginx web server, we can create server blocks (similar to virtual hosts in Apache) to encapsulate configuration details and host more than one domain on a single server. 
 
-On Ubuntu 20.04, by default, Nginx has only one server block enabled and it is configured to serve documents out of a directory at /var/www/html. It can be difficult to manage if one is hosting multiple sites. Rather than modifying /var/www/html, I’ll create a directory structure within /var/www for the "your_domain" website, leaving /var/www/html in place as the default directory to be used if a client request does not match any other sites.
-To create the root web directory for the "your_domain" Website, run "sudo mkdir /var/www/projectLEMP" then, assign ownership of the directory with the $USER environment variable "sudo chown -R $USER:$USER /var/www/projectLEMP", this will reference your current system user.
-Now, We'll open a new configuration file in Nginx’s sites-available directory using any preferred command-line editor. Here, Nano editor was used with the command "sudo nano /etc/nginx/sites-available/projectLEMP". The bare-bones configuration was pasted in the blank and activated by linking it to the config file from Nginx's sites-enabled directory using "sudo ln -s /etc/nginx/sites-available/projectLEMP /etc/nginx/sites-enabled/".
-Then the configuration was tested for syntax errors with the command "sudo nginx -t". The following response (nginx: the configuration file /etc/nginx/nginx.conf syntax is ok,
-nginx: configuration file /etc/nginx/nginx.conf test is successful) indicate that there is no syntax error and the config test is ok.
+On Ubuntu 20.04, by default, Nginx has only one server block enabled and it is configured to serve documents out of a directory at **/var/www/html**. This can be difficult to manage if one is hosting multiple sites on the server. Instead of modifying /var/www/html, we’ll create a directory structure within **/var/www** for the *your_domain* website, leaving **/var/www/html** in place as the default directory to be used if a client request does not match any other sites.
+
+To create the root web directory for the *your_domain* Website, run the command:
+```
+sudo mkdir /var/www/projectLEMP
+```
+Then, assign ownership of the directory with the $USER environment variable.
+
+```
+sudo chown -R $USER:$USER /var/www/projectLEMP
+```
+ This is used to reference your current system user.
+
+Now, We'll open a new configuration file in Nginx’s sites-available directory using any preferred command line editor.
+
+Open Nano editor for the /etc/nginx/sites-available/projectLEMP using the command:
+
+```
+sudo nano /etc/nginx/sites-available/projectLEMP
+```
+ This would create a new blank file. Paste the bare-bones configuration below in the blank.
+ ```
+ #/etc/nginx/sites-available/projectLEMP
+
+server {
+    listen 80;
+    server_name projectLEMP www.projectLEMP;
+    root /var/www/projectLEMP;
+
+    index index.html index.htm index.php;
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+
+    location ~ \.php$ {
+        include snippets/fastcgi-php.conf;
+        fastcgi_pass unix:/var/run/php/php8.1-fpm.sock;
+     }
+
+    location ~ /\.ht {
+        deny all;
+    }
+
+}
+
+```
+When you're done editing, save and close the file with the command: 
+```CTRL+X``` and then ```Y``` and ```ENTER``` to confirm.
+
+Then activate your configuration by linking it to the config file from Nginx's ```sites-enabled``` directory with the command:
+ 
+ ```
+sudo ln -s /etc/nginx/sites-available/projectLEMP /etc/nginx/sites-enabled/
+```
+This will notify Nginx to use the configuration next time it is reloaded. 
+
+Test for syntax errors with the command:
+
+```sudo nginx -t```
+
+You will get the following response:
+
+*nginx: the configuration file /etc/nginx/nginx.conf syntax is ok,* 
+
+*nginx: configuration file /etc/nginx/nginx.conf test is successful*
+
+indicate that there is no syntax error and the config test is ok.
 The default Nginx host currently configured to use port 80, would need to be disable for it to run. This is done by running the command "sudo unlink /etc/nginx/sites-enabled/default" and then , reload Nginx using the command "sudo systemctl reload nginx" to apply the changes. 
 
 Now, the new website is active, but the web root /var/www/projectLEMP is still empty.To test that the new server block is working as expected, an index.html file is created in same location and command "sudo echo 'Hello LEMP from hostname' $(curl -s http://169.254.169.254/latest/meta-data/public-hostname) 'with public IP' $(curl -s http://169.254.169.254/latest/meta-data/public-ipv4) > /var/www/projectLEMP/index.html" is ran. which give a response :
