@@ -238,14 +238,21 @@ Disable the default Nginx host currently configured to use port 80. This is achi
 ```
 sudo unlink /etc/nginx/sites-enabled/default
 ```
-and then , reload Nginx using the command:
+To apply the changes reload Nginx using the command:
 ```
 sudo systemctl reload nginx
 ```
-to apply the changes. 
 
 
-Now, the new website is active, but the web root /var/www/projectLEMP is still empty.To test that the new server block is working as expected, an index.html file is created in same location and command "sudo echo 'Hello LEMP from hostname' $(curl -s http://169.254.169.254/latest/meta-data/public-hostname) 'with public IP' $(curl -s http://169.254.169.254/latest/meta-data/public-ipv4) > /var/www/projectLEMP/index.html" is ran. which give a response :
+
+Now, the new website is active, but the web root **/var/www/projectLEMP** is still empty. To test that the new server block is working as expected, create an index.html file in same location using the command:
+
+```
+sudo echo 'Hello LEMP from hostname' $(curl -s http://169.254.169.254/latest/meta-data/public-hostname)
+ 'with public IP' $(curl -s http://169.254.169.254/latest/meta-data/public-ipv4) 
+ >/var/www/projectLEMP/index.html
+```
+you will get a response like this:
 ![Screenshot 2023-07-05 223955](https://github.com/Saidat23/devops.pbl/assets/138054715/79ee6e18-a78a-4f22-8e3f-d51976fdd993)
 
 ## TESTING PHP WITH NGINX
