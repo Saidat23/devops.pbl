@@ -257,28 +257,123 @@ you will get a response like this:
 
 ## TESTING PHP WITH NGINX
 ---
-The LEMP stack set up is now complete and fully functional. To validate that the Nginx can correctly hand .php files off to the PHP processor,a test PHP file in the document root would be created and a new file called info.php is opened within the document root in the text editor using "sudo nano /var/www/projectLEMP/info.php" command. Then paste the command 
-"<?php
-phpinfo();". The response is shown below: 
+The LEMP stack set up is now complete and fully functional. To validate that the Nginx can correctly hand off **.php** files to the PHP processor, create a test PHP file in the document root.
+Open a new file named **info.php** within the document root in your text editor using the command:
+
+```
+sudo nano /var/www/projectLEMP/info.php
+```
+Then type the command below into the new file. This command is a valid PHP code that will return information about your server.
+
+```
+<?php
+phpinfo();
+```
+You can now access this page on the browser by visiting the domain name or public IP address you've set up in your Nginx configuration file followed by **/info.php**.
+```
+http://`server_domain_or_IP`/info.php
+```
+ The response is shown below: 
 
 ![Screenshot 2023-07-05 224223](https://github.com/Saidat23/devops.pbl/assets/138054715/16c5744c-3e13-4d57-a669-d235fb86e7d0)
 
+After checking the relevant information about the PHP server through this page, it is best practice to remove the file you created because it contains sensitive information about your PHP environment and Ubuntu server. Run the ```rm``` command to remove the file.
+```
+ sudo rm /var/www/your_domain/info.php
+```
+
 ## RETRIEVING DATA FROM MYSQL DATABASE WITH PHP
 ---
-A test database (DB) was create with simple “To do list” and the access configured so that the Nginx website would be able to query data from the DB and display it. We’ll need to create a new user with the "mysql_native_password" authentication method to connect to the MySQL database from PHP. We'll also create a database named "example_database" and a user named "example_user".
-To start with, connect to the MySQL console through the root account using the command "sudo mysql".
-A new database was created using "CREATE DATABASE `example_database`;" command. A new user was also created using "CREATE USER 'example_user'@'%' IDENTIFIED WITH mysql_native_password BY 'password';" and giving full previledge on the created database with the command "GRANT ALL ON example_database.* TO 'example_user'@'%';". "Exit" command was used to exit the mysql shell.
-To test if the new database has the proper permissions, log back into the myqsl consoleusing the custom user credentials "mysql -u example_user -p". 
-It will prompt for the password used when creating the "example_user" user. After logging in to the MySQL console, confirm that you have access to the "example_database" database with the command "SHOW DATABASES;" which will give the following output.
+In this step we will create a test database with "TO do list" and configure access to it. the Nginx website would be able to query data from the database and display it.
+
+ We’ll need to create a new user with the "mysql_native_password" authentication method to connect to the MySQL database from PHP. We'll also create a database named "example_database" and a user named "example_user".
+
+ 
+To start with, connect to the MySQL console using the root account with the command 
+
+```
+sudo mysql
+```
+Create a new database with the name example_database using the command
+
+```
+CREATE DATABASE `example_database`;
+```
+ Create a new user named ```example_user``` using mysql_native_password as default authentication method and define the user password as ```password``` with the command: 
+  ```
+CREATE USER 'example_user'@'%' IDENTIFIED WITH mysql_native_password BY 'password';
+```
+Give the user permission over the database with the command below. This would give the user full priviledges over the database while preventing the user from creating or modifying other databases on the server.
+
+```
+GRANT ALL ON example_database.* TO 'example_user'@'%';
+```
+Exit  MySQL shell with the command:
+```
+ Exit
+```
+
+you can check if the new database has the proper permissions by logging back into MySQL console using the custom user credential below.
+
+```mysql -u example_user -p
+```
+It will prompt for the password used when creating the ```example_user``` user. After logging in to the MySQL console, confirm that you have access to the ```example_database``` database with the command:
+
+```SHOW DATABASES;```
+
+ Which gives the following output.
 
 ![Screenshot 2023-07-07 233111](https://github.com/Saidat23/devops.pbl/assets/138054715/10a05c88-627d-4682-8832-c926f794c1d9)
 
-Next we need to create a test table named "todo_list" using the mysql console by running the command "CREATE TABLE example_database.todo_list (item_id INT AUTO_INCREMENT,content VARCHAR(255),PRIMARY KEY(item_id));".
-Insert few rows of content into the test teble using the command "INSERT INTO example_database.todo_list (content) VALUES ("My first important item");" changing values for each row.
-To comfirm that the data was succesfully saved in the table, run the command "SELECT * FROM example_database.todo_list;". Exit mysql with the "exit" command. 
-Now we need to create a PHP script that will connect to MySQL database and query content. To do this we have to create new PHPfile in the custom web root directory using vi editor with the command "vim /var/www/projectLEMP/todo_list.php". Insert your PHP script, save and close the file.
-Now, we can access the page on the web browser by visiting the domain name or public IP address configured for the website, followed by /todo_list.php i.e "http://<Public_domain_or_IP>/todo_list.php"
+Next, create a test table named **todo_list** using the mysql console with the command: 
+
+```CREATE TABLE example_database.todo_list (item_id INT AUTO_INCREMENT,content VARCHAR(255),PRIMARY KEY(item_id));```
+
+Insert few rows of content into the test table with the command:
+
+```INSERT INTO example_database.todo_list (content) VALUES ("My first important item");```
+
+Confirm that the data is succesfully saved in the table by running the command
+```SELECT * FROM example_database.todo_list;```
+
+Exit MySQL console with the command: 
+
+```exit```
+
+Now we need to create a PHP script that will connect to MySQL database and query the content. 
+
+Create a new PHP file in the custom web root directory using any editor of your chioce with the command:
+
+```vim /var/www/projectLEMP/todo_list.php```
+
+ Insert the PHP script below, save and close the file after editing.
+ 
+ ```
+<?php
+$user = "example_user";
+$password = "PassWord.1";
+$database = "example_database";
+$table = "todo_list";
+
+try {
+  $db = new PDO("mysql:host=localhost;dbname=$database", $user, $password);
+  echo "<h2>TODO</h2><ol>";
+  foreach($db->query("SELECT content FROM $table") as $row) {
+    echo "<li>" . $row['content'] . "</li>";
+  }
+  echo "</ol>";
+} catch (PDOException $e) {
+    print "Error!: " . $e->getMessage() . "<br/>";
+    die();
+}
+```
+
+Now, we can access the page on the web browser by visiting the domain name or public IP address configured for the website, followed by **/todo_list.php**
+
+```http://<Public_domain_or_IP>/todo_list.php```
+
 You would see a page like this, showing the content inserted in your test table. This means the PHP environment is ready to connect and interact with your MySQL server.
+
 ![Screenshot 2023-07-05 232212](https://github.com/Saidat23/devops.pbl/assets/138054715/9dc82552-32e8-4236-9ce7-3a61a1a303cc)
 
 
