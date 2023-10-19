@@ -18,7 +18,6 @@ name=John
 echo $greeting $name
 ```
 
-
 2. ### CONTROL FLOW
    Bash provides control flow statements like **if-else**, **for loops**, **while loops** and **case statements** to control the flow of execution in the scripts. These statements allows you to make decisions, iterate over lists and execute different commands based on conditions. <br />
    #### Using if-else.
@@ -91,8 +90,82 @@ done
   ``` echo "hello world" | grep "pattern" ```
   
   5. ### FUNCTIONS
+     Functions are used to group related commamds together. It provides a way to modularize codes and make it more reusesable.Functions can be defined using the function keyword or by simply declaring the function name followed by parentheses.
      
+```
+     #!/bin/bash
 
+# Define a function to greet the user
+greet() {
+    echo "Hello, $1! Nice to meet you."
+}
+
+# Call the greet function and pass the name as an argument
+greet "John"
+
+```
+
+![image](https://github.com/Saidat23/devops.pbl/assets/138054715/c29bb0e2-de82-4cc9-bdb5-614744176637)
+
+## SHELL SCRIPTING PROJECT
+---
+Open a folder on the terminal with the name **shell-scripting** using the command below
+
+``` mkdir shell-scripting ```
+    
+Create a file named **user-input.sh** using the command
+
+``` touch user-input.sh ```
+
+![Screenshot 2023-10-18 132552](https://github.com/Saidat23/devops.pbl/assets/138054715/ebfbbeb1-0a2a-4686-97de-c56fa9618bad)
+
+Inside this file, copy and paste the block of code below
+
+```
+#!/bin/bash
+
+# Prompt the user for their name
+echo "Enter your name:"
+read name
+
+# Display a greeting with the entered name
+echo "Hello, $name! Nice to meet you."
+
+```
+![Screenshot 2023-10-18 130953](https://github.com/Saidat23/devops.pbl/assets/138054715/c48b955b-659b-454f-92f4-633ee2c7537d)
+
+Save the file and exit nano text editor.<br />
+This script prompt for your name. When you type in your name, it displays the text Hello, (your name)! Nice to meet you.
+
+
+Run the command below on the terminal to make the file executable.
+
+``` sudo chmod +x user-input.sh ```
+
+Then run the script on the terminal using the command 
+``` ./user-input.sh ```
+
+
+![image](https://github.com/Saidat23/devops.pbl/assets/138054715/a9868d20-5f0e-42ce-acb9-fd59107a7851)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
 
 
 
