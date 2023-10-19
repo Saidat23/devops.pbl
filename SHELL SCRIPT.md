@@ -20,4 +20,79 @@ echo $greeting $name
 
 
 2. ### CONTROL FLOW
-   Bash provides control flow statements like **if-else**, **for loops**, **while loops** and **case statements** to control the flow of execution in the scripts. 
+   Bash provides control flow statements like **if-else**, **for loops**, **while loops** and **case statements** to control the flow of execution in the scripts. These statements allows you to make decisions, iterate over lists and execute different commands based on conditions. <br />
+   #### Using if-else.
+   The code below prompt for a number and print if the number is positive, negative or zero.<br />
+  ```
+   #!/bin/bash
+
+# Example script to check if a number is positive, negative, or zero
+
+read -p "Enter a number: " num
+
+if [ $num -gt 0 ]; then
+    echo "The number is positive."
+elif [ $num -lt 0 ]; then
+    echo "The number is negative."
+else
+    echo "The number is zero."
+fi
+  ```
+#### Iterating through a list using for loop.
+  ```
+#!/bin/bash
+
+# Example script to print numbers from 1 to 5 using a for loop
+
+for (( i=1; i<=5; i++ ))
+do
+    echo $i
+done
+  ```
+3. ### COMMAND SUBSTITUTION
+   Command substitution captures the output of a command and use it as a value within the script. Both the bascktick **`** and the **$()** sysntax can be used.<br />
+   Using the backtick for command substitution.
+   
+   ``` current_date=`date +%Y-%m-%d`  ```
+   
+   Using the **$( )** for command substitution.
+
+   ```current_date=$(date +%Y-%m-%d)```
+   
+4. ### INPUT AND OUTPUT
+    In bash, the **read** command is used to accept user input while the **echo** command is used to print out the text. The input and output can be redirected using operators like **>** (output to a file), **<** (input to a file) and **|** (pipe the output of one command as input to another).<br />
+    #### Accept user input
+   
+   ```
+    echo "Enter your name:"
+        read name
+   ```
+
+   ![image](https://github.com/Saidat23/devops.pbl/assets/138054715/b47705ac-ffd9-4b9a-ba5e-54f20936259a)
+
+   #### Output text to the terminal
+
+   ``` echo "Hello World" ```
+   
+   ![image](https://github.com/Saidat23/devops.pbl/assets/138054715/1489486f-3e23-4c72-bedf-738caf956454)
+
+   #### Output the result of a command into a file
+   
+   ``` echo "hello world" > index.txt ```
+
+   ![image](https://github.com/Saidat23/devops.pbl/assets/138054715/7366a274-7df4-4c1c-abe3-3ed547e0c85e)
+
+  #### Pass the result of a file as input to a command
+  
+  ``` grep "pattern" < input.txt ```
+
+  #### Pass the result of a command as input to another command
+  
+  ``` echo "hello world" | grep "pattern" ```
+  
+  5. ### FUNCTIONS
+     
+
+
+
+
