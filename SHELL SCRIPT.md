@@ -153,7 +153,10 @@ This script will display the current directory, create a new directory named **m
 **my_directory** and its contents, then list the files in the current directory again. <br />
 
   **Step 1**: Create  a file named navigation-linux-filesystem.sh <br />
-  **Step 2** :  Open the file and paste the code block below into your file <br />
+  **Step 2** :  Open the file with a text editor and paste the code block below into your file <br />
+
+  ![Screenshot 2023-10-18 133434](https://github.com/Saidat23/devops.pbl/assets/138054715/712eb5a4-cf6e-4ad9-a28c-e02f243d94f9)
+  
   ```
     #!/bin/bash
 
@@ -194,15 +197,20 @@ echo "Directory removed."
 echo "Files in the current directory:"
 ls
 ```
-**Step 3**: Run the sudo command to set execute permission on the file.<br />
+
+![Screenshot 2023-10-18 133124](https://github.com/Saidat23/devops.pbl/assets/138054715/111f9db7-1cf2-4ef3-837d-812156526f94)
+
+**Step 3**: Save and Exit the text editor. <br />
+
+**Step 4**: Run the sudo command to set execute permission on the file.<br />
 
 ``` sudo chmod +x navigating-linux-filesystem.sh ```
 
-**Step 4**: Run the script using the command
+**Step 5**: Run the script using the command
 
 ``` ./navigating-linux-filesystem.sh ```
 
-
+ ![Screenshot 2023-10-18 133505](https://github.com/Saidat23/devops.pbl/assets/138054715/b8e3428b-bb9f-4ffb-8847-7ed4f8f8cc0b)
 
 
 
