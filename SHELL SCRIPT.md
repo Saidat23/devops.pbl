@@ -319,12 +319,14 @@ echo "Remainder: $remainder"
 
 # Perform some more complex calculations
 power_of_2=$((num1 ** 2))
-square_root=$(awk "BEGIN{ sqrt=$num2; print sqrt }")
+square_root=$(echo "num2" | awk '{print sqrt ($1)}')
 
 # Display the results
 echo "Number 1 raised to the power of 2: $power_of_2"
 echo "Square root of number 2: $square_root"
 ```
+![Screenshot 2023-10-18 141116](https://github.com/Saidat23/devops.pbl/assets/138054715/4ac11dfd-fe8d-4e4d-80ee-8997ba4847dc)
+
 **Step 4**: Save and Exit the text file with **ctrl O** followed by **Enter** the  **ctrl X**
 
 **Step 5**: Set execute permission on the calculations.sh using the command
@@ -334,6 +336,8 @@ echo "Square root of number 2: $square_root"
 **Step 6**: Run the script with the command
 
 ``` ./calculations.sh ```
+
+![Screenshot 2023-10-18 141054](https://github.com/Saidat23/devops.pbl/assets/138054715/0ae66524-e9ed-4c64-92ae-889aa993ee48)
 
 ### File Backup and Timestamping.
 
@@ -345,6 +349,7 @@ As a DevOps engineer, backing up databases and other storage devices is one of t
 
 **Step 2**: Open the file with a text editor, then copy and paste the code block below into the text editor.
 
+
 ```
 #!/bin/bash
 
@@ -353,7 +358,7 @@ source_dir="/path/to/source_directory"
 backup_dir="/path/to/backup_directory"
 
 # Create a timestamp with the current date and time
-timestamp=$(date +"%Y%m%d%H%M%S")
+timestamp=$(date +"%Y-%m-%d-%H-%M-%S")
 
 # Create a backup directory with the timestamp
 backup_dir_with_timestamp="$backup_dir/backup_$timestamp"
@@ -367,6 +372,9 @@ cp -r "$source_dir"/* "$backup_dir_with_timestamp"
 # Display a message indicating the backup process is complete
 echo "Backup completed. Files copied to: $backup_dir_with_timestamp"
 ```
+
+![Screenshot 2023-10-18 141339](https://github.com/Saidat23/devops.pbl/assets/138054715/4de290eb-b24f-4ee2-bf80-1d8b0dcdaccd)
+
 **Step 3**: Save and Exit the text file with **ctrl O** followed by **Enter** the  **ctrl X**
   
 **Step 4**: Set execute permission on the backup.sh using the command
@@ -377,7 +385,7 @@ echo "Backup completed. Files copied to: $backup_dir_with_timestamp"
 
 ``` ./backup.sh ```
 
-
+![Screenshot 2023-10-18 142432](https://github.com/Saidat23/devops.pbl/assets/138054715/f24dabc5-ade5-4189-9d15-169d0638d27a)
 
 
 
