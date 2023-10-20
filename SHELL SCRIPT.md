@@ -214,7 +214,7 @@ ls
 
 ### File Operations and Sorting
 We would be writing a simple shell script that focuses on file operations and sorting. <br />
-In this script, we would create three files **(file 1.txt, file2.txt and file3.txt). We would display the files in their current order, sort them alphabetically, save the sorted files in **sorted_file.txt**, display the sorted files, remove the original files, rename the sorted file to **sorted_files_sorted_alphabetically.txt then finally display the contents of the final sorted file.<br />
+In this script, we would create three files **(file 1.txt, file2.txt and file3.txt)**. We would display the files in their current order, sort them alphabetically, save the sorted files in **sorted_file.txt**, display the sorted files, remove the original files, rename the sorted file to **sorted_files_sorted_alphabetically.txt** then finally display the contents of the final sorted file.<br />
 
 **Step 1**: Create a file with the name sorting.sh on your terminal with the command
 
@@ -223,6 +223,8 @@ In this script, we would create three files **(file 1.txt, file2.txt and file3.t
 **Step 2**: Open the file with a text editor using the command
 
 ``` nano sorting.sh ```
+
+
 
 **Step 3**: Paste the code block below into the text file.
 
@@ -263,6 +265,7 @@ echo "File renamed."
 echo "Final sorted file:"
 cat sorted_files_sorted_alphabetically.txt
 ```
+![Screenshot 2023-10-18 134850](https://github.com/Saidat23/devops.pbl/assets/138054715/3c53978b-a804-4dd8-b4bf-8fd18f2c0394)
 
 **Step 4**: Save and Exit the text file with **ctrl O** followed by **Enter** the  **ctrl X** <br />
 
@@ -275,9 +278,104 @@ cat sorted_files_sorted_alphabetically.txt
 ``` ./sorting.sh ```
 
 
+![Screenshot 2023-10-18 135217](https://github.com/Saidat23/devops.pbl/assets/138054715/d8d67d96-db63-4373-adc4-56ab73feac44)
 
+### Working with Numbers and Calculations
 
+This script defines two variables Num1 and Num2 with numerical values. It performs basic arithemetic operations and displayys the results. It also carry out complex calculations like squaring and finding the square root of a number.
 
+**Step 1**: On your terminal, create a file named **calculations.sh** with the command
+
+``` touch calculations.sh ```
+
+**Step 2**: Open the file with a text editor using the command
+
+``` nano calculations.sh ```
+
+**Step 3**: Copy and paste the code block below into the text editor.
+
+```
+ #!/bin/bash
+
+# Define two variables with numeric values
+num1=10
+num2=5
+
+# Perform basic arithmetic operations
+sum=$((num1 + num2))
+difference=$((num1 - num2))
+product=$((num1 * num2))
+quotient=$((num1 / num2))
+remainder=$((num1 % num2))
+
+# Display the results
+echo "Number 1: $num1"
+echo "Number 2: $num2"
+echo "Sum: $sum"
+echo "Difference: $difference"
+echo "Product: $product"
+echo "Quotient: $quotient"
+echo "Remainder: $remainder"
+
+# Perform some more complex calculations
+power_of_2=$((num1 ** 2))
+square_root=$(awk "BEGIN{ sqrt=$num2; print sqrt }")
+
+# Display the results
+echo "Number 1 raised to the power of 2: $power_of_2"
+echo "Square root of number 2: $square_root"
+```
+**Step 4**: Save and Exit the text file with **ctrl O** followed by **Enter** the  **ctrl X**
+
+**Step 5**: Set execute permission on the calculations.sh using the command
+
+``` sudo chmod +x calculations.sh ```
+
+**Step 6**: Run the script with the command
+
+``` ./calculations.sh ```
+
+### File Backup and Timestamping.
+
+As a DevOps engineer, backing up databases and other storage devices is one of the most common task you carry out. This shell scripting is focused on file backup and timestamp. It defines the source directory and the backup directory paths then create a timestamp using the current date and time. It creates a backup directory with the timestamp appended to its name. The script then copy all files from the source directory to the backup directory using the **cp command** with the **-r** option for recursive copying. It finally displays a message indicating the completion of the backup process and shows the backup directory path with the timestamp.
+
+**Step 1**: On your terminal, create a file **backup.sh** with the command
+
+``` touch backup.sh ```
+
+**Step 2**: Open the file with a text editor, then copy and paste the code block below into the text editor.
+
+```
+#!/bin/bash
+
+# Define the source directory and backup directory
+source_dir="/path/to/source_directory"
+backup_dir="/path/to/backup_directory"
+
+# Create a timestamp with the current date and time
+timestamp=$(date +"%Y%m%d%H%M%S")
+
+# Create a backup directory with the timestamp
+backup_dir_with_timestamp="$backup_dir/backup_$timestamp"
+
+# Create the backup directory
+mkdir -p "$backup_dir_with_timestamp"
+
+# Copy all files from the source directory to the backup directory
+cp -r "$source_dir"/* "$backup_dir_with_timestamp"
+
+# Display a message indicating the backup process is complete
+echo "Backup completed. Files copied to: $backup_dir_with_timestamp"
+```
+**Step 3**: Save and Exit the text file with **ctrl O** followed by **Enter** the  **ctrl X**
+  
+**Step 4**: Set execute permission on the backup.sh using the command
+
+``` sudo chmod +x backup.sh ```
+
+**Step 5**: Run the script with the command
+
+``` ./backup.sh ```
 
 
 
