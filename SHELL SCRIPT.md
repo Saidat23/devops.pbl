@@ -148,7 +148,8 @@ Then run the script on the terminal using the command
 
 ![image](https://github.com/Saidat23/devops.pbl/assets/138054715/a9868d20-5f0e-42ce-acb9-fd59107a7851)
 
-
+### Directory Manipulation and Navigation
+This script will display the current directory, create a new directory named **my_directory**, change to the new directory, create two files inside it, list the files, move back one level up, remove the my_directory and its contents, then list  the files in the current directory again.
 
 
 
