@@ -20,8 +20,11 @@ echo $greeting $name
 
 2. ### CONTROL FLOW
    Bash provides control flow statements like **if-else**, **for loops**, **while loops** and **case statements** to control the flow of execution in the scripts. These statements allows you to make decisions, iterate over lists and execute different commands based on conditions. <br />
+   
    #### Using if-else.
+   
    The code below prompt for a number and print if the number is positive, negative or zero.<br />
+   
   ```
    #!/bin/bash
 
@@ -37,6 +40,7 @@ else
     echo "The number is zero."
 fi
   ```
+
 #### Iterating through a list using for loop.
   ```
 #!/bin/bash
@@ -48,6 +52,7 @@ do
     echo $i
 done
   ```
+
 3. ### COMMAND SUBSTITUTION
    Command substitution captures the output of a command and use it as a value within the script. Both the bascktick **`** and the **$()** sysntax can be used.<br />
    Using the backtick for command substitution.
@@ -109,17 +114,17 @@ greet "John"
 
 ## SHELL SCRIPTING PROJECT
 ---
-Open a folder on the terminal with the name **shell-scripting** using the command below
+**Step 1**: Open a folder on the terminal with the name **shell-scripting** using the command below
 
 ``` mkdir shell-scripting ```
     
-Create a file named **user-input.sh** using the command
+**Step 2**: Create a file named **user-input.sh** using the command
 
 ``` touch user-input.sh ```
 
 ![Screenshot 2023-10-18 132552](https://github.com/Saidat23/devops.pbl/assets/138054715/ebfbbeb1-0a2a-4686-97de-c56fa9618bad)
 
-Inside this file, copy and paste the block of code below
+**Step 3**: Inside this file, copy and paste the block of code below
 
 ```
 #!/bin/bash
@@ -134,26 +139,28 @@ echo "Hello, $name! Nice to meet you."
 ```
 ![Screenshot 2023-10-18 130953](https://github.com/Saidat23/devops.pbl/assets/138054715/c48b955b-659b-454f-92f4-633ee2c7537d)
 
-Save the file and exit nano text editor.<br />
+**Step 4**: Save the file and exit nano text editor.<br />
+
 This script prompt for your name. When you type in your name, it displays the text Hello, (your name)! Nice to meet you.
 
-
-Run the command below on the terminal to make the file executable.
+**Step 5**: Run the command below on the terminal to make the file executable.
 
 ``` sudo chmod +x user-input.sh ```
 
-Then run the script on the terminal using the command 
+**Step 6**: Then run the script on the terminal using the command 
+
 ``` ./user-input.sh ```
 
 
 ![image](https://github.com/Saidat23/devops.pbl/assets/138054715/a9868d20-5f0e-42ce-acb9-fd59107a7851)
 
 ### Directory Manipulation and Navigation
+
 This script will display the current directory, create a new directory named **my_directory**, change to the new directory, create two files inside it, list the files then move back one level up, remove the 
 **my_directory** and its contents, then list the files in the current directory again. <br />
 
-  **Step 1**: Create  a file named navigation-linux-filesystem.sh <br />
-  **Step 2** :  Open the file with a text editor and paste the code block below into your file <br />
+  **Step 1**: Create  a file named **navigation-linux-filesystem.sh** <br />
+  **Step 2** :  Open the file with a text editor and paste the code block below into the text <br />
 
   ![Screenshot 2023-10-18 133434](https://github.com/Saidat23/devops.pbl/assets/138054715/712eb5a4-cf6e-4ad9-a28c-e02f243d94f9)
   
@@ -216,15 +223,13 @@ ls
 We would be writing a simple shell script that focuses on file operations and sorting. <br />
 In this script, we would create three files **(file 1.txt, file2.txt and file3.txt)**. We would display the files in their current order, sort them alphabetically, save the sorted files in **sorted_file.txt**, display the sorted files, remove the original files, rename the sorted file to **sorted_files_sorted_alphabetically.txt** then finally display the contents of the final sorted file.<br />
 
-**Step 1**: Create a file with the name sorting.sh on your terminal with the command
+**Step 1**: Create a file with the name **sorting.sh** on your terminal with the command
 
 ``` touch sorting.sh ```
 
 **Step 2**: Open the file with a text editor using the command
 
 ``` nano sorting.sh ```
-
-
 
 **Step 3**: Paste the code block below into the text file.
 
@@ -348,7 +353,6 @@ As a DevOps engineer, backing up databases and other storage devices is one of t
 ``` touch backup.sh ```
 
 **Step 2**: Open the file with a text editor, then copy and paste the code block below into the text editor.
-
 
 ```
 #!/bin/bash
