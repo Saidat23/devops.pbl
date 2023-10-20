@@ -149,7 +149,58 @@ Then run the script on the terminal using the command
 ![image](https://github.com/Saidat23/devops.pbl/assets/138054715/a9868d20-5f0e-42ce-acb9-fd59107a7851)
 
 ### Directory Manipulation and Navigation
-This script will display the current directory, create a new directory named **my_directory**, change to the new directory, create two files inside it, list the files, move back one level up, remove the my_directory and its contents, then list  the files in the current directory again.
+This script will display the current directory, create a new directory named **my_directory**, change to the new directory, create two files inside it, list the files then move back one level up, remove the 
+**my_directory** and its contents, then list the files in the current directory again. <br />
+
+  **Step 1**: Create  a file named navigation-linux-filesystem.sh <br />
+  **Step 2** :  Open the file and paste the code block below into your file <br />
+  ```
+    #!/bin/bash
+
+# Display current directory
+echo "Current directory: $PWD"
+
+# Create a new directory
+echo "Creating a new directory..."
+mkdir my_directory
+echo "New directory created."
+
+# Change to the new directory
+echo "Changing to the new directory..."
+cd my_directory
+echo "Current directory: $PWD"
+
+# Create some files
+echo "Creating files..."
+touch file1.txt
+touch file2.txt
+echo "Files created."
+
+# List the files in the current directory
+echo "Files in the current directory:"
+ls
+
+# Move one level up
+echo "Moving one level up..."
+cd ..
+echo "Current directory: $PWD"
+
+# Remove the new directory and its contents
+echo "Removing the new directory..."
+rm -rf my_directory
+echo "Directory removed."
+
+# List the files in the current directory again
+echo "Files in the current directory:"
+ls
+```
+**Step 3**: Run the sudo command to set execute permission on the file.<br />
+
+``` sudo chmod +x navigating-linux-filesystem.sh ```
+
+**Step 4**: Run the script using the command
+
+``` ./navigating-linux-filesystem.sh ```
 
 
 
