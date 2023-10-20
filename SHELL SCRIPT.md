@@ -212,6 +212,113 @@ ls
 
  ![Screenshot 2023-10-18 133505](https://github.com/Saidat23/devops.pbl/assets/138054715/b8e3428b-bb9f-4ffb-8847-7ed4f8f8cc0b)
 
+### File Operations and Sorting
+We would be writing a simple shell script that focuses on file operations and sorting. <br />
+In this script, we would create three files **(file 1.txt, file2.txt and file3.txt). We would display the files in their current order, sort them alphabetically, save the sorted files in **sorted_file.txt**, display the sorted files, remove the original files, rename the sorted file to **sorted_files_sorted_alphabetically.txt then finally display the contents of the final sorted file.<br />
+**Step 1**: Create a file with the name sorting.sh on your terminal with the command
+``` touch sorting.sh ```
+
+**Step 2**: Open the file with a text editor using the command
+``` nano sorting.sh ```
+**Step 3**: Paste the code block below into the text file.
+``` 
+#!/bin/bash
+
+# Create three files
+echo "Creating files..."
+echo "This is file3." > file3.txt
+echo "This is file1." > file1.txt
+echo "This is file2." > file2.txt
+echo "Files created."
+
+# Display the files in their current order
+echo "Files in their current order:"
+ls
+
+# Sort the files alphabetically
+echo "Sorting files alphabetically..."
+ls | sort > sorted_files.txt
+echo "Files sorted."
+
+# Display the sorted files
+echo "Sorted files:"
+cat sorted_files.txt
+
+# Remove the original files
+echo "Removing original files..."
+rm file1.txt file2.txt file3.txt
+echo "Original files removed."
+
+# Rename the sorted file to a more descriptive name
+echo "Renaming sorted file..."
+mv sorted_files.txt sorted_files_sorted_alphabetically.txt
+echo "File renamed."
+
+# Display the final sorted file
+echo "Final sorted file:"
+cat sorted_files_sorted_alphabetically.txt
+```
+
+**Step 4**: Save and Exit the text file with **ctrl O** followed by **Enter** the  **ctrl X** <br />
+**Step 5**: Set the execution permission on sorting.sh with the command <br />
+``` sudo chmod +x sorting.sh ```
+**Step 6**: Run the script with the command <br />
+``` ./sorting.sh ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
