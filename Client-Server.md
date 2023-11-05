@@ -34,9 +34,10 @@ Use the command below to ping your browser.
 
  ## IMPLEMENTING A CLIENT-SERVER ARCHITECTURE USING MYSQL DATABASE MANAGEMENT SYSTEM (DBMS).
  To demonstrate a basic client server using MYSQL RDBMS, follow the steps explained below.
- Step 1 
- Create and configure two virtual servers (AWS EC2 instances) and name:<br/>
+ **Step 1**: Create and configure two virtual servers (AWS EC2 instances) and name:<br/>
  Server A - **'mysql server'** <br/>
- Server B - **'mysql client'**
+ Server B - **'mysql client'** <br/>
+ **Step 2**: On mysql server, install MySQL Server software.
+ 
  
  
