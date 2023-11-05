@@ -38,6 +38,20 @@ Use the command below to ping your browser.
  Server A - **'mysql server'** <br/>
  Server B - **'mysql client'** <br/>
  **Step 2**: On mysql server, install MySQL Server software.
+ ### INSTALLING MYSQL SERVER SOFTWARE
+  MySQL is a popular relational database management system used within PHP environments to store and manage data for your site.
+  Install MYSQL with the command:
+  ```
+ sudo apt install mysql-server
+```
+ Connect to MySQL server as the administrative database user root using the command:
+ ```
+ sudo mysql
+```
+ Output will look like this:
  
+![mysql installed](https://github.com/Saidat23/devops.pbl/assets/138054715/36144c9f-6490-445b-ac37-6f6301b51f92)
+
+It is recommended that we run a security script that comes pre-installed with MYSQL. This script will remove insecure default settings and lock down access to your database system.
  
  
