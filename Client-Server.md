@@ -19,6 +19,24 @@ Open your terminal to run the curl command below.<br/>
 
 ``` curl -iV http://www.google.com```
 
-![curl](https://github.com/Saidat23/devops.pbl/assets/138054715/f853252b-e300-4135-895f-764c79c91b7d)
-If you do not have **'curl'** installed, you can do that with the command:<br/>
-``` sudo apt install curl ```
+![Screenshot 2023-11-05 214549](https://github.com/Saidat23/devops.pbl/assets/138054715/6293f065-3fca-4fae-a70b-8ca850d9c873)
+
+
+If you do not have **'curl'** installed, you can do so with the command:<br/>
+``` sudo apt install curl ```<br/>
+In the example above, the terminal will be the **Client** while **www.google.com** will be the **server**. 
+Another simple way to get a server's IP address is to use the diagnostic tool like **'ping'**. It also shows the round-trip time: the time for the packets to go to the server and back.<br/>
+Use the command below to ping your browser.
+
+```ping google.com```
+
+![Screenshot 2023-11-05 215625](https://github.com/Saidat23/devops.pbl/assets/138054715/9034ccb4-6595-4dfa-9a5f-5bc39dd426b6)
+
+ ## IMPLEMENTING A CLIENT-SERVER ARCHITECTURE USING MYSQL DATABASE MANAGEMENT SYSTEM (DBMS).
+ To demonstrate a basic client server using MYSQL RDBMS, follow the steps explained below.
+ Step 1 
+ Create and configure two virtual servers (AWS EC2 instances) and name:<br/>
+ Server A - **'mysql server'** <br/>
+ Server B - **'mysql client'**
+ 
+ 
