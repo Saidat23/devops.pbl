@@ -15,7 +15,7 @@ The diagram below is a generic Web Stack architecture (LAMP,LEMP,MEAN,MERN) whic
 In a project implemented earlier, a **LAMP STACK** website was deployed. This website server can be located anywhere in the world and can be reached from any part of the globe over the global network-Internet.<br/>
 Take for example, we type **www.google.com** on our browser. It means that your browser is considered as the **"Client"** sending request to the remote server and in turn, would be expecting some response from the remote server. 
 ## IMPLEMENTING A CLIENT-SERVER COMMUNICATION.
-Open your terminal to run the curl command below.<br/>
+Open your terminal and **'cd'** into where you have your **pem** key. Then run the curl command below.<br/>
 
 ``` curl -iV http://www.google.com```
 
@@ -33,25 +33,29 @@ Use the command below to ping your browser.
 ![Screenshot 2023-11-05 215625](https://github.com/Saidat23/devops.pbl/assets/138054715/9034ccb4-6595-4dfa-9a5f-5bc39dd426b6)
 
  ## IMPLEMENTING A CLIENT-SERVER ARCHITECTURE USING MYSQL DATABASE MANAGEMENT SYSTEM (DBMS).
- To demonstrate a basic client server using MYSQL RDBMS, follow the steps explained below.
+ MySQL is an open source, popular relational database management system used to store and manage data for Website.  To demonstrate a basic client server using MYSQL RDBMS, follow the steps explained below.
+ 
  **Step 1**: Create and configure two virtual servers (AWS EC2 instances) and name:<br/>
  Server A - **'mysql server'** <br/>
  Server B - **'mysql client'** <br/>
- **Step 2**: On mysql server, install MySQL Server software.
- ### INSTALLING MYSQL SERVER SOFTWARE
-  MySQL is a popular relational database management system used within PHP environments to store and manage data for your site.
-  Install MYSQL with the command:
-  ```
- sudo apt install mysql-server
-```
+ **Step 2**: On mysql server, run the command below to update MySQL on the terminal.
+ 
+ ``` sudo apt update ```
+ ![Screenshot 2023-11-05 224747](https://github.com/Saidat23/devops.pbl/assets/138054715/29357a5a-305c-4bb8-bbca-d3f9b6617715)
+ 
+ Then install MySQL Server software using the command:
+  
+  ``` sudo apt install mysql-server ```
+
+  ![Screenshot 2023-11-02 104402](https://github.com/Saidat23/devops.pbl/assets/138054715/ab336669-50d0-4959-bd99-2ee471c7a236)
+  
  Connect to MySQL server as the administrative database user root using the command:
- ```
- sudo mysql
-```
+ ``` sudo mysql ```
  Output will look like this:
  
 ![mysql installed](https://github.com/Saidat23/devops.pbl/assets/138054715/36144c9f-6490-445b-ac37-6f6301b51f92)
 
-It is recommended that we run a security script that comes pre-installed with MYSQL. This script will remove insecure default settings and lock down access to your database system.
+**STEP 3**: 
+
  
  
