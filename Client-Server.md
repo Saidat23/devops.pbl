@@ -14,3 +14,11 @@ The diagram below is a generic Web Stack architecture (LAMP,LEMP,MEAN,MERN) whic
 ![Screenshot 2023-11-05 211957](https://github.com/Saidat23/devops.pbl/assets/138054715/2932373f-0e40-4d03-a42a-84287e2b569e) <br/>
 In a project implemented earlier, a **LAMP STACK** website was deployed. This website server can be located anywhere in the world and can be reached from any part of the globe over the global network-Internet.<br/>
 Take for example, we type **www.google.com** on our browser. It means that your browser is considered as the **"Client"** sending request to the remote server and in turn, would be expecting some response from the remote server. 
+## IMPLEMENTING A CLIENT-SERVER COMMUNICATION.
+Open your terminal to run the curl command below.<br/>
+
+``` curl -iV http://www.google.com```
+
+![curl](https://github.com/Saidat23/devops.pbl/assets/138054715/f853252b-e300-4135-895f-764c79c91b7d)
+If you do not have **'curl'** installed, you can do that with the command:<br/>
+``` sudo apt install curl ```
