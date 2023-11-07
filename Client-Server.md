@@ -97,13 +97,23 @@ To confirm that the configuration is correct, run the command below.
 ![Screenshot 2023-11-03 211620](https://github.com/Saidat23/devops.pbl/assets/138054715/9096b6de-e0cc-4f20-ad41-833528630bd3)
 
  **Step 6**: From mysql client connect remotely to mysql server Database Engine using mysql utility.
-**'Cd'** back to home and than connect into mysql using command
+**'Cd'** back to home and than connect into mysql environment using the command
 
 ``` sudo mysql ```
 
  Create a user on the database in mysql console environment with the sql query command:
 
- ``` CREATE USER username@host identified by password; ```
+ ``` CREATE USER 'username'@'host' identified by password; ```
+ 
+ Edit the username to your prefered name and the host to your IP address.
+ 
+ ``` CREATE USER 'saidat'@'172.31.22.194' identified by 'password'; ```
+
+ ![Screenshot 2023-11-03 224210](https://github.com/Saidat23/devops.pbl/assets/138054715/42333512-6cbb-4bfe-ba51-913327d61a05)
+
+ 
+
+ 
 
  
  
