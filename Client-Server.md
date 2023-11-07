@@ -38,19 +38,25 @@ Use the command below to ping your browser.
  **Step 1**: Create and configure two virtual servers (AWS EC2 instances) and name:<br/>
  Server A - **'mysql server'** <br/>
  Server B - **'mysql client'** <br/>
- **Step 2**: On mysql server, run the command below to update MySQL on the terminal.
+  **Step 2**: Connect **'mysql server'** to your terminal with the command:
+  ``` ssh -i "EC2-key-pair.pem" ubuntu@
+  
+  On mysql server, run the command below to update MySQL on the terminal.
  
  ``` sudo apt update ```
+ 
  ![Screenshot 2023-11-05 224747](https://github.com/Saidat23/devops.pbl/assets/138054715/29357a5a-305c-4bb8-bbca-d3f9b6617715)
  
- Then install MySQL Server software using the command:
+ Then install MySQL Server Software on the mysql server instance using the command:
   
   ``` sudo apt install mysql-server ```
 
   ![Screenshot 2023-11-02 104402](https://github.com/Saidat23/devops.pbl/assets/138054715/ab336669-50d0-4959-bd99-2ee471c7a236)
   
  Connect to MySQL server as the administrative database user root using the command:
+ 
  ``` sudo mysql ```
+ 
  Output will look like this:
  
 ![mysql installed](https://github.com/Saidat23/devops.pbl/assets/138054715/36144c9f-6490-445b-ac37-6f6301b51f92)
