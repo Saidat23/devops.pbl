@@ -57,7 +57,7 @@ Use the command below to ping your browser.
  
  ![Screenshot 2023-11-05 224747](https://github.com/Saidat23/devops.pbl/assets/138054715/29357a5a-305c-4bb8-bbca-d3f9b6617715)
  
- Then install MySQL Server Software using the command:
+**STEP 3**:  Then install MySQL Server Software using the command:
   
   ``` sudo apt install mysql-server ```
 
@@ -71,7 +71,7 @@ Use the command below to ping your browser.
  
 ![mysql installed](https://github.com/Saidat23/devops.pbl/assets/138054715/36144c9f-6490-445b-ac37-6f6301b51f92)
 
-**STEP 3**: Open another terminal and SSH into it. **'Cd'** into your key-pair location than install MySQL Client software for mysql client.
+
 
 **Step 4**: Both the EC2 virtual servers are located in the same local virtual network by default, so they can communicate to each other using the local IP adderess.<br/> Use the local IP adderess of the mysql server to connect to mysql client. By default, MySQL server uses TCP port 3306. To connect, we have to open the port by creating a new Inbound rule in mysql server's Security Group. For extra security on the server, we do not allow all IP addresses to pass through the mysql server. Only allow access to mysql client Private IP address.  
 
@@ -96,8 +96,7 @@ To confirm that the configuration is correct, run the command below.
 
 ![Screenshot 2023-11-03 211620](https://github.com/Saidat23/devops.pbl/assets/138054715/9096b6de-e0cc-4f20-ad41-833528630bd3)
 
- **Step 6**: From mysql client connect remotely to mysql server Database Engine using mysql utility.
-**'Cd'** back to home and than connect into mysql environment using the command
+**Step 6**: **'Cd'** back to home and than connect into mysql environment using the command
 
 ``` sudo mysql ```
 
@@ -109,9 +108,27 @@ To confirm that the configuration is correct, run the command below.
  
  ``` CREATE USER 'saidat'@'172.31.22.194' identified by 'password'; ```
 
+ Then give permission to the user created in order to have access to the Database. use the command:
+
+ ``` grant all privileges *.* TO 'saidat'@'172.31.22.194'; ```
+
+ Exit mysql.
+
  ![Screenshot 2023-11-03 224210](https://github.com/Saidat23/devops.pbl/assets/138054715/42333512-6cbb-4bfe-ba51-913327d61a05)
 
- 
+**Step 7**: Open another terminal and SSH into it with the IP address of the mysql client. 
+
+**'Cd'** into your key-pair location than . Update the server using 
+
+``` sudo apt update```
+
+Then install MySQL Client software with the command
+
+``` sudo mysql-client -y ```
+
+
+
+ From mysql client connect remotely to mysql server Database Engine using mysql utility.
 
  
 
