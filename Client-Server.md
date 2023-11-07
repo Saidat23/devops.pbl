@@ -11,9 +11,12 @@ Below is a diagram of a Web Client-Server architecture where a machine is trying
 
 If the concept is extended further and a Database Server is added to the archtecture, the Web Server will take the role of a Client that connects and read/write to/from a Database Server ( Oracle, MYSQL, MongoDB, SQL Server) communicating over the Local Network. It can also be over the internet connection, but it is a common practice to have the Web Server and the Database Server in same local network.
 The diagram below is a generic Web Stack architecture (LAMP,LEMP,MEAN,MERN) which can be implemented with many other technologies from small single page applications **SPA** to large and complex portals.
+
 ![Screenshot 2023-11-05 211957](https://github.com/Saidat23/devops.pbl/assets/138054715/2932373f-0e40-4d03-a42a-84287e2b569e) <br/>
+
 In a project implemented earlier, a **LAMP STACK** website was deployed. This website server can be located anywhere in the world and can be reached from any part of the globe over the global network-Internet.<br/>
 Take for example, we type **www.google.com** on our browser. It means that your browser is considered as the **"Client"** sending request to the remote server and in turn, would be expecting some response from the remote server. 
+
 ## IMPLEMENTING A CLIENT-SERVER COMMUNICATION.
 Open your terminal and **'cd'** into where you have your **pem** key. Then run the curl command below.<br/>
 
@@ -38,16 +41,23 @@ Use the command below to ping your browser.
  **Step 1**: Create and configure two virtual servers (AWS EC2 instances) and name:<br/>
  Server A - **'mysql server'** <br/>
  Server B - **'mysql client'** <br/>
-  **Step 2**: Connect **'mysql server'** to your terminal with the command:
-  ``` ssh -i "EC2-key-pair.pem" ubuntu@
+  **Step 2**: Connect **'mysql server'** on your terminal with the command:
   
-  On mysql server, run the command below to update MySQL on the terminal.
+   ``` ssh -i "access key" Ubuntu@public ip address ```
+   
+ * Replace the access key and public IP address with your own values.
+
+  Then, cd into your download folder or wherever you have your key-pair located. Mine is in my download folder.
+
+  ``` cd Downloads ```
+  
+  Run the command below to update MySQL on the terminal.
  
  ``` sudo apt update ```
  
  ![Screenshot 2023-11-05 224747](https://github.com/Saidat23/devops.pbl/assets/138054715/29357a5a-305c-4bb8-bbca-d3f9b6617715)
  
- Then install MySQL Server Software on the mysql server instance using the command:
+ Then install MySQL Server Software using the command:
   
   ``` sudo apt install mysql-server ```
 
@@ -61,7 +71,20 @@ Use the command below to ping your browser.
  
 ![mysql installed](https://github.com/Saidat23/devops.pbl/assets/138054715/36144c9f-6490-445b-ac37-6f6301b51f92)
 
-**STEP 3**: 
+**STEP 3**: Open another terminal and SSH into it. **'Cd'** into your key-pair location than install MySQL Client software for mysql client.
+**Step 4**: Both the EC2 virtual servers are located in the same local virtual network by default, so they can communicate to each other using the local IP adderess.<br/> Use the local IP adderess of the mysql server to connect to mysql client. By default, MySQL server uses TCP port 3306. To connect, we have to open the port by creating a new Inbound rule in mysql server's Security Group. For extra security on the server, we do not allow all IP addresses to pass through the mysql server. Only allow access to mysql client local IP address.  
+
+![Screenshot 2023-11-03 204714](https://github.com/Saidat23/devops.pbl/assets/138054715/0359269c-1cec-493f-a4f3-828e38bc2e72)
+
+
+
+
+
+
+
+
+
+
 
  
  
