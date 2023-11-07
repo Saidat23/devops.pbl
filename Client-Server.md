@@ -72,11 +72,42 @@ Use the command below to ping your browser.
 ![mysql installed](https://github.com/Saidat23/devops.pbl/assets/138054715/36144c9f-6490-445b-ac37-6f6301b51f92)
 
 **STEP 3**: Open another terminal and SSH into it. **'Cd'** into your key-pair location than install MySQL Client software for mysql client.
-**Step 4**: Both the EC2 virtual servers are located in the same local virtual network by default, so they can communicate to each other using the local IP adderess.<br/> Use the local IP adderess of the mysql server to connect to mysql client. By default, MySQL server uses TCP port 3306. To connect, we have to open the port by creating a new Inbound rule in mysql server's Security Group. For extra security on the server, we do not allow all IP addresses to pass through the mysql server. Only allow access to mysql client local IP address.  
+
+**Step 4**: Both the EC2 virtual servers are located in the same local virtual network by default, so they can communicate to each other using the local IP adderess.<br/> Use the local IP adderess of the mysql server to connect to mysql client. By default, MySQL server uses TCP port 3306. To connect, we have to open the port by creating a new Inbound rule in mysql server's Security Group. For extra security on the server, we do not allow all IP addresses to pass through the mysql server. Only allow access to mysql client Private IP address.  
 
 ![Screenshot 2023-11-03 204714](https://github.com/Saidat23/devops.pbl/assets/138054715/0359269c-1cec-493f-a4f3-828e38bc2e72)
 
+**Step 5**: Configure mysql server to allow connections from remote hosts with the commands below.
 
+``` cd /etc/mysql/mysql.conf.d/mysqld.cnf ```
+
+ VI/VIM into it.
+
+``` sudo vi /etc/mysql/mysql.conf.d/mysqld.cnf ```
+<br/>
+
+ Then edit the **bind address** by replacing the **'127.0.0.1'** to **'0.0.0.0'**.
+ 
+ ![Screenshot 2023-11-03 210053](https://github.com/Saidat23/devops.pbl/assets/138054715/c2593078-5069-4194-81cc-6bb6aaf12e04)
+ 
+To confirm that the configuration is correct, run the command below.
+
+``` sudo systemctl restart mysql.service```
+
+![Screenshot 2023-11-03 211620](https://github.com/Saidat23/devops.pbl/assets/138054715/9096b6de-e0cc-4f20-ad41-833528630bd3)
+
+ **Step 6**: From mysql client connect remotely to mysql server Database Engine using mysql utility.
+**'Cd'** back to home and than connect into mysql using command
+
+``` sudo mysql ```
+
+ Create a user on the database in mysql console environment with the sql query command:
+
+ ``` CREATE USER username@host identified by password; ```
+
+ 
+ 
+ 
 
 
 
