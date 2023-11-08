@@ -146,7 +146,7 @@ When you log in with a user with permision, the user is able to action on the da
 ![Screenshot 2023-11-03 233702](https://github.com/Saidat23/devops.pbl/assets/138054715/2b1398c6-8759-4f00-872e-f02427783165)
 ![Screenshot 2023-11-03 233759](https://github.com/Saidat23/devops.pbl/assets/138054715/c0eac939-25ca-49dd-adcf-1c18daf491cd)
 
-Create a  new database with the command:**CREATE DATABASE 'database-name';** 
+Create a  new database with the command: **CREATE DATABASE 'database-name';** 
 
 ``` create database Data; ```
 
@@ -157,7 +157,8 @@ Create a  new database with the command:**CREATE DATABASE 'database-name';**
 ![Screenshot 2023-11-08 123955](https://github.com/Saidat23/devops.pbl/assets/138054715/6b13d38a-52a4-4854-b51e-c9487a41203f)
  
 
-**Step 7**: Open another terminal, **'Cd'** into your key-pair location and connect to mysql client using the ssh than, update the server with the command:
+**Step 7**: From mysql client connect remotely to mysql server Database Engine using mysql utility.<BR/>
+Open another terminal, **'Cd'** into your key-pair location and connect to mysql client using the SSH Client than, update the server with the command:
 
 ``` sudo apt update```
 
@@ -165,11 +166,19 @@ You can then install MySQL Client software with the command:
 
 ``` sudo apt install mysql-client -y ```
 
+To **CD** into the **/etc/mysql** utility terminal run the command:
 
+``` cd /etc/mysql ```
 
- From mysql client connect remotely to mysql server Database Engine using mysql utility.
+ Run the command below to connect to the database.
 
+ ``` mysql -u saidat -h 172.31.26.34 -p ```
  
+ Type in the password and click enter key on your keyboard.<br/>
+ 
+ Open the database with the command: ``` show databases; ``` to access the database.
+  
+![Screenshot 2023-11-08 124135](https://github.com/Saidat23/devops.pbl/assets/138054715/87680e8a-6082-44d5-af57-d30a4094f126)
 
  
  
