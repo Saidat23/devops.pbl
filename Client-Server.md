@@ -133,13 +133,18 @@ Connect back into mysql with ``` sudo mysql ``` and view the database with the c
 
 ![Screenshot 2023-11-03 231413](https://github.com/Saidat23/devops.pbl/assets/138054715/d0708ae6-51b2-4177-ad45-8b279c34152d)
 
-If the users does not have permision, they can not access the database.
-Try to access the database with the user **'sally'**, you would notice that the user can log in and only see the default database but not able to see/create database.
+If the users does not have permision, they can not access the database.<br/>
+Try to access the database with the user **'sally'** using the command ``` mysql -u sally -p ``` , you would notice that the user can log in and when you run the command ``` show databases;``` the user can only see the default database but not able to create or see the restof the database.
 
 ![Screenshot 2023-11-03 231323](https://github.com/Saidat23/devops.pbl/assets/138054715/5748aa4c-7705-4656-b0c7-db48dcdca5de)
 
+When you log in with a user with permision, the user is able to action on the database.
+
+![Screenshot 2023-11-03 231413](https://github.com/Saidat23/devops.pbl/assets/138054715/55c12fb0-f67d-4f96-981f-712ab5a3889e)
 
 
+![Screenshot 2023-11-03 233702](https://github.com/Saidat23/devops.pbl/assets/138054715/2b1398c6-8759-4f00-872e-f02427783165)
+![Screenshot 2023-11-03 233759](https://github.com/Saidat23/devops.pbl/assets/138054715/c0eac939-25ca-49dd-adcf-1c18daf491cd)
 
  
 
