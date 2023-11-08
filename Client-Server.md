@@ -112,19 +112,35 @@ To confirm that the configuration is correct, run the command below.
 
  ``` grant all privileges *.* TO 'saidat'@'172.31.22.194'; ```
 
- Exit mysql.
+ Use the command below to effect the access granted immediately:  ``` flush privileges; ```
 
  ![Screenshot 2023-11-03 224210](https://github.com/Saidat23/devops.pbl/assets/138054715/42333512-6cbb-4bfe-ba51-913327d61a05)
+ 
+You can create another user that can access from anywhere with the command:
 
-**Step 7**: Open another terminal and SSH into it with the IP address of the mysql client. 
+``` create user 'sally'@'%' identified by 'password'; ```
 
-**'Cd'** into your key-pair location than . Update the server using 
+Next, check that the users are created in the database with the command:
+
+``` select user, host FROM mysql.user; ```
+
+![Screenshot 2023-11-03 230828](https://github.com/Saidat23/devops.pbl/assets/138054715/3a7172a9-0d43-4ee7-9143-1e73f7f2dfdc)
+
+
+
+ Exit mysql.
+
+ 
+
+**Step 7**: Open another terminal and connect to mysql client. 
+
+**'Cd'** into your key-pair location than, update the server with the command:
 
 ``` sudo apt update```
 
-Then install MySQL Client software with the command
+You can then install MySQL Client software with the command:
 
-``` sudo mysql-client -y ```
+``` sudo install mysql-client -y ```
 
 
 
