@@ -1,6 +1,6 @@
-# IMPLEMENTING LOADBALANCING WITH NGINX.
+# IMPLEMENTING LOAD BALANCING WITH NGINX.
 ---
-## INTRODUCTION TO LOADBALANCING AND NGINX.
+## INTRODUCTION TO LOAD BALANCING AND NGINX.
 ## LOAD BALANCING
 
 Load balancing is the efficient distribution of incoming network traffic across a group of backend servers.
@@ -21,7 +21,7 @@ Load  balancer algorithms are techniques used to distribute incoming network tra
 **Round Robin** – Requests are distributed across the group of servers in the pool sequentially. It is simple to implement and ensures an even distribution of the traffic. It works well when the servers have capabilities and resources that are similar.<br/>
 **Least Connections** – A new request is sent to the server with the fewest current connections to clients. The relative computing capacity of each server is factored into determining which one has the least connections.<br/>
 **Weighted Round Robin** - This is similar to the Round Robin algorithm, but the servers are assigned different weights based on their capabilities. Servers with higher performance level receives more request.<br/>
-**Weighted Least Connections** - This is similar to the Least Connections Algorithm, servers are assingned different weights based on their capabilities. Servers with higher capacities receives more connections.
+**Weighted Least Connections** - This is similar to the Least Connections Algorithm, servers are assingned different weights based on their capabilities. Servers with higher capacities receives more connections.<BR/>
 **IP Hash** – Uses the Hash function based on the IP address of the client to consistently map the client to a specific server. This ensures that the same client always reaches the same server.
 
 
@@ -32,3 +32,11 @@ Load  balancer algorithms are techniques used to distribute incoming network tra
 -Redundancy<br/>
 -Flexibility<br/>
 -Efficiency<br/>
+
+## NGINX
+
+NGINX is an open source software for web serving, caching, reverse proxying, load balancing, media streaming, and more. It started out as a web server designed for maximum performance and stability. In addition to its HTTP server capabilities, NGINX can also function as a proxy server for email (IMAP, POP3, and SMTP) and a reverse proxy and load balancer for HTTP, TCP, and UDP servers. Nginx configuration depends on the use case.
+## SETTING UP A BASIC LOAD BALANCER.
+We will provision three EC2 instances running ubuntu 22.04 and install apache webserver in two and Nginx in the third one. In the two instances with apache, we will
+
+
