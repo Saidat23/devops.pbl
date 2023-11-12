@@ -127,6 +127,7 @@ We will start by configuring **Apache** webserver to serve content on port 8000 
 ![Screenshot 2023-11-09 194526](https://github.com/Saidat23/devops.pbl/assets/138054715/62f296ac-8bc5-4587-ade9-95709bac1d13)
   
     * 
+    
 
   3. 
 
