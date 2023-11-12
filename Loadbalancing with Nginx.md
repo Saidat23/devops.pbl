@@ -37,6 +37,51 @@ Load  balancer algorithms are techniques used to distribute incoming network tra
 
 NGINX is an open source software for web serving, caching, reverse proxying, load balancing, media streaming, and more. It started out as a web server designed for maximum performance and stability. In addition to its HTTP server capabilities, NGINX can also function as a proxy server for email (IMAP, POP3, and SMTP) and a reverse proxy and load balancer for HTTP, TCP, and UDP servers. Nginx configuration depends on the use case.
 ## SETTING UP A BASIC LOAD BALANCER.
-We will provision three EC2 instances running ubuntu 22.04 and install apache webserver in two and Nginx in the third one. In the two instances with apache, we will
+We will provision three EC2 instances running on Ubuntu Server 22.04. Install apache webserver on two of the instances and open port 8000 to allow traffic from anywhere, then update the default page of the webservers to display their public IP addresses.<br/>
+On the third EC2 instance, install Nginx and configure it to act as a load balancer to distribute traffic across the webservers.<br/>
+**STEP 1 :** Provision an EC2 Instance.<br/>
+* Open your AWS Management Console, click on **EC2**, then click on **Launch Instance**.
+  
+  ![Screenshot 2023-11-12 153950](https://github.com/Saidat23/devops.pbl/assets/138054715/b5ec3b9b-52ed-40a7-956e-a705c9766dcc)
+ ![Screenshot 2023-11-12 154509](https://github.com/Saidat23/devops.pbl/assets/138054715/ddbdf0cb-642b-47ad-8e39-90ffe65acfc3)
+
+* Under **Name and tags**, provide a unique name for each of your webservers.<br/>
+* Under **Applications and OS Images**, click on Ubuntu then select **Ubuntu Server 22.04** Volume Type.
+  
+![Screenshot 2023-11-09 121540 - Copy](https://github.com/Saidat23/devops.pbl/assets/138054715/fa39943b-15e7-439b-827b-219f851d1183)
+
+*Under **Instance type**, select t3.micro.
+
+![Screenshot 2023-11-12 194000](https://github.com/Saidat23/devops.pbl/assets/138054715/6b3e0e4f-fb5f-4c8b-b773-6e70a57e11aa)
+
+* Under **Key Pair**, click on **Create new key pair** if you do not have one or select a **key pair name** if you have one already. You can use the same key pair for all the instances you provision for this lesson.
+
+![Screenshot 2023-11-12 193036](https://github.com/Saidat23/devops.pbl/assets/138054715/47d93532-7917-49a7-9827-7b21fd8a2316)
+
+* Under **Firewall (Security groups)**, Select **Create security group** or **Select existing security group** if you have one. Then, select **Allow SSH traffic from** **Anywhere** and **Allow HTTP traffic from the internet**.
+
+![Screenshot 2023-11-12 195140](https://github.com/Saidat23/devops.pbl/assets/138054715/144272f6-a1d5-4d03-a670-d93fc5c52a85)
+
+* Under **Summary**, select the Number of instances (3) and click **Launch instance**.
+
+![Screenshot 2023-11-09 121719](https://github.com/Saidat23/devops.pbl/assets/138054715/1a85e6d3-d8ae-4f4a-9f31-52f3a89bc4b9)
+
+* Click on **View all instances** to see all your provisioned instances.
+
+![Screenshot 2023-11-09 122212](https://github.com/Saidat23/devops.pbl/assets/138054715/cd3f6ddc-3f5d-45c6-bc96-be068a032412)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
