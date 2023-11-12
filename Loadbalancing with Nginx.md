@@ -124,21 +124,28 @@ We will start by configuring **Apache** webserver to serve content on port 8000 
 
   1. Configure Apache to serve content on port 8000:
      
-    * Cd into /etc/apache2/. Open the file ports.conf using a text editor with the command
+ * Cd into /etc/apache2/. Open the file ports.conf using a text editor with the command
 
-     ``` sudo vi ports.conf ```<br/>
+     ``` sudo vi ports.conf ```
      
 
 ![Screenshot 2023-11-09 194526](https://github.com/Saidat23/devops.pbl/assets/138054715/62f296ac-8bc5-4587-ade9-95709bac1d13) <br/>
   
-    * Type I to switch to insert mode than add a new Listen directive for port 8000. Save and exit.
+  * Type I to switch to insert mode than add a new Listen directive for port 8000. Save and exit.
    
 ![Screenshot 2023-11-09 165530](https://github.com/Saidat23/devops.pbl/assets/138054715/96eacaca-24c4-42fe-a9d6-1203b68c9878)<br/> 
 
-    * Cd into /etc/apache2/site-enabled/, open the file 000-default.conf using a text editor with the command<br/>
+   * Cd into /etc/apache2/site-enabled/, open the file 000-default.conf using a text editor with the command<br/>
 
     ``` sudo vi 000-default.conf ```
-    
+
+
+![Screenshot 2023-11-09 164733](https://github.com/Saidat23/devops.pbl/assets/138054715/5297736c-e579-4462-ae95-eb783d47c86d)
+
+  * Configure and change port 80 on the virtualhost to 8000 like in the screenshot below.
+
+ 
+![Screenshot 2023-11-09 164935](https://github.com/Saidat23/devops.pbl/assets/138054715/934ab654-bc70-4395-84d5-0456699d9f87) 
   3. 
 
 
