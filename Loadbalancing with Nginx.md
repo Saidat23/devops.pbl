@@ -107,6 +107,16 @@ Your Inbound rules will look like this.
 
 ![Screenshot 2023-11-09 123604](https://github.com/Saidat23/devops.pbl/assets/138054715/ac84907b-98b0-4a17-b740-771ff88dcdca)
 
+* Verify that apache is running with the command:
+
+ ``` sudo systemctl status apache2 ```
+ 
+![Screenshot 2023-11-09 123738](https://github.com/Saidat23/devops.pbl/assets/138054715/62891585-2f78-4c58-a92f-37be625c476e)
+
+* View your webserver page on the browser by pasteing the webserver IP address.
+
+![Screenshot 2023-11-09 123832](https://github.com/Saidat23/devops.pbl/assets/138054715/2df88999-c66a-4521-8281-4a286c5d7ec0)
 
 
 
+**Step 4 :**
