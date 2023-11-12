@@ -70,9 +70,23 @@ On the third EC2 instance, install Nginx and configure it to act as a load balan
 
 ![Screenshot 2023-11-09 122212](https://github.com/Saidat23/devops.pbl/assets/138054715/cd3f6ddc-3f5d-45c6-bc96-be068a032412)
 
+* Select your instance and click on **Security** then click on your **Security groups** (looks like sg-12e34567---e41).
 
+![Screenshot 2023-11-09 124043](https://github.com/Saidat23/devops.pbl/assets/138054715/185a151e-c84a-435d-a62e-84120a16513c)
 
+* Click on **Edit inbound rules**.
 
+![Screenshot 2023-11-09 124056](https://github.com/Saidat23/devops.pbl/assets/138054715/fa9bebb9-5b1d-4f83-866e-e5e3278bd4c4)
+
+* On the **Edit inbound rules page**, click on **Add rule** and type in **8000** in the **Port range** box then select **Anywhere** and save rules.
+
+ ![Screenshot 2023-11-09 124136](https://github.com/Saidat23/devops.pbl/assets/138054715/56fe4804-2ac4-4ec2-9644-7dde2331fe21)
+ 
+Your Inbound rules will look like this.
+
+![Screenshot 2023-11-09 124136](https://github.com/Saidat23/devops.pbl/assets/138054715/56fe4804-2ac4-4ec2-9644-7dde2331fe21)
+
+ *
 
 
 
