@@ -94,10 +94,18 @@ Your Inbound rules will look like this.
 
 ![Screenshot 2023-11-12 205039](https://github.com/Saidat23/devops.pbl/assets/138054715/75c53d8d-268c-410f-a6cf-36e735d9418b)
 
+* Click on **SSH client** and copy the **SSH** command. (Looks like this- ssh -i "keypair.pem" ubuntu@ec2-IP address.com)
 
+![Screenshot 2023-11-12 205106](https://github.com/Saidat23/devops.pbl/assets/138054715/66eac392-47ab-40c7-9f8a-4a97466c636c)
 
+* Open a terminal on your local machine, **cd** into your Downloads folder.Then paste the SSH command you copied from the previous step onto your terminal and press enter. Type **Yes** when prompted. You should be connected to a terminal on your instance.
+  
+   ![Screenshot 2023-11-09 123129](https://github.com/Saidat23/devops.pbl/assets/138054715/96a74adb-77e0-40c7-9c40-a4f69464a7c4)
+* Next, update and install apache with the command below:
+  
+  ``` sudo apt update -y && sudo apt install apache2 -y ``` 
 
-
+![Screenshot 2023-11-09 123604](https://github.com/Saidat23/devops.pbl/assets/138054715/ac84907b-98b0-4a17-b740-771ff88dcdca)
 
 
 
