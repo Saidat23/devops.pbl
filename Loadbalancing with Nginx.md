@@ -113,10 +113,47 @@ Your Inbound rules will look like this.
  
 ![Screenshot 2023-11-09 123738](https://github.com/Saidat23/devops.pbl/assets/138054715/62891585-2f78-4c58-a92f-37be625c476e)
 
-* View your webserver page on the browser by pasteing the webserver IP address.
+* Paste your webserver's IP address on the browser to view your page.
 
 ![Screenshot 2023-11-09 123832](https://github.com/Saidat23/devops.pbl/assets/138054715/2df88999-c66a-4521-8281-4a286c5d7ec0)
 
+**Step 4 :** Configure Apache to serve a page showing its IP address.<br/>
+We will start by configuring **Apache** webserver to serve content on port 8000 instead of its default which is port 80. Then we will create a new **index.html** file.The file will contain code to display the public IP of the EC2 instance. We will then override the apache webserver's default html file with our new file.
+  1. Configure Apache to serve content on port 8000:
+    * Open the file /etc/apache2/ports.conf using a text editor with the command
+
+     ``` sudo vi /etc/apache2/ports.conf ```
+
+![Screenshot 2023-11-09 194526](https://github.com/Saidat23/devops.pbl/assets/138054715/62f296ac-8bc5-4587-ade9-95709bac1d13)
+  
+    * 
+
+  3. 
 
 
-**Step 4 :**
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
