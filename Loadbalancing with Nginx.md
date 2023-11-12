@@ -70,6 +70,8 @@ On the third EC2 instance, install Nginx and configure it to act as a load balan
 
 ![Screenshot 2023-11-09 122212](https://github.com/Saidat23/devops.pbl/assets/138054715/cd3f6ddc-3f5d-45c6-bc96-be068a032412)
 
+**Step 2 :** We will be running our webservers on port 8000 while the load balancer runs on port 80. We need to open port 8000 to allow traffic from anywhere. We need to add a rule to the security group of each webserver to allow this.
+
 * Select your instance and click on **Security** then click on your **Security groups** (looks like sg-12e34567---e41).
 
 ![Screenshot 2023-11-09 124043](https://github.com/Saidat23/devops.pbl/assets/138054715/185a151e-c84a-435d-a62e-84120a16513c)
@@ -86,7 +88,8 @@ Your Inbound rules will look like this.
 
 ![Screenshot 2023-11-09 124136](https://github.com/Saidat23/devops.pbl/assets/138054715/56fe4804-2ac4-4ec2-9644-7dde2331fe21)
 
- *
+ **Step 3 :** Install Apache Webserver.<br/>
+ After we have provisioned both webservers and opened the necessary ports, next is to install apache software on both webservers. To do this, we must first connect to each webserver via SSH. we can then run commands on the terminal of our webservers.
 
 
 
