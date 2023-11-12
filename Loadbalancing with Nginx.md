@@ -89,10 +89,10 @@ Your Inbound rules will look like this.
 ![Screenshot 2023-11-09 124136](https://github.com/Saidat23/devops.pbl/assets/138054715/56fe4804-2ac4-4ec2-9644-7dde2331fe21)
 
  **Step 3 :** Install Apache Webserver.<br/>
- After we have provisioned both webservers and opened the necessary ports, next is to install apache software on both webservers. To do this, we must first connect to each webserver via SSH. we can then run commands on the terminal of our webservers.
+ After we have provisioned both webservers and opened the necessary ports, next is to install apache software on both webservers. To do this, we must first connect to each webserver via SSH. we can then run commands on the terminal of our webservers.<br/>
+* Connecting to the webservers: Select your instance and click on **Connect** at the top right of the page.
 
-
-
+![Screenshot 2023-11-12 205039](https://github.com/Saidat23/devops.pbl/assets/138054715/75c53d8d-268c-410f-a6cf-36e735d9418b)
 
 
 
