@@ -142,11 +142,19 @@ We will start by configuring **Apache** webserver to serve content on port 8000 
 
 ![Screenshot 2023-11-09 164733](https://github.com/Saidat23/devops.pbl/assets/138054715/5297736c-e579-4462-ae95-eb783d47c86d)
 
-  * Configure and change port 80 on the virtualhost to 8000 like in the screenshot below.
+  * Configure and change port 80 on the virtualhost to 8000 like in the screenshot below. 
 
  
 ![Screenshot 2023-11-09 164935](https://github.com/Saidat23/devops.pbl/assets/138054715/934ab654-bc70-4395-84d5-0456699d9f87) 
-  3. 
+
+  * Close the file by first pressing the **esc** key on your keyboard then the command
+    
+     ``` wq!```
+    
+    *Restart apache to load the new configuration using the command
+
+     ``` sudo systemctl restart apache2 ```
+  2. Create a new html file:
 
 
 
