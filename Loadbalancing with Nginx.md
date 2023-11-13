@@ -110,7 +110,9 @@ Your Inbound rules will look like this.
 
 * Verify that apache is running with the command:
 
+
  ``` sudo systemctl status apache2 ```
+
  
 ![Screenshot 2023-11-09 123738](https://github.com/Saidat23/devops.pbl/assets/138054715/62891585-2f78-4c58-a92f-37be625c476e)
 
@@ -132,14 +134,13 @@ We will start by configuring **Apache** webserver to serve content on port 8000 
 
 ![Screenshot 2023-11-09 194526](https://github.com/Saidat23/devops.pbl/assets/138054715/62f296ac-8bc5-4587-ade9-95709bac1d13) <br/>
   
-  * Type I to switch to insert mode than add a new Listen directive for port 8000. Save and exit.
+  * Type **I** to switch to insert mode than add a new **Listen directive for port 8000**. Save and exit.
    
 ![Screenshot 2023-11-09 165530](https://github.com/Saidat23/devops.pbl/assets/138054715/96eacaca-24c4-42fe-a9d6-1203b68c9878)<br/> 
 
-   * Cd into /etc/apache2/site-enabled/, open the file 000-default.conf using a text editor with the command<br/>
+   * Cd into **/etc/apache2/site-enabled/**, open the file **000-default.conf** using a text editor with the command<br/>
 
-    ``` sudo vi 000-default.conf ```
-
+     ``` sudo vi 000-default.conf ```
 
 ![Screenshot 2023-11-09 164733](https://github.com/Saidat23/devops.pbl/assets/138054715/5297736c-e579-4462-ae95-eb783d47c86d)
 
@@ -152,9 +153,9 @@ We will start by configuring **Apache** webserver to serve content on port 8000 
     
      ``` wq!```
     
-  *Restart apache to load the new configuration using the command below.
+  * Restart apache to load the new configuration using the command below.
 
-     ``` sudo systemctl restart apache2 ```
+      ``` sudo systemctl restart apache2 ```
     
   2. Creating our new html file:
      
@@ -181,9 +182,9 @@ We will start by configuring **Apache** webserver to serve content on port 8000 
 
    * Change file ownership of the index.html with the command below.
     
-    ```
-    sudo chown www-data:www-data ./index.html
-    ```
+      ```
+      sudo chown www-data:www-data ./index.html
+      ```
     
 ![Screenshot 2023-11-09 204627](https://github.com/Saidat23/devops.pbl/assets/138054715/233d91cc-a3cd-48c1-8e74-444cafc418cd)
 
@@ -213,30 +214,74 @@ We will start by configuring **Apache** webserver to serve content on port 8000 
  
   * Update and Install Nginx using the command below.
 
- ``` sudo apt update -y && sudo apt install nginx -y ```
+      ``` sudo apt update -y && sudo apt install nginx -y ```
  
 ![Screenshot 2023-11-09 212518](https://github.com/Saidat23/devops.pbl/assets/138054715/87d63fdd-1bee-47a1-b55e-292301f2d57d)
 
   * Verify that Nginx is installed with the command below.
 
- ``` sudo systemctl status nginx ```
+      ``` sudo systemctl status nginx ```
  
 ![Screenshot 2023-11-09 212643](https://github.com/Saidat23/devops.pbl/assets/138054715/b4ecc01e-2fd2-4c5f-938a-ef8af48745f2)
 
   * Copy your Load Balancer's public IP, paste it on the browser. Your page on the browser would look like this.
 
   ![Screenshot 2023-11-09 212219](https://github.com/Saidat23/devops.pbl/assets/138054715/048c5d63-53ee-4fc8-829d-2a469a6fbb1d)  
+  
+  * **cd** into **/etc/nginx/conf.d**, create and open a file named **loadbalancer.conf** with the command below.
+
+      ``` sudo vi loadbalancer.conf ```
+   
+![Screenshot 2023-11-09 214234](https://github.com/Saidat23/devops.pbl/assets/138054715/42901598-3189-4ca5-ad29-013802ecdaf1)
+
+  * Paste the configuration file below to configure nginx to act as a load balancer. Copy and insert the Public IP addresses for both webservers and the load balancer to edit the file.
+
+       ```
+        upstream backend_servers {
+
+            # your are to replace the public IP and Port to that of your webservers
+            server 127.0.0.1:8000; # public IP and port for webserser 1
+            server 127.0.0.1:8000; # public IP and port for webserver 2
+
+        }
+
+        server {
+            listen 80;
+            server_name <your load balancer's public IP addres>; # provide your load balancers public IP address
+
+            location / {
+                proxy_pass http://backend_servers;
+                proxy_set_header Host $host;
+                proxy_set_header X-Real-IP $remote_addr;
+                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            }
+        }    
+       ```
+         
+![Screenshot 2023-11-09 214256](https://github.com/Saidat23/devops.pbl/assets/138054715/4b329e91-2551-437c-a9b1-59f03bc7d668) 
+
+  * Test your configuration with the command below.
+    
+       ``` sudo nginx -t ```
 
 
+![Screenshot 2023-11-09 215043](https://github.com/Saidat23/devops.pbl/assets/138054715/5221b035-9b04-4f9b-bc41-0978f6b6e89f)
 
+   * If no errors occcur, restart your Nginx to effect the new configuration with the command below.
+
+       ```sudo systemctl restart nginx ```
+
+   * Copy and paste the public IP address of your Nginx load balancer on the browser. you would notice that the page changes and time you refresh the page. this shows that your load balancer is effectivly load balancing between your two webservers.
+     
+![Screenshot 2023-11-09 215219](https://github.com/Saidat23/devops.pbl/assets/138054715/6bdd003d-3df0-455d-aa82-0881a1b0f783)
 
      
 ![Screenshot 2023-11-09 215237](https://github.com/Saidat23/devops.pbl/assets/138054715/b6d10fd1-9bd3-49ba-92e9-fb1c922f60d3)
 
-![Screenshot 2023-11-09 215219](https://github.com/Saidat23/devops.pbl/assets/138054715/6bdd003d-3df0-455d-aa82-0881a1b0f783)
+
 
  
-  6. 
+
 
 
 
