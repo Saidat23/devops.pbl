@@ -39,6 +39,7 @@ NGINX is an open source software for web serving, caching, reverse proxying, loa
 ## SETTING UP A BASIC LOAD BALANCER.
 We will provision three EC2 instances running on Ubuntu Server 22.04. Install apache webserver on two of the instances and open port 8000 to allow traffic from anywhere, then update the default page of the webservers to display their public IP addresses.<br/>
 On the third EC2 instance, install Nginx and configure it to act as a load balancer to distribute traffic across the webservers.<br/>
+
 **STEP 1 :** Provision an EC2 Instance.<br/>
 * Open your AWS Management Console, click on **EC2**, then click on **Launch Instance**.
   
@@ -172,35 +173,69 @@ We will start by configuring **Apache** webserver to serve content on port 8000 
             <h1>Welcome to my EC2 instance</h1>
             <p>Public IP: YOUR_PUBLIC_IP</p>
         </body>
-        </html> ```
+        </html>
+
+       ```
       
 ![Screenshot 2023-11-09 211343](https://github.com/Saidat23/devops.pbl/assets/138054715/74cae4fb-c050-4ff1-b031-6014e1ee8062)
 
-    * Change file ownership of the index.html with the command below.
+   * Change file ownership of the index.html with the command below.
     
-    ``` sudo chown www-data:www-data ./index.html ```
+    ```
+    sudo chown www-data:www-data ./index.html
+    ```
     
 ![Screenshot 2023-11-09 204627](https://github.com/Saidat23/devops.pbl/assets/138054715/233d91cc-a3cd-48c1-8e74-444cafc418cd)
 
   3. Overriding the default html file of Apache Webserver.
      
-     * Replace the default html file with our new html file using the command below.
+  * Replace the default html file with our new html file using the command below.
 
        ``` sudo cp -f ./index.html /var/www/html/index.html ```
 
-     * Restart the webserver to load the new configuration using the command below.
+  * Restart the webserver to load the new configuration using the command below.
 
        ``` sudo systemctl restart apache2 ```
        
 ![Screenshot 2023-11-09 205039](https://github.com/Saidat23/devops.pbl/assets/138054715/f7c5a896-7f81-4c5e-bec3-9043556d2ece)
 
-     * Your page on the browser should look like this. Remmember you are working on both webservers.
+  * Your page on the browser should look like this. Remmember you are working on both webservers.
 
+![Screenshot 2023-11-09 212303](https://github.com/Saidat23/devops.pbl/assets/138054715/8f5f5000-761f-4e30-a81c-c70c9ee1ca3c)
+
+![Screenshot 2023-11-09 212234](https://github.com/Saidat23/devops.pbl/assets/138054715/14026053-a3dd-440f-8061-2d77687cb624)
+
+  **Step 5:** Configuring Nginx as a Load Balancer.
+
+  * On the third EC2 instance provisioned, confirm that port 80 is opened to accept traffic from anywwhere. Refer to **Step 2**.
+
+  * Next SSH into the instance. Refer to **Step 3**.
+ 
+  * Update and Install Nginx using the command below.
+
+ ``` sudo apt update -y && sudo apt install nginx -y ```
+ 
+![Screenshot 2023-11-09 212518](https://github.com/Saidat23/devops.pbl/assets/138054715/87d63fdd-1bee-47a1-b55e-292301f2d57d)
+
+  * Verify that Nginx is installed with the command below.
+
+ ``` sudo systemctl status nginx ```
+ 
+![Screenshot 2023-11-09 212643](https://github.com/Saidat23/devops.pbl/assets/138054715/b4ecc01e-2fd2-4c5f-938a-ef8af48745f2)
+
+  * Copy your Load Balancer's public IP, paste it on the browser. Your page on the browser would look like this.
+
+  ![Screenshot 2023-11-09 212219](https://github.com/Saidat23/devops.pbl/assets/138054715/048c5d63-53ee-4fc8-829d-2a469a6fbb1d)  
+
+
+
+
+     
 ![Screenshot 2023-11-09 215237](https://github.com/Saidat23/devops.pbl/assets/138054715/b6d10fd1-9bd3-49ba-92e9-fb1c922f60d3)
 
 ![Screenshot 2023-11-09 215219](https://github.com/Saidat23/devops.pbl/assets/138054715/6bdd003d-3df0-455d-aa82-0881a1b0f783)
 
-  5. 
+ 
   6. 
 
 
