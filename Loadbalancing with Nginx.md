@@ -147,14 +147,61 @@ We will start by configuring **Apache** webserver to serve content on port 8000 
  
 ![Screenshot 2023-11-09 164935](https://github.com/Saidat23/devops.pbl/assets/138054715/934ab654-bc70-4395-84d5-0456699d9f87) 
 
-  * Close the file by first pressing the **esc** key on your keyboard then the command
+  * Close the file by first pressing the **esc** key on your keyboard then the command below.
     
      ``` wq!```
     
-    *Restart apache to load the new configuration using the command
+  *Restart apache to load the new configuration using the command below.
 
      ``` sudo systemctl restart apache2 ```
-  2. Create a new html file:
+    
+  2. Creating our new html file:
+     
+   * Create/Open a new file: index.html with the command below.
+
+     ``` sudo vi index.html ```
+     
+   * Switch the Vi editor to insert mode and paste the file below. On your AWS Manageement Console, copy the public IP address of your EC2 instance and replace the placeholder text for IP address in the html file.
+       
+      ```         <!DOCTYPE html>
+        <html>
+        <head>
+            <title>My EC2 Instance</title>
+        </head>
+        <body>
+            <h1>Welcome to my EC2 instance</h1>
+            <p>Public IP: YOUR_PUBLIC_IP</p>
+        </body>
+        </html> ```
+      
+![Screenshot 2023-11-09 211343](https://github.com/Saidat23/devops.pbl/assets/138054715/74cae4fb-c050-4ff1-b031-6014e1ee8062)
+
+    * Change file ownership of the index.html with the command below.
+    
+    ``` sudo chown www-data:www-data ./index.html ```
+    
+![Screenshot 2023-11-09 204627](https://github.com/Saidat23/devops.pbl/assets/138054715/233d91cc-a3cd-48c1-8e74-444cafc418cd)
+
+  3. Overriding the default html file of Apache Webserver.
+     
+     * Replace the default html file with our new html file using the command below.
+
+       ``` sudo cp -f ./index.html /var/www/html/index.html ```
+
+     * Restart the webserver to load the new configuration using the command below.
+
+       ``` sudo systemctl restart apache2 ```
+       
+![Screenshot 2023-11-09 205039](https://github.com/Saidat23/devops.pbl/assets/138054715/f7c5a896-7f81-4c5e-bec3-9043556d2ece)
+
+     * Your page on the browser should look like this. Remmember you are working on both webservers.
+
+![Screenshot 2023-11-09 215237](https://github.com/Saidat23/devops.pbl/assets/138054715/b6d10fd1-9bd3-49ba-92e9-fb1c922f60d3)
+
+![Screenshot 2023-11-09 215219](https://github.com/Saidat23/devops.pbl/assets/138054715/6bdd003d-3df0-455d-aa82-0881a1b0f783)
+
+  5. 
+  6. 
 
 
 
