@@ -309,4 +309,3 @@ We will start by configuring **Apache** webserver to serve content on port 8000 
 
 
 
-
