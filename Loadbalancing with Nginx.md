@@ -51,7 +51,7 @@ On the third EC2 instance, install Nginx and configure it to act as a load balan
   
 ![Screenshot 2023-11-09 121540 - Copy](https://github.com/Saidat23/devops.pbl/assets/138054715/fa39943b-15e7-439b-827b-219f851d1183)
 
-*Under **Instance type**, select t3.micro.
+* Under **Instance type**, select t3.micro.
 
 ![Screenshot 2023-11-12 194000](https://github.com/Saidat23/devops.pbl/assets/138054715/6b3e0e4f-fb5f-4c8b-b773-6e70a57e11aa)
 
