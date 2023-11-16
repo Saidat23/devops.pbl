@@ -140,6 +140,59 @@ sudo systemctl restart nginx
 
   ```
 
+## Steps to Run the Shell Script.
+
+**Step 1:** On your terminal, open a file nginx.sh with the command below:
+
+  ``` sudo vi nginx.sh ```
+  
+**Step 2:** Copy and paste the script inside the file.
+
+**Step 3:** Close the file using the command below:
+
+  ```type esc the shift + :wqa!```
+
+**Step 4:** Change the file permission to make it executable with the command below:
+
+  ``` sudo chmod +x nginx.sh ```
+
+  **Step 5:** Run the script with the command below.
+
+    ``` ./nginx.sh PUBLIC_IP Webserver-1 Webserver-2 ```
+
+   ## Verifying the Setup
+
+ Screenshot For Webserver one
+
+
+ Screenshot For Webserver one
+
+
+ Screenshot of Load balancer
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
