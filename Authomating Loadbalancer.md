@@ -17,11 +17,12 @@ In this project, we will be automating the entire process by writing a shell scr
 
 **Step 4:** Creat/Open a file on your terminal.
 
-         ```   sudo vi install.sh ```
+                ``` sudo vi install.sh ```
          
 Paste the script below. The shell script below is a codified process we need to deploy our webservers.
 
-          ``` #!/bin/bash
+         ```
+          #!/bin/bash
 
 ####################################################################################################################
 ##### This automates the installation and configuring of apache webserver to listen on port 8000
