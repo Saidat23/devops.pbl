@@ -27,36 +27,36 @@ Paste the script below. The shell script below is a codified process we need to 
 
          
        ``` 
-       #!/bin/bash<br/>
+       #!/bin/bash <br/>
        
-####################################################################################################################<br/>
-##### This automates the installation and configuring of apache webserver to listen on port 8000<br/>
-##### Usage: Call the script and pass in the Public_IP of your EC2 instance as the first argument as shown below:<br/>
-######## ./install_configure_apache.sh 127.0.0.1<br/>
-####################################################################################################################<br/>
+#################################################################################################################### <br/>
+##### This automates the installation and configuring of apache webserver to listen on port 8000 <br/>
+##### Usage: Call the script and pass in the Public_IP of your EC2 instance as the first argument as shown below: <br/>
+######## ./install_configure_apache.sh 127.0.0.1 <br/>
+#################################################################################################################### <br/>
 
 set -x # debug mode<br/>
-set -e # exit the script if there is an error
-set -o pipefail # exit the script when there is a pipe failure
+set -e # exit the script if there is an error<br/>
+set -o pipefail # exit the script when there is a pipe failure<br/>
 
-PUBLIC_IP=$1
+PUBLIC_IP=$1<br/>
 
-[ -z "${PUBLIC_IP}" ] && echo "Please pass the public IP of your EC2 instance as an argument to the script" && exit 1
+[ -z "${PUBLIC_IP}" ] && echo "Please pass the public IP of your EC2 instance as an argument to the script" && exit 1<br/>
 
-sudo apt update -y &&  sudo apt install apache2 -y
+sudo apt update -y &&  sudo apt install apache2 -y<br/>
 
-sudo systemctl status apache2
+sudo systemctl status apache2<br/>
 
-if [[ $? -eq 0 ]]; then
-    sudo chmod 777 /etc/apache2/ports.conf
-    echo "Listen 8000" >> /etc/apache2/ports.conf
-    sudo chmod 777 -R /etc/apache2/
+if [[ $? -eq 0 ]]; then<br/>
+    sudo chmod 777 /etc/apache2/ports.conf<br/>
+    echo "Listen 8000" >> /etc/apache2/ports.conf<br/>
+    sudo chmod 777 -R /etc/apache2/<br/>
 
-    sudo sed -i 's/<VirtualHost \*:80>/<VirtualHost *:8000>/' /etc/apache2/sites-available/000-default.conf
+    sudo sed -i 's/<VirtualHost \*:80>/<VirtualHost *:8000>/' /etc/apache2/sites-available/000-default.conf<br/>
 
-fi
-sudo chmod 777 -R /var/www/
-echo "<!DOCTYPE html>
+fi<br/>
+sudo chmod 777 -R /var/www/<br/>
+echo "<!DOCTYPE html> <br/>
         <html>
         <head>
             <title>My EC2 Instance</title>
@@ -65,8 +65,9 @@ echo "<!DOCTYPE html>
             <h1>Welcome to my EC2 instance</h1>
             <p>Public IP: "${PUBLIC_IP}"</p>
         </body>
-        </html>" > /var/www/html/index.html
-sudo systemctl restart apache2  ```
+        </html>" > /var/www/html/index.html <br/>
+sudo systemctl restart apache2  
+¬¬¬
 
 
 
