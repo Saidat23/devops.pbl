@@ -17,14 +17,16 @@ In this project, we will be automating the entire process by writing a shell scr
 
 **Step 4:** Creat/Open a file on your terminal.
 
+       ``` sudo vi install.sh```
 
-                ``` sudo vi install.sh ```
+
+
+       ```  sudo vi install.sh ```
          
 Paste the script below. The shell script below is a codified process we need to deploy our webservers.
 
-         ```
-          #!/bin/bash
-
+         
+       ```   #!/bin/bash
 ####################################################################################################################
 ##### This automates the installation and configuring of apache webserver to listen on port 8000
 ##### Usage: Call the script and pass in the Public_IP of your EC2 instance as the first argument as shown below:
@@ -62,9 +64,10 @@ echo "<!DOCTYPE html>
             <p>Public IP: "${PUBLIC_IP}"</p>
         </body>
         </html>" > /var/www/html/index.html
+sudo systemctl restart apache2  ```
 
-sudo systemctl restart apache2
-          ```
+
+
 To close the file, press **esc** button on your keyboard then **Shift + :wq!** .       
 
 
