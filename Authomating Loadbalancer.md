@@ -26,14 +26,16 @@ In this project, we will be automating the entire process by writing a shell scr
 Paste the script below. The shell script below is a codified process we need to deploy our webservers.
 
          
-       ```   #!/bin/bash
-####################################################################################################################
-##### This automates the installation and configuring of apache webserver to listen on port 8000
-##### Usage: Call the script and pass in the Public_IP of your EC2 instance as the first argument as shown below:
-######## ./install_configure_apache.sh 127.0.0.1
-####################################################################################################################
+       ``` 
+       #!/bin/bash<br/>
+       
+####################################################################################################################<br/>
+##### This automates the installation and configuring of apache webserver to listen on port 8000<br/>
+##### Usage: Call the script and pass in the Public_IP of your EC2 instance as the first argument as shown below:<br/>
+######## ./install_configure_apache.sh 127.0.0.1<br/>
+####################################################################################################################<br/>
 
-set -x # debug mode
+set -x # debug mode<br/>
 set -e # exit the script if there is an error
 set -o pipefail # exit the script when there is a pipe failure
 
