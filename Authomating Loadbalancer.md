@@ -1,1 +1,9 @@
+# AUTHOMATING LOADBALANCER CONFIGURATION WITH SHELL SCRIPTING.
+This project demonstrate how to automate the setup and maintainance of your loadbalancer using a freestyle job to enhance and reduce manual effort. Shell Scripting and simple CI/CD on Jenkins streamline the loadbalancer configuration with ease.
+
+## Automating the Deploment of Webservers.
+
+As DevOps Engineers, automation is the heart of our work. Automation helps us speed the deployment of services and reduce error making in our day to day activities.<br/>
+In the implementation of loadbalancer with Nginx project (), we deployed two
+
 
