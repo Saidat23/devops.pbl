@@ -65,9 +65,18 @@ echo "<!DOCTYPE html>
 sudo systemctl restart apache2  
   ```
 
+To close the file, press **esc** button on your keyboard then **Shift + :wq!**.  
+
+**Step 5:** Change the permissions on the file to make it executable with the command:
+
+  ```   sudo chmod +x install.sh ```
+
+  **Step 6:** Run the shell script with the command below. Ensure you read the instructions in the shell script on how to use it.
+
+  ```   ./install.sh PUBLIC_IP ```
 
 
-To close the file, press **esc** button on your keyboard then **Shift + :wq!** .       
+
 
 
 
