@@ -11,14 +11,20 @@ In this project, we will be automating the entire process by writing a shell scr
 
 **Step 1:** Provision an EC2 instance running ubuntu 20.04. Refer to the project **Loadbalancing with Nginx**.
 
+![Screenshot 2023-11-19 205615](https://github.com/Saidat23/devops.pbl/assets/138054715/ac865125-5e14-4407-a293-8af949ddcf81)
+
 **Step 2:** Open port 8000 to allow traffic from anywhere using the security group.
 
 **Step 3:** Connect to the webserver via the terminal using SSH client.  
 
+![Screenshot 2023-11-19 205708](https://github.com/Saidat23/devops.pbl/assets/138054715/29232f95-da83-447f-aabf-9ddfc3425188)
+
 **Step 4:** Creat/Open a file on your terminal.
 
   ``` sudo vi install.sh```
-         
+  
+   ![Screenshot 2023-11-19 220855](https://github.com/Saidat23/devops.pbl/assets/138054715/d484fd87-1404-4f8e-9f54-2e270f2ccd3c)
+   
 Paste the script below. The shell script below is a codified process we need to deploy our webservers.
 
          
@@ -67,6 +73,8 @@ sudo systemctl restart apache2
 
 To close the file, press **esc** button on your keyboard then **Shift + :wq!**.  
 
+![Screenshot 2023-11-19 211037](https://github.com/Saidat23/devops.pbl/assets/138054715/11b7b3a1-6b9f-4cd0-9579-8c971fd470c0)
+
 **Step 5:** Change the permissions on the file to make it executable with the command:
 
   ```   sudo chmod +x install.sh ```
@@ -74,9 +82,15 @@ To close the file, press **esc** button on your keyboard then **Shift + :wq!**.
   **Step 6:** Run the shell script with the command below. Ensure you read the instructions in the shell script on how to use it.
 
   ```   ./install.sh PUBLIC_IP ```
+  
+  ![Screenshot 2023-11-19 220525](https://github.com/Saidat23/devops.pbl/assets/138054715/4f3ce6f4-9d96-44dd-81ec-470530726072)
+  
+  ## Deployment of Nginx as a Load Balancer using Shell Script.
+  Having successfully deployed and configured our two weservers, we will now move to the load balancer. As prerequisite, we need to provision an EC2 instance running ubuntu 22.04, open port 80 to allow traffic from anywhere using the security group and connect to the load balancer via the terminal.
 
 ## Deploying and Configuring Nginx Load Balancer Using Shell Script.
-
+Conect to the terminal using the instance SSH.
+![Screenshot 2023-11-19 205820](https://github.com/Saidat23/devops.pbl/assets/138054715/bb973a55-5a12-4994-ba01-323db613e6dc)
 All the steps implemented in the **Implementing Load balance with Nginx** project has been codified in the script below. Follow the instructions to learn how to use the script.
 
   ``` 
@@ -146,7 +160,11 @@ sudo systemctl restart nginx
 
   ``` sudo vi nginx.sh ```
   
+  ![Screenshot 2023-11-19 221359](https://github.com/Saidat23/devops.pbl/assets/138054715/75c26240-3a53-42fa-b2c9-6b2271b5a792)
+  
 **Step 2:** Copy and paste the script inside the file.
+
+![Screenshot 2023-11-19 210108](https://github.com/Saidat23/devops.pbl/assets/138054715/3395308e-17e3-404b-b6fa-87ee62802fbe)
 
 **Step 3:** Close the file using the command below:
 
@@ -159,20 +177,29 @@ sudo systemctl restart nginx
   **Step 5:** Run the script with the command below.
 
     ``` ./nginx.sh PUBLIC_IP Webserver-1 Webserver-2 ```
+    
+![Screenshot 2023-11-19 205904](https://github.com/Saidat23/devops.pbl/assets/138054715/5cdca61c-ba41-44e9-97d2-f682b71b7903)
 
    ## Verifying the Setup
 
- Screenshot For Webserver one
+ **Screenshot For Webserver one**
+ 
+ 
+![Screenshot 2023-11-19 200623](https://github.com/Saidat23/devops.pbl/assets/138054715/77dae558-152b-44f6-a69b-87dcfc114306)
 
+ **Screenshot For Webserver two**
+ 
+ 
+![Screenshot 2023-11-19 200611](https://github.com/Saidat23/devops.pbl/assets/138054715/c06e4def-811e-471a-95df-0f9019e148f3)
 
- Screenshot For Webserver one
+**Screenshot of Load balancer**
+ 
 
+![Screenshot 2023-11-19 200602](https://github.com/Saidat23/devops.pbl/assets/138054715/583422f3-f9bc-4dcd-8e6f-0b1d12b10335)
 
- Screenshot of Load balancer
+![Screenshot 2023-11-19 204333](https://github.com/Saidat23/devops.pbl/assets/138054715/f637df03-5982-4fb1-95f1-1f985318665b)
 
-
-
-
+![Screenshot 2023-11-19 204319](https://github.com/Saidat23/devops.pbl/assets/138054715/55b036fc-faca-4819-8fd3-7225b0ffd397)
 
 
 
