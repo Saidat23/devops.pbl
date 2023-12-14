@@ -53,19 +53,24 @@ On the **Create Volume** page, select your volume size (10GiB) , your availabili
 SSH into your terminal, 
 ![Screenshot 2023-11-29 192436](https://github.com/Saidat23/devops.pbl/assets/138054715/3603fe81-aaed-48be-9885-4e8f3d5dc7d7)
 
-Use the **lsblk** command to inspect what block devices are attached to the server.
+Use the **```lsblk```** command to inspect what block devices are attached to the server.
 
 ![Screenshot 2023-12-14 220628](https://github.com/Saidat23/devops.pbl/assets/138054715/3fd669a6-d484-413b-8139-c25b5b49f7a9)
 
- Inspect the /dev/directory with **ls/dev/** to be sure all three newly create block devices are there. their names will likely be **xvdf,xvdg,xvdh**
+ Inspect the /dev/directory with **```ls/dev/```** to be sure all three newly create block devices are there. Their names will likely be **xvdf, xvdg, xvdh**.
 
 ![Screenshot 2023-11-29 192506](https://github.com/Saidat23/devops.pbl/assets/138054715/e431e871-7ff0-42b4-8b75-76512f423508)
 
+4. Use **```df -h```** command to see all mounts and free space on your server.
 
+![Screenshot 2023-11-29 193223](https://github.com/Saidat23/devops.pbl/assets/138054715/be25223d-7553-4a4c-9660-b35eca26faae)
 
+ Use **```gdisk```** utility to create a single partition on each of the disks.
 
+ ``` sudo gdisk /dev/xvdf```
+ 
 
-
+![Screenshot 2023-11-29 193429](https://github.com/Saidat23/devops.pbl/assets/138054715/07f33efa-8731-46ee-8fd7-bb019a8239f3)
 
 
 
