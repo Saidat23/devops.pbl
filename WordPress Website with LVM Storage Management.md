@@ -4,7 +4,7 @@ In this project, we will build and manage a scalable WordPress website using LVM
 
 We will set up an EC2 instance, configure security groups, and establish a reliable connection to your website. Through hands-on exercise, we will delve into the complexity of LVM storage management on Red Hat by creating logical volumes, managing disk spaces and dynamically resizing volumes to accommodate changing storage requirements. As part of this project, we will gain proficiency in installing and configuring WordPress, configure themes and adding essential plug-ins to enhance the website's functionality. We'll cover performance optimization techniques and best practice for securing your WordPress installation on AWS cloud. 
 
-## UNDERSTANDING 3 TIER ARCHITECTURE
+## UNDERSTANDING 3-TIER ARCHITECTURE
 ---
 ### Web Solution With WordPress
 We will prepare storage infrastructure on two Linux server and implement a basic web solution using WordPress. WordPress is an open-source content management system written in PHP and paired with MySQL as its backend Relational Database Management System (RDBMS). This consist of two parts:
@@ -19,5 +19,73 @@ Web or mobile solutions are implemented based on Three-tier architecture. Three-
 
 ![image](https://github.com/Saidat23/devops.pbl/assets/138054715/2ee76451-15a4-4675-b436-d4782e84d695)
 
-### Provision your EC2 instance.
+### Implementing LVM on Linux server (Web and Database server).
+**Step 1**: Prepare a Web Server
+1. Launch 2 EC2 instance using Red Hat to serve as **Web Server** and **Database Server**.
+   
+   ![Screenshot 2023-11-29 192519](https://github.com/Saidat23/devops.pbl/assets/138054715/2cd9ac34-6fa9-4a1b-8dad-d7c3b4cc1229)
+   
+2. Create 3 volumes in the same Availability Zone as your EC2 Web Server and Database, each of 10GiB.
+    Click on **Volumes** on the left side under the **Elastic Block Store**
+     
+  ![Screenshot 2023-11-29 192600](https://github.com/Saidat23/devops.pbl/assets/138054715/53a6291a-ca69-4a79-ba8b-2b1041c93410) 
+  
+Click on **Create Volume** at the top right corner of your page.  
+
+![Screenshot 2023-11-29 192701](https://github.com/Saidat23/devops.pbl/assets/138054715/0affe765-3050-43d6-bbdc-a61e49cdcb49)
+
+On the **Create Volume** page, select your volume size (10GiB) , your availability zone (same as your instance) and click on **Create Volume**. 
+
+![Screenshot 2023-11-29 192806](https://github.com/Saidat23/devops.pbl/assets/138054715/85a01704-00dc-48cd-8fcb-407448cb6869)
+
+3. Name the volumes 
+   
+![Screenshot 2023-11-29 193051](https://github.com/Saidat23/devops.pbl/assets/138054715/191398ec-a7e5-4c81-92d9-9346e8b481d2)
+
+ Attach all the volumes one at a time to your EC2 instance Web Server. Select your volume, then click on **Action** on the top right corner of the page. On the drop down, click on **Attach Volume**. 
+ 
+![Screenshot 2023-11-29 193010](https://github.com/Saidat23/devops.pbl/assets/138054715/df989f1b-9456-4382-a946-f5583fa35cce)
+
+ On the **Attach volume** page, select your server and click on **Attach volume**.
+  
+![Screenshot 2023-12-14 204017](https://github.com/Saidat23/devops.pbl/assets/138054715/7489635c-ec7e-401d-86bb-ae413ffdc58a)
+
+SSH into your terminal, 
+![Screenshot 2023-11-29 192436](https://github.com/Saidat23/devops.pbl/assets/138054715/3603fe81-aaed-48be-9885-4e8f3d5dc7d7)
+
+Use the **lsblk** command to inspect what block devices are attached to the server.
+
+![Screenshot 2023-12-14 220628](https://github.com/Saidat23/devops.pbl/assets/138054715/3fd669a6-d484-413b-8139-c25b5b49f7a9)
+
+ Inspect the /dev/directory with **ls/dev/** to be sure all three newly create block devices are there. their names will likely be **xvdf,xvdg,xvdh**
+
+![Screenshot 2023-11-29 192506](https://github.com/Saidat23/devops.pbl/assets/138054715/e431e871-7ff0-42b4-8b75-76512f423508)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
