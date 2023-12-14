@@ -12,11 +12,12 @@ We will prepare storage infrastructure on two Linux server and implement a basic
 2. Install WordPress and connect it to a remote MySQL database server. This part of the project will solidify your skills of deploying Web and DB tiers of Web solution.
 
 ### Three-tier Architecture
-
-
-
-
-
-
+Web or mobile solutions are implemented based on Three-tier architecture. Three-tier Architecture is a client-server software architecture pattern that comprise of 3 different layers.<br/>
+1. **Presentation Layer**(PL): This is the user interface such as the client server or browser on your Desktop/Laptop.
+2. **Business Layer**(BL): This is the backend program that implements business logic such as Application or Webserver.
+3. **Data Access or Management Layer**(DAL):This is the layer for computer data storage and data access. Database Server or File System Server such as FTP server or NFS Server.  
 
 ![image](https://github.com/Saidat23/devops.pbl/assets/138054715/2ee76451-15a4-4675-b436-d4782e84d695)
+
+### Provision your EC2 instance.
+
