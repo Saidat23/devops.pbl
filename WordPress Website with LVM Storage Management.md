@@ -67,14 +67,32 @@ Use the **```lsblk```** command to inspect what block devices are attached to th
 
  Use **```gdisk```** utility to create a single partition on each of the disks.
 
- ``` sudo gdisk /dev/xvdf```
+ ``` sudo gdisk /dev/xvdf``` then hit enter on your keyboard.
  
+ Type **n**  for **Command (? for help):** prompt, then hit enter.
+ 
+ Type **1** for **Partition number (1-128, default 1):** prompt, then hit enter for the next three prompt. As we are not effecting any changes.
+ Then type **8e00** to change partition to **Linux LVM**, Then hit enter.
+ 
+ Type **p**  for **Command (? for help):** prompt, then hit enter.
+
+ Type **w**  for **Command (? for help):** prompt, then hit enter.
+ 
+ Type **y** for **Do you want to proceed? (Y/N):** prompt, then hit enter.
+ 
+ Follow this steps for the other two partitioning.
+ 
+ 
+ ``` sudo gdisk /dev/xvdg```
+ 
+ ``` sudo gdisk /dev/xvdh```
 
 ![Screenshot 2023-11-29 193429](https://github.com/Saidat23/devops.pbl/assets/138054715/07f33efa-8731-46ee-8fd7-bb019a8239f3)
 
+5. Use **```lsblk```** utility to view the newly configured partition on each of the 3 disks 
 
 
-
+![Screenshot 2023-11-29 195232](https://github.com/Saidat23/devops.pbl/assets/138054715/db46af01-6d47-41a8-aebb-856161d80f2f)
 
 
 
