@@ -104,6 +104,45 @@ Check if the lvm is installed with the command ```which lvm```
 ![Screenshot 2023-11-29 195534](https://github.com/Saidat23/devops.pbl/assets/138054715/68f41261-4501-430c-8c92-0ab184c290ea)
 
 7. Mark each of the 3 disks as a physical volume to be used by LVM with the command ```sudo pvcreate /dev/xvdf1 /dev/xvdg1 /dev/xvdh1```.
+8. 
+![Screenshot 2023-11-29 195758](https://github.com/Saidat23/devops.pbl/assets/138054715/d1155b26-2532-47e3-aa1f-6fde1244911a)
+
+9. Verify that the physical volume has been created successfully by running ```sudo pvs```.
+
+ ![Screenshot 2023-11-29 195818](https://github.com/Saidat23/devops.pbl/assets/138054715/1928372f-1607-436a-b0dc-ed3d955d3276)
+
+10. Add all 3 disks to a volume group (VG) using vgcreate. Name the VG **vg-webdata**.
+
+Run the command ``` sudo vgcreate vg-webdata /dev/xvdf1 /dev/xvdg1 /dev/xvdh1 ```.
+
+11. Then verify that the VG has been created successfully by runing ```sudo vgs```
+
+![Screenshot 2023-11-29 200738](https://github.com/Saidat23/devops.pbl/assets/138054715/a394be9a-c7ea-4740-a5e0-ea3273ac9ab8)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
