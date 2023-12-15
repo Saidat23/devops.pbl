@@ -121,14 +121,55 @@ Run the command ``` sudo vgcreate vg-webdata /dev/xvdf1 /dev/xvdg1 /dev/xvdh1 ``
 
 ![Screenshot 2023-11-29 200738](https://github.com/Saidat23/devops.pbl/assets/138054715/a394be9a-c7ea-4740-a5e0-ea3273ac9ab8)
 
-12.Use **lvcreate** utility to create 2  logical volumes (app-lv and logs-lv). Use half of the PV size for each of the logical volume. The App-lv will be used to store data for the Website while logs-lv will be used to store data for logs.
+12. Use **lvcreate** utility to create 2  logical volumes (app-lv and logs-lv). Use half of the PV size for each of the logical volume. The App-lv will be used to store data for the Website while logs-lv will be used to store data for logs.
 Run the command below to create the logical volume.
 
-```sudo lvcreate -n apps-lv -L 14G webdata-vg ```
+```sudo lvcreate -n apps-lv -L 14G vg-webdata ```
 
-```sudo lvcreate -n logs-lv -L 14G webdata-vg```
+```sudo lvcreate -n logs-lv -L 14G vg-webdata```
+
+To confirm that the Logical Volume has been successfully created, run ```sudo lvs```.
 
 ![Screenshot 2023-11-29 201057](https://github.com/Saidat23/devops.pbl/assets/138054715/466d2908-ab9c-4067-abdc-f0e087c9be08)
+
+13. Use mkfs.ext4 to format the logical volumes with ext4 filesystem using this commands.
+
+```  sudo mkfs.ext4 /dev/vg-webdata/apps-lv ``` 
+
+![Screenshot 2023-11-29 204049](https://github.com/Saidat23/devops.pbl/assets/138054715/456c2038-42c5-4e38-ba8c-a9d0e6df0a03)
+
+```  sudo mkfs -t ext4 /dev/vg-webdata/logs-lv ```
+
+![Screenshot 2023-11-29 204125](https://github.com/Saidat23/devops.pbl/assets/138054715/4c766da6-609e-4961-8390-b772be6a7b74)
+
+14. Create var/www/html directory to store website file with the command below
+
+ ``` sudo mkdir -p /var/www/html ``` 
+ 
+ ![Screenshot 2023-11-29 204559](https://github.com/Saidat23/devops.pbl/assets/138054715/6840d8b6-260f-44cd-a7fc-c2fe6447740f)
+ 
+15. Create /home/recovery/logs to store backup of log data
+
+``` sudo mkdir -p /home/recovery/logs ```
+
+![Screenshot 2023-11-29 204837](https://github.com/Saidat23/devops.pbl/assets/138054715/17784d2f-1f87-4d44-85bf-30fe96ab6b97)
+
+16. Mount /var/www/html on app-lv logical volume with the command below.
+    
+``` sudo mount /dev/vg-webdata/apps-lv /var/www/html/ ```
+
+17. Use rsyn utility to backup all the files in the log directory **/var/log** into **/ home/recovery/logs** ( It is required to backup the content of the log directory before mounting the file system )
+
+Check the content of the log file before backing up with the command 
+
+``` ls -l /var/log ```
+
+![Screenshot 2023-11-29 205901](https://github.com/Saidat23/devops.pbl/assets/138054715/70372574-2323-4910-8ae4-772a09562f93)
+
+``` sudo rsync -av /var/log/ /home/recovery/logs/ ```
+
+![Screenshot 2023-11-29 210354](https://github.com/Saidat23/devops.pbl/assets/138054715/4ede1cb6-0474-43e5-beaa-b7098883574d)
+
 
 
 
