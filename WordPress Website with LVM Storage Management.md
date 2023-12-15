@@ -94,12 +94,16 @@ Use the **```lsblk```** command to inspect what block devices are attached to th
 
 ![Screenshot 2023-11-29 195232](https://github.com/Saidat23/devops.pbl/assets/138054715/db46af01-6d47-41a8-aebb-856161d80f2f)
 
+6. Install LVM2 package using the command ``` sudo yum install lvm2 -y ```.
 
 
+![Screenshot 2023-11-29 195517](https://github.com/Saidat23/devops.pbl/assets/138054715/2d5e8ec6-5030-4e8d-8c0e-02d09752dbfc)
 
+Check if the lvm is installed with the command ```which lvm```
 
+![Screenshot 2023-11-29 195534](https://github.com/Saidat23/devops.pbl/assets/138054715/68f41261-4501-430c-8c92-0ab184c290ea)
 
-
+7. Mark each of the 3 disks as a physical volume to be used by LVM with the command ```sudo pvcreate /dev/xvdf1 /dev/xvdg1 /dev/xvdh1```.
 
 
 
