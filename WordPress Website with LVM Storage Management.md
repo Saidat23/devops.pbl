@@ -158,7 +158,7 @@ To confirm that the Logical Volume has been successfully created, run ```sudo lv
     
 ``` sudo mount /dev/vg-webdata/apps-lv /var/www/html/ ```
 
-17. Use rsyn utility to backup all the files in the log directory **/var/log** into **/ home/recovery/logs** ( It is required to backup the content of the log directory before mounting the file system )
+17. Use rsync utility to backup all the files in the log directory **/var/log** into **/ home/recovery/logs** ( It is required to backup the content of the log directory before mounting the file system )
 
 Check the content of the log file before backing up with the command 
 
@@ -166,12 +166,40 @@ Check the content of the log file before backing up with the command
 
 ![Screenshot 2023-11-29 205901](https://github.com/Saidat23/devops.pbl/assets/138054715/70372574-2323-4910-8ae4-772a09562f93)
 
-``` sudo rsync -av /var/log/ /home/recovery/logs/ ```
+``` sudo rsync -av /var/log /home/recovery/logs ```
 
 ![Screenshot 2023-11-29 210354](https://github.com/Saidat23/devops.pbl/assets/138054715/4ede1cb6-0474-43e5-beaa-b7098883574d)
 
+18. Check that the backup is stored in the **/home/recovery/logs** using the command below.
+    
+``` sudo ls -l /home/recovery/logs/log ```
+
+![Screenshot 2023-11-29 211438](https://github.com/Saidat23/devops.pbl/assets/138054715/8ca5216e-5676-41d1-862e-656a8d329d27)
+
+19. Mount **/var/log** on **logs-lv** logical volume. Note that all the existing data on /var/log will be deleted hence we need to backup the data. Run the command below.
+    
+``` sudo mount /dev/vg-webdata/logs-lv /var/log ```
+
+![Screenshot 2023-11-29 211739](https://github.com/Saidat23/devops.pbl/assets/138054715/4f924f54-c39f-47a0-aff6-8dfcc77198e8)
+
+20. Restore log files back into /var/log directory with the command below.
+
+ ``` sudo rsync -av /home/recovery/logs/log/ /var/log ```
+
+![Screenshot 2023-11-29 213307](https://github.com/Saidat23/devops.pbl/assets/138054715/da70233e-6c7a-4055-867f-4bb013dad450)
+
+21. Update **/etc/fstab** file so that the mount configuration will persist after restarting the server. Use the **UUID** of the device to update the **/etc/fstab** file. Run the **blkid** command to retrive the **UUID**.
+
+     ``` sudo blkid ```
+Double check to see if the /var/log directory has been updated with the command  below.
+
+``` sudo ls -l /var/log ```
 
 
+![Screenshot 2023-11-29 213307](https://github.com/Saidat23/devops.pbl/assets/138054715/1b4803f6-c048-4df5-abe3-8f06fd71021f)
+    
+ 
+   
 
 
 
