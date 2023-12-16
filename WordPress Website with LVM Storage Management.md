@@ -188,20 +188,29 @@ Check the content of the log file before backing up with the command
 
 ![Screenshot 2023-11-29 213307](https://github.com/Saidat23/devops.pbl/assets/138054715/da70233e-6c7a-4055-867f-4bb013dad450)
 
-21. Update **/etc/fstab** file so that the mount configuration will persist after restarting the server. Use the **UUID** of the device to update the **/etc/fstab** file. Run the **blkid** command to retrive the **UUID**.
 
-     ``` sudo blkid ```
 Double check to see if the /var/log directory has been updated with the command  below.
 
 ``` sudo ls -l /var/log ```
 
+![Screenshot 2023-11-29 213402](https://github.com/Saidat23/devops.pbl/assets/138054715/6273dce2-89b1-4cfc-a2bb-2c9a6d2e6241)
 
-![Screenshot 2023-11-29 213307](https://github.com/Saidat23/devops.pbl/assets/138054715/1b4803f6-c048-4df5-abe3-8f06fd71021f)
-    
+21. Update **/etc/fstab** file so that the mount configuration will persist after restarting the server. Use the **UUID** of the device to update the **/etc/fstab** file. Run the **blkid** command to retrive the **UUID**.
+
+     ``` sudo blkid ``` 
  
-   
+   ![Screenshot 2023-12-16 193700](https://github.com/Saidat23/devops.pbl/assets/138054715/7bd98535-a0f1-4938-83ba-5ad36d402bda)
 
+22. Create and open the /etc/fstab file with the command bellow.
 
+``` sudo vi /etc/fstab ```
+
+  Then, update the **/etc/fstab**  in this format using your own **UUID** and remember to remove the leading and ending quotes.  
+
+ UUID=c2cd2766-5c6c-4f39-9c4c-452894c47be2 ext4   -- for app-lv
+ UUID=aee3d295-b171-4a14-a50e-027c8ebf8712 ext4   -- for logs-lv
+
+![Screenshot 2023-12-16 194552](https://github.com/Saidat23/devops.pbl/assets/138054715/14ac5ae1-dd03-41b8-8793-6836b386e923)
 
 
 
