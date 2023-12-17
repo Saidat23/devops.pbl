@@ -239,7 +239,7 @@ The second Red Hat EC2 instance launched, will be the used as **DB Server**. Rep
 
 - Mount **/dev/vg-database/db-lv** on **/db**
   
-![Screenshot 2023-11-29 223412](https://github.com/Saidat23/devops.pbl/assets/138054715/270d8cf7-2b7b-4bdf-a7ea-ec7d2c97a114)
+![Screenshot 2023-12-17 010141](https://github.com/Saidat23/devops.pbl/assets/138054715/456706e1-43b5-41a6-b04d-dda3c54ee17b)
 
 - Make the mount persistent.
   
@@ -249,7 +249,9 @@ The second Red Hat EC2 instance launched, will be the used as **DB Server**. Rep
 
 ![Screenshot 2023-12-16 230927](https://github.com/Saidat23/devops.pbl/assets/138054715/64a7a897-f466-4ad1-861c-e6000fd1e58e)
 
-![Screenshot 2023-12-16 231421](https://github.com/Saidat23/devops.pbl/assets/138054715/0e35298c-0550-4ab1-afc2-bd5dd62d1182)
+![Screenshot 2023-12-17 010055](https://github.com/Saidat23/devops.pbl/assets/138054715/819ddf51-ae82-4611-83d2-1c99276e0616)
+
+
 
 
 
