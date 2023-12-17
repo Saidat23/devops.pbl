@@ -205,29 +205,51 @@ Double check to see if the /var/log directory has been updated with the command 
 
 ``` sudo vi /etc/fstab ```
 
+![Screenshot 2023-12-16 192852](https://github.com/Saidat23/devops.pbl/assets/138054715/6d10d781-7612-48ee-99dc-62fd6763afff)
+
   Then, update the **/etc/fstab**  in this format using your own **UUID** and remember to remove the leading and ending quotes.  
 
- UUID=c2cd2766-5c6c-4f39-9c4c-452894c47be2 ext4   -- for app-lv
+ UUID=c2cd2766-5c6c-4f39-9c4c-452894c47be2 ext4   -- for app-lv </br>
  UUID=aee3d295-b171-4a14-a50e-027c8ebf8712 ext4   -- for logs-lv
 
 ![Screenshot 2023-12-16 194552](https://github.com/Saidat23/devops.pbl/assets/138054715/14ac5ae1-dd03-41b8-8793-6836b386e923)
 
+Exit the vim editor.
 
+23. Test the configuration with ``` sudo mount -a ``` and reload the daemon with ``` sudo systemctl daemon-reload ```. Then, verify your setup by running **df -h**. Output must look like this.
 
+![Screenshot 2023-12-16 194854](https://github.com/Saidat23/devops.pbl/assets/138054715/f61396f8-5a1e-4fd5-8903-02ab07b7447c)
 
+## Imstalling WordPress and Configuring to use MySQL Database.
 
+**Step 2**: Prepare the Database Server
 
+The second Red Hat EC2 instance launched, will be the used as **DB Server**. Repeat same steps carried out in the Web Server but instead of **app-lv** create **db-lv** and mount it to **/db** directory instead of **/var/www/html/**.           
+- Create Logical Volume and highmark 20G to it.   
 
+![Screenshot 2023-11-29 222646](https://github.com/Saidat23/devops.pbl/assets/138054715/1ccb052f-37cc-4ea5-8ba4-7b6ee451650f)   
 
+- Create a mount point.
+  
+![Screenshot 2023-11-29 222956](https://github.com/Saidat23/devops.pbl/assets/138054715/13fe549a-868f-4c77-8303-01cf50258680)
+                                                                                                        
+- Check the content of the **/db**.
 
+![Screenshot 2023-11-29 223223](https://github.com/Saidat23/devops.pbl/assets/138054715/1f3bc42e-c43a-4821-bd0e-569eefd87ebd)
 
+- Mount **/dev/vg-database/db-lv** on **/db**
+  
+![Screenshot 2023-11-29 223412](https://github.com/Saidat23/devops.pbl/assets/138054715/270d8cf7-2b7b-4bdf-a7ea-ec7d2c97a114)
 
+- Make the mount persistent.
+  
+![Screenshot 2023-12-16 231227](https://github.com/Saidat23/devops.pbl/assets/138054715/9854ded8-9402-4643-9a99-950373a95f6f)
 
+- Copy the **UUID** and paste into the /etc/fstab file. Don't forget to remove the quote.
 
+![Screenshot 2023-12-16 230927](https://github.com/Saidat23/devops.pbl/assets/138054715/64a7a897-f466-4ad1-861c-e6000fd1e58e)
 
-
-
-
+![Screenshot 2023-12-16 231421](https://github.com/Saidat23/devops.pbl/assets/138054715/0e35298c-0550-4ab1-afc2-bd5dd62d1182)
 
 
 
