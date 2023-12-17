@@ -251,6 +251,38 @@ The second Red Hat EC2 instance launched, will be the used as **DB Server**. Rep
 
 ![Screenshot 2023-12-17 010055](https://github.com/Saidat23/devops.pbl/assets/138054715/819ddf51-ae82-4611-83d2-1c99276e0616)
 
+**Step 3**: Install WordPress on your Web Server EC2.
+
+1. Update the repository with ``` sudo yum -y update```. 
+
+![Screenshot 2023-12-08 214305](https://github.com/Saidat23/devops.pbl/assets/138054715/d01014db-753e-49ec-a98e-a1ba310263e3)
+
+![Screenshot 2023-12-08 232450](https://github.com/Saidat23/devops.pbl/assets/138054715/bac49291-0563-4635-b6a8-b406cb4ff0cf)
+
+![Screenshot 2023-12-08 234218](https://github.com/Saidat23/devops.pbl/assets/138054715/c6c6897c-c80f-4cea-969a-f8fe5d1f030a)
+
+![Screenshot 2023-12-08 234253](https://github.com/Saidat23/devops.pbl/assets/138054715/c1b24ac7-59a2-4ed0-89b7-539eb362b684)
+![Screenshot 2023-12-08 234348](https://github.com/Saidat23/devops.pbl/assets/138054715/57824a43-d4dd-418b-807b-141f1ed10343)
+
+![Screenshot 2023-12-08 234412](https://github.com/Saidat23/devops.pbl/assets/138054715/a5086075-a871-4932-9549-9740a974a15d)
+
+![Screenshot 2023-12-08 234558](https://github.com/Saidat23/devops.pbl/assets/138054715/bb295781-06ad-4de1-9074-442dffb9c17c)
+
+![Screenshot 2023-12-08 234626](https://github.com/Saidat23/devops.pbl/assets/138054715/10a22df8-7988-4b29-b8a9-dbd8f49f59d0)
+
+![Screenshot 2023-12-08 234654](https://github.com/Saidat23/devops.pbl/assets/138054715/0c5709de-f9dc-4446-8232-82e91589e5a1)
+
+![Screenshot 2023-12-08 234725](https://github.com/Saidat23/devops.pbl/assets/138054715/d9731197-c1a2-48de-bb87-4f4b97ad5b26)
+
+![Screenshot 2023-12-08 234827](https://github.com/Saidat23/devops.pbl/assets/138054715/9600aec7-f33b-4057-b372-d6ba153a27f9)
+
+5. Restart Apache
+
+
+![Screenshot 2023-12-08 235034](https://github.com/Saidat23/devops.pbl/assets/138054715/68eabb83-c333-4888-96cf-4fa80c4d1ec3)
+
+
+
 
 
 
