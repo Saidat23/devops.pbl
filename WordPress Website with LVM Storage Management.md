@@ -341,8 +341,13 @@ Then, confirm that the service is up and running with the command ```sudo system
 
 In case it's not running, restart the service with the command ``` sudo systemctl restart mysqld ``` and enable it with the ``` sudo systemctl enable mysqld ``` command.
 
-![Screenshot 2023-12-09 001310](https://github.com/Saidat23/devops.pbl/assets/138054715/d85dab1a-2799-4adb-a729-7ecadbd26a2e)
+**Step 5**: Configrue Database to Work with WordPress.
 
+1. Run the command ```sudo mysql ``` to access the database environment. 
+2. Then, create database with the name **wordpress** using the command ``` CREATE DATABASE wordpress ``` .
+3. Run the command ``` show databse ``` to confirm that your database is created successfully.
+
+![Screenshot 2023-12-09 002443](https://github.com/Saidat23/devops.pbl/assets/138054715/cc15469e-e3b3-4036-8c62-1f13b333f2de)
 
 
 
