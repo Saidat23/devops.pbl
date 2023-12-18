@@ -359,10 +359,9 @@ In case it's not running, restart the service with the command ``` sudo systemct
    
     Run ```FLUSH PRIVILEGES;``` for the command to take immediate effect.
 
-6. Confirm the database with ```SHOW DATABASES;``` and exit MySQL with the command ```exit```.
+6. Exit MySQL with the command ```exit```.
 
+![Screenshot 2023-12-18 193027](https://github.com/Saidat23/devops.pbl/assets/138054715/7101fa4b-c930-436b-9850-711e6e80db57)
 
-
-
-
+**Step 6**: Configure WordPress to connect to remote database.
 
