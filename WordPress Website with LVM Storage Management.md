@@ -257,9 +257,33 @@ The second Red Hat EC2 instance launched, will be the used as **DB Server**. Rep
 
 ![Screenshot 2023-12-08 214305](https://github.com/Saidat23/devops.pbl/assets/138054715/d01014db-753e-49ec-a98e-a1ba310263e3)
 
+2. Install wget, Apache and its dependencies with the command below.
+
+   ``` sudo yum -y install wget httpd php php-myqslnd php-fpm php-json ```
+
 ![Screenshot 2023-12-08 232450](https://github.com/Saidat23/devops.pbl/assets/138054715/bac49291-0563-4635-b6a8-b406cb4ff0cf)
 
+3. Start Apache with the commands
+
+    ```sudo systemctl enable httpd ```
+
+   ```sudo systemctl start httpd ```
+
 ![Screenshot 2023-12-08 234218](https://github.com/Saidat23/devops.pbl/assets/138054715/c6c6897c-c80f-4cea-969a-f8fe5d1f030a)
+
+4. Install PHP and its dependencies using the commands below.
+
+   ```
+       sudo yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm 
+       sudo yum install yum-utils http://rpms.remirepo.net/enterprise/remi-release-8.rpm
+       sudo yum module list php
+       sudo yum module reset php
+       sudo yum module enable php:remi-7.4
+       sudo yum install php php-opcache php-gd php-curl php-mysqlnd
+       sudo systemctl start php-fpm
+       sudo systemctl enable php-fpm
+       sudo setsebool -P httpd_execmem 1 
+    ```
 
 ![Screenshot 2023-12-08 234253](https://github.com/Saidat23/devops.pbl/assets/138054715/c1b24ac7-59a2-4ed0-89b7-539eb362b684)
 ![Screenshot 2023-12-08 234348](https://github.com/Saidat23/devops.pbl/assets/138054715/57824a43-d4dd-418b-807b-141f1ed10343)
@@ -276,13 +300,32 @@ The second Red Hat EC2 instance launched, will be the used as **DB Server**. Rep
 
 ![Screenshot 2023-12-08 234827](https://github.com/Saidat23/devops.pbl/assets/138054715/9600aec7-f33b-4057-b372-d6ba153a27f9)
 
-5. Restart Apache
-
+5. Restart Apache with the command ``` sudo systemctl restart httpd ```
 
 ![Screenshot 2023-12-08 235034](https://github.com/Saidat23/devops.pbl/assets/138054715/68eabb83-c333-4888-96cf-4fa80c4d1ec3)
 
+6. Download WordPress and copy the WordPress to **/var/www/html** with the command below.
 
+   ```mkdir wordpress
+      cd   wordpress
+      sudo wget http://wordpress.org/latest.tar.gz
+      sudo tar xzvf latest.tar.gz
+      sudo rm -rf latest.tar.gz
+      sudo cp wordpress/wp-config-sample.php wordpress/wp-config.php
+      sudo cp -R wordpress /var/www/html/
+   ```
+![Screenshot 2023-12-08 235830](https://github.com/Saidat23/devops.pbl/assets/138054715/bf5acc26-20e6-4f40-ba76-68107b885b1c)
 
+7. Configure SELinux Policies as a form of security to give ownership to Apache in order to access the WordPress site using the command below.
+
+   ```
+    sudo chown -R apache:apache /var/www/html/wordpress
+    sudo chcon -t httpd_sys_rw_content_t /var/www/html/wordpress -R
+    sudo setsebool -P httpd_can_network_connect=1
+   ```
+   ![Screenshot 2023-12-09 000311](https://github.com/Saidat23/devops.pbl/assets/138054715/2079ad98-8f84-4aaf-a618-8254ddb9c760)
+
+**Step 4**:  
 
 
 
