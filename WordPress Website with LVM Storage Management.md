@@ -339,11 +339,7 @@ Then, confirm that the service is up and running with the command ```sudo system
 
 ![Screenshot 2023-12-09 001232](https://github.com/Saidat23/devops.pbl/assets/138054715/f970095c-b736-4aa6-adeb-029451a4906f)
 
-In case it's not running, restart the service and enable it with the command
-
-``` sudo systemctl restart mysqld ```
-
-``` sudo systemctl enable mysqld ```
+In case it's not running, restart the service with the command ``` sudo systemctl restart mysqld ``` and enable it with the ``` sudo systemctl enable mysqld ``` command.
 
 ![Screenshot 2023-12-09 001310](https://github.com/Saidat23/devops.pbl/assets/138054715/d85dab1a-2799-4adb-a729-7ecadbd26a2e)
 
