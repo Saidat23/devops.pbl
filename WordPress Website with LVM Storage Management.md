@@ -417,6 +417,7 @@ Insert the appropriate values in the **DB_NAME**, **DB_USER**, **DB_PASSWORD** a
 ![Screenshot 2023-12-09 011438](https://github.com/Saidat23/devops.pbl/assets/138054715/9c61557d-16e1-458f-a019-5d5dfe27b551)
 
 
+
 ![Screenshot 2023-12-09 012246](https://github.com/Saidat23/devops.pbl/assets/138054715/1a60cde6-f13c-44ce-9bd2-35c3a7503e8b)
 
 
