@@ -379,5 +379,44 @@ In case it's not running, restart the service with the command ``` sudo systemct
 
 ![Screenshot 2023-12-09 005022](https://github.com/Saidat23/devops.pbl/assets/138054715/908a35c1-200c-460a-9b86-dbffa62638e8)
 
+3. Confirm  if you can successfully execute ```show database;``` command to see a list of existing databases.
+
+![Screenshot 2023-12-09 005237](https://github.com/Saidat23/devops.pbl/assets/138054715/9f0a30fe-fdf1-42de-8b63-115e7faab4f6)
+
+4. Change permissions and configuration so that Apache can use WordPress. Please refer back to **Step 3 no 7**.
+
+5. Enable TCP port 80 in Inbound Rule configuration for WebServer EC2. Refer back to **Step 6**.
+
+6. Try accessing from your browser, the link to your WordPress ```http://<Web-Server-Public-IP-Address>/wordpress/```
+
+![Screenshot 2023-12-09 010141](https://github.com/Saidat23/devops.pbl/assets/138054715/14edb3bb-08a1-4ccf-a317-1442f94e6c90)
+
+7. Configure WordPress to connect to the Database Server by editing the **wordpress** in the /var/www/html directory. Then edit the content of **wp-config.php** using the **vi** code editor.
+    
+![Screenshot 2023-12-09 010701](https://github.com/Saidat23/devops.pbl/assets/138054715/eadbe350-4332-4071-92df-11c1e86fcafb)
+
+Insert the appropriate values in the **DB_NAME**, **DB_USER**, **DB_PASSWORD** and **DB_HOST**.
+
+![Screenshot 2023-12-09 011048](https://github.com/Saidat23/devops.pbl/assets/138054715/5257203a-7355-4e77-b41a-982688cf0609)
+
+8. Restart your service by running ``` sudo systemctl restart httpd ```.
+
+![Screenshot 2023-12-09 011204](https://github.com/Saidat23/devops.pbl/assets/138054715/5641b35a-52c5-4485-a5f8-b83cb3ea244f)
+
+9. Refresh your browser, select a language and click on **Continue**
+
+
+![Screenshot 2023-12-09 011220](https://github.com/Saidat23/devops.pbl/assets/138054715/7efae8c0-94f7-4775-a4ce-eceb43bd6da2)
+
+10. Fill in the information needed and click on **Install WordPress**
+
+![Screenshot 2023-12-09 011421](https://github.com/Saidat23/devops.pbl/assets/138054715/de531f87-b74d-41ee-800a-241e47093980)
+
+11.Click on **Log In** to access your Webpage.
+
+![Screenshot 2023-12-09 011438](https://github.com/Saidat23/devops.pbl/assets/138054715/9c61557d-16e1-458f-a019-5d5dfe27b551)
+
+
+![Screenshot 2023-12-09 012246](https://github.com/Saidat23/devops.pbl/assets/138054715/1a60cde6-f13c-44ce-9bd2-35c3a7503e8b)
 
 
