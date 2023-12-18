@@ -304,7 +304,7 @@ The second Red Hat EC2 instance launched, will be the used as **DB Server**. Rep
 
 ![Screenshot 2023-12-08 235034](https://github.com/Saidat23/devops.pbl/assets/138054715/68eabb83-c333-4888-96cf-4fa80c4d1ec3)
 
-6. Download WordPress and copy the WordPress to **/var/www/html** with the command below.
+6. Download WordPress on your WebServer and copy the WordPress to **/var/www/html** with the command below.
 
    ```mkdir wordpress
       cd   wordpress
@@ -325,10 +325,27 @@ The second Red Hat EC2 instance launched, will be the used as **DB Server**. Rep
    ```
    ![Screenshot 2023-12-09 000311](https://github.com/Saidat23/devops.pbl/assets/138054715/2079ad98-8f84-4aaf-a618-8254ddb9c760)
 
-**Step 4**:  
+**Step 4**:  Install MySQL on your DB Server EC2
 
+Update and Install MySQL on the database server with the command below.
 
+``` sudo yum update ```
 
+``` sudo yum install mysql-server ``` 
+
+![Screenshot 2023-12-09 000939](https://github.com/Saidat23/devops.pbl/assets/138054715/7b73b3a2-7353-416f-8da5-c55e42e73046)
+
+Then, confirm that the service is up and running with the command ```sudo systemctl status mysqld ```. 
+
+![Screenshot 2023-12-09 001232](https://github.com/Saidat23/devops.pbl/assets/138054715/f970095c-b736-4aa6-adeb-029451a4906f)
+
+In case it's not running, restart the service and enable it with the command
+
+``` sudo systemctl restart mysqld ```
+
+``` sudo systemctl enable mysqld ```
+
+![Screenshot 2023-12-09 001310](https://github.com/Saidat23/devops.pbl/assets/138054715/d85dab1a-2799-4adb-a729-7ecadbd26a2e)
 
 
 
