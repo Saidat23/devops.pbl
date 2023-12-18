@@ -344,13 +344,22 @@ In case it's not running, restart the service with the command ``` sudo systemct
 **Step 5**: Configrue Database to Work with WordPress.
 
 1. Run the command ```sudo mysql ``` to access the database environment. 
-2. Then, create database with the name **wordpress** using the command ``` CREATE DATABASE wordpress ``` .
+2. Then, create database with the name **wordpress** using the command ``` CREATE DATABASE wordpress ; ``` .
 3. Run the command ``` show databse ``` to confirm that your database is created successfully.
 
 ![Screenshot 2023-12-09 002443](https://github.com/Saidat23/devops.pbl/assets/138054715/cc15469e-e3b3-4036-8c62-1f13b333f2de)
 
+4. Create a user with the name **myuser** and password **mypass** running the command below. Don't forget to insert the private IP address of the WebServer.
 
+``` CREATE USER `myuser`@`<Web-Server-Private-IP-Address>` IDENTIFIED BY 'mypass';```
 
+5. Then grant the user the premission to access the WordPress with the command below.
+
+``` GRANT ALL ON wordpress.* TO 'myuser'@'<Web-Server-Private-IP-Address>'; ```
+   
+    Run ```FLUSH PRIVILEGES;``` for the command to take immediate effect.
+
+6. Confirm the database with ```SHOW DATABASES;``` and exit MySQL with the command ```exit```.
 
 
 
