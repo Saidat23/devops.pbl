@@ -365,3 +365,19 @@ In case it's not running, restart the service with the command ``` sudo systemct
 
 **Step 6**: Configure WordPress to connect to remote database.
 
+1.Edit security group to allow trafic into the database. Configure the inbound rule of the database to allow WebServer to access the content of the database server.
+
+![Screenshot 2023-12-18 203358](https://github.com/Saidat23/devops.pbl/assets/138054715/e6e5a827-678a-4209-966a-a1d5e7bb0a53)
+
+2. Install MySQL Client on your WebServer and test if you can connect to your database server by running the command below. Don't forget to insert the database server's private IP address.
+   
+``` sudo yum install mysql ```
+
+![Screenshot 2023-12-09 004943](https://github.com/Saidat23/devops.pbl/assets/138054715/59c42118-b746-4afa-9f5f-cd9d73df1158)
+
+``` sudo mysql -u admin -p -h <DB-Server-Private-IP-address> ```.
+
+![Screenshot 2023-12-09 005022](https://github.com/Saidat23/devops.pbl/assets/138054715/908a35c1-200c-460a-9b86-dbffa62638e8)
+
+
+
