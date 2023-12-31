@@ -4,22 +4,22 @@ In this project, we will be building a comprehensive DevOps tooling website solu
 collaboration and efficiency for software development and operation teams.
 
 In a previous Project, [WordPress Website](https://github.com/Saidat23/devops.pbl/blob/main/WordPress%20Website%20with%20LVM%20Storage%20Management.md), we implemented a WordPress based solution that is ready to be filled with content and can be used as a website or blog. In this project, we will introduce a set of DevOps tools that will help our team in day to day activities like managing, developing, testing, deploying and monitoring different projects.
-The tools we want our team to be able to use are well known and widely used by multiple DevOps teams, so we will introduce a single DevOps Tooling Solution that will consist of:
+The DevOps Tooling Solution will consist of:
 
 
-Jenkins - free and open source automation server used to build CI/CD pipelines.
+**Jenkins** - free and open source automation server used to build CI/CD pipelines.
 
-Kubernetes - an open-source container-orchestration system for automating computer application deployment, scaling, and management.
+**Kubernetes** - an open-source container-orchestration system for automating computer application deployment, scaling, and management.
 
-Jfrog Artifactory - Universal Repository Manager supporting all major packaging formats, build tools and CI servers. Artifactory.
+**Jfrog Artifactory** - Universal Repository Manager supporting all major packaging formats, build tools and CI servers. Artifactory.
 
-Rancher - an open source software platform that enables organizations to run and manage Docker and Kubernetes in production.
+**Rancher** - an open source software platform that enables organizations to run and manage Docker and Kubernetes in production.
 
-Grafana - a multi-platform open source analytics and interactive visualization web application.
+**Grafana** - a multi-platform open source analytics and interactive visualization web application.
 
-Prometheus - An open-source monitoring system with a dimensional data model, flexible query language, efficient time series database and modern alerting approach.
+**Prometheus** - An open-source monitoring system with a dimensional data model, flexible query language, efficient time series database and modern alerting approach.
 
-Kibana - Kibana is a free and open user interface that lets you visualize your Elasticsearch data and navigate the Elastic Stack.
+**Kibana** - Kibana is a free and open user interface that lets you visualize your Elasticsearch data and navigate the Elastic Stack.
 
 Note: Do not feel overwhelmed by all the tools and technologies listed above, we will gradually get ourselves familiar with them in upcoming projects!
 
