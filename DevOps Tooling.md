@@ -3,9 +3,7 @@
 In this project, we will be building a comprehensive DevOps tooling website solution by exploring the integration of various tools and technology to create a unified platform that enhances automation, 
 collaboration and efficiency for software development and operation teams.
 
-on 
-In previous Project 6 you implemented a WordPress based solution that is ready to be filled with content and can be used as a full fledged website or blog. Moving further we will add some more value to our
-solutions that your DevOps team could utilize. We want to introduce a set of DevOps tools that will help our team in day to day activities in managing, developing, testing, deploying and monitoring different projects.
+In a previous Project, [WordPress Website](https://github.com/Saidat23/devops.pbl/blob/main/WordPress%20Website%20with%20LVM%20Storage%20Management.md), we implemented a WordPress based solution that is ready to be filled with content and can be used as a website or blog. In this project, we will introduce a set of DevOps tools that will help our team in day to day activities like managing, developing, testing, deploying and monitoring different projects.
 The tools we want our team to be able to use are well known and widely used by multiple DevOps teams, so we will introduce a single DevOps Tooling Solution that will consist of:
 
 
