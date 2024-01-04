@@ -205,12 +205,13 @@ Repeat **steps 1-5** for the other 2 Web Servers.
 8. Fork the **tooling source code** from **[A Github Account](https://github.com/darey-io/tooling)** to your Github account. Watch how to fork a repo [here](https://www.youtube.com/watch?v=f5grYMXbAV0).
 
 
-Deploy the tooling website's code to the Webserver. Ensure that the html folder from the repository is deployed to /var/www/html
+8. Deploy the **tooling website's code** to the **Webserver**. Ensure that the **html folder** from the repository is deployed to **/var/www/html**.
 
 
-Note 1: Do not forget to open TCP port 80 on the Web Server.
-Note 2: If you encounter 403 Error - check permissions to your /var/www/html folder and also disable SELinux sudo setenforce 0
-To make this change permanent - open following config file sudo vi /etc/sysconfig/selinux and set SELINUX=disabled, then restrt httpd.
+**Note 1**: Open TCP port 80 on the Web Server.
+**Note 2**: If you encounter 403 Error - check permissions to your **/var/www/html** folder and also disable **SELinux sudo setenforce 0**. To make this change permanent, open **config file** with: 
+
+```sudo vi /etc/sysconfig/selinux``` and set **SELINUX=disabled**, then restart httpd.
 
 
 
