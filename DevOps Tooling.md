@@ -48,7 +48,7 @@ It is important to know what storage solution is suitable for what use cases, fo
 
 
 
-**Step 1**- Prepare NFS Server
+**Step 1- Prepare NFS Server**
 
 
 1. Spin up a new EC2 instance with RHEL Linux 8 Operating System.
@@ -115,34 +115,32 @@ Esc + :wq!
 sudo exportfs -arv
 ```
 
-
-
 Check the port used by **NFS** and open it using Security Groups (add new Inbound Rule)
 
 ```rpcinfo -p | grep nfs```
 
 To access the **NFS** server from your client, open the following ports: **TCP 111**, **UDP 111**, **UDP 2049** and **TCP 2049**
 
-**Step 2** — Configure the database server
+**Step 2 — Configure the database server**
 
-1. Install MySQL server
+1. Install **MySQL** server
   
-2. Create a database and name it tooling
+2. Create a database and name it **tooling**
 
-3. Create a database user and name it webaccess
+3. Create a database user and name it **webaccess**
 
-4. Grant permission to webaccess user on tooling database to do anything only from the webservers subnet cidr
+4. Grant permission to **webaccess** user on **tooling** database to do anything only from the webservers **subnet cidr**
 
-**Step 3** — Prepare the Web Servers
+**Step 3 — Prepare the Web Servers**
 
-We need to make sure that our Web Servers can serve the same content from shared storage solutions- NFS Server and MySQL database.
-You already know that one DB can be accessed for reads and writes by multiple clients. For storing shared files that our Web Servers will use - we will utilize NFS and mount previously created Logical Volume lv-apps to the folder where Apache stores files to be served to the users (/var/www).
-This approach will make our Web Servers stateless, which means we will be able to add new ones or remove them whenever we need, and the integrity of the data (in the database and on NFS) will be preserved.
-During the next steps we will do following:
+We need to make sure that our Web Servers can serve the same content from shared storage solutions- NFS Server and MySQL database. For storing shared files that our Web Servers will use, we will utilize **NFS** and mount previously created Logical Volume **lv-apps** to the folder where **Apache** stores files to be served to users **(/var/www)**.
+This approach will make our Web Servers stateless, which means we will be able to add or remove new ones when needed, and the integrity of the data (in the database and on NFS) will be preserved.
 
-Configure NFS client (this step must be done on all three servers)
-Deploy a Tooling application to our Web Servers into a shared NFS folder
-Configure the Web Servers to work with a single MySQL database
+. Configure NFS client on all three servers.
+
+. Next, deploy a Tooling application from the Web Servers into a shared NFS folder.
+
+. Then, configure the Web Servers to work with a single MySQL database.
 
 
 
