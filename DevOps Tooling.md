@@ -56,7 +56,7 @@ It is important to know what storage solution is suitable for what use cases, fo
 
 2. Based on your **LVM** experience from  [WordPress Website](https://github.com/Saidat23/devops.pbl/blob/main/WordPress%20Website%20with%20LVM%20Storage%20Management.md), Configure LVM on the Server.
 
-. Instead of formating the disks as **ext4** you will have to format them as **xfs**
+* Instead of formating the disks as **ext4** you will have to format them as **xfs**
 
 . Ensure there are 3 Logical Volumes. **lv-opt**, **lv-apps** and **lv-logs**
 
