@@ -202,7 +202,7 @@ Repeat **steps 1-5** for the other 2 Web Servers.
 7. Locate the log folder for **Apache** on the **Web Server** and mount it to **NFS server's** export for logs. Repeat **step 4** to make sure the mount point will persist after reboot.
 
 
-8. Fork the **tooling source code** from **[A Github Account](https://github.com/darey-io/tooling)** to your Github account.
+8. Fork the **tooling source code** from **[A Github Account](https://github.com/darey-io/tooling)** to your Github account. Watch how to fork a repo [here](https://www.youtube.com/watch?v=f5grYMXbAV0).
 
 
 Deploy the tooling website's code to the Webserver. Ensure that the html folder from the repository is deployed to /var/www/html
