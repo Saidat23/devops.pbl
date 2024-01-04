@@ -58,7 +58,7 @@ It is important to know what storage solution is suitable for what use cases, fo
 
 * Instead of formating the disks as **ext4** you will have to format them as **xfs**
 
-. Ensure there are 3 Logical Volumes. **lv-opt**, **lv-apps** and **lv-logs**
+* Ensure there are 3 Logical Volumes. **lv-opt**, **lv-apps** and **lv-logs**
 
 3. Create mount points on **/mnt** directory for the logical volumes as follow:
 
@@ -136,47 +136,43 @@ To access the **NFS** server from your client, open the following ports: **TCP 1
 We need to make sure that our Web Servers can serve the same content from shared storage solutions- NFS Server and MySQL database. For storing shared files that our Web Servers will use, we will utilize **NFS** and mount previously created Logical Volume **lv-apps** to the folder where **Apache** stores files to be served to users **(/var/www)**.
 This approach will make our Web Servers stateless, which means we will be able to add or remove new ones when needed, and the integrity of the data (in the database and on NFS) will be preserved.
 
-. Configure NFS client on all three servers.
+* Configure NFS client on all three servers.
 
-. Next, deploy a Tooling application from the Web Servers into a shared NFS folder.
+* Next, deploy a Tooling application from the Web Servers into a shared NFS folder.
 
-. Then, configure the Web Servers to work with a single MySQL database.
-
-
-
-Launch a new EC2 instance with RHEL 8 Operating System
-
-
-Install NFS client
+* Then, configure the Web Servers to work with a single MySQL database.
 
 
 
-sudo yum install nfs-utils nfs4-acl-tools -y
+1. Launch a new EC2 instance with **RHEL 8 Operating System**
 
 
+2. Install NFS client running the command below.
 
-Mount /var/www/ and target the NFS server's export for apps
+```sudo yum install nfs-utils nfs4-acl-tools -y```
 
 
+3. Mount **/var/www/** and target the NFS server's export for apps with the command,
+   
+```
 sudo mkdir /var/www
+
 sudo mount -t nfs -o rw,nosuid <NFS-Server-Private-IP-Address>:/mnt/apps /var/www
+```
 
 
+4. Verify that NFS was mounted successfully by running ```df -h```.
 
-Verify that NFS was mounted successfully by running df -h. Make sure that the changes will persist on Web Server after reboot:
+5.  Make the changes persist on your Web Server after reboot by opening your **/etc/fstab** to edit it. Run the command below.
 
+```sudo vi /etc/fstab```
 
-sudo vi /etc/fstab
+Add the following line 
 
-
-add following line
-
-<NFS-Server-Private-IP-Address>:/mnt/apps /var/www nfs defaults 0 0
-
+```<NFS-Server-Private-IP-Address>:/mnt/apps /var/www nfs defaults 0 0```
 
 
-Install Remi's repository, Apache and PHP
-
+5. Install **Remi's repository**, Apache and PHP
 
 sudo yum install httpd -y
 
