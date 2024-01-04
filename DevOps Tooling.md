@@ -205,7 +205,7 @@ Repeat **steps 1-5** for the other 2 Web Servers.
 8. Fork the **tooling source code** from **[A Github Account](https://github.com/darey-io/tooling)** to your Github account. Watch how to fork a repo [here](https://www.youtube.com/watch?v=f5grYMXbAV0).
 
 
-8. Deploy the **tooling website's code** to the **Webserver**. Ensure that the **html folder** from the repository is deployed to **/var/www/html**.
+9. Deploy the **tooling website's code** to the **Webserver**. Ensure that the **html folder** from the repository is deployed to **/var/www/html**.
 
 
 **Note 1**: Open TCP port 80 on the Web Server.
@@ -215,6 +215,22 @@ Repeat **steps 1-5** for the other 2 Web Servers.
 
 
 
+
+10.Update the website's configuration to connect to the database in **/var/www/html/functions.php file**. 
+
+Apply **tooling-db.sql** script to your database using this command
+
+```mysql -h <databse-private-ip> -u <db-username> -p <db-pasword> < tooling-db.sql>```
+
+
+11. Create a new **admin user** in MySQL with username: **myuser** and password: **password**
+
+* INSERT INTO **users** (**ID**, **username**, **password**, **email**, **user_type**, **status**)
+* VALUES (**1**, **myuser**, **5f4dcc3b5aa1**, **user@mail.com**, **admin**, **1**)
+
+
+
+Open the website in your browser **http://<Web-Server-Public-IP-Address-or-Public-DNS-Name>/index.php** and make sure you can login into the websute with **myuser** user.
 
 
 
