@@ -315,22 +315,32 @@ Repeat **steps 1-5** for the other 2 Web Servers.
 
 11.Update the website's configuration to connect to the database in **/var/www/html/functions.php file**. 
 
+![Screenshot 2024-01-05 043729](https://github.com/Saidat23/devops.pbl/assets/138054715/8db06253-d6e6-441f-b900-904f3f2568a9)
+
+![Screenshot 2024-01-05 043441](https://github.com/Saidat23/devops.pbl/assets/138054715/20fa44b7-1720-4f26-8c36-cbae3f9bf871)
+
 Apply **tooling-db.sql** script to your database using this command
 
 ```mysql -h <databse-private-ip> -u <db-username> -p <db-pasword> < tooling-db.sql>```
 
+![Screenshot 2024-01-05 044256](https://github.com/Saidat23/devops.pbl/assets/138054715/c02da507-69a2-42fc-935b-9c4d77964d7e)
+
+![Screenshot 2024-01-05 044649](https://github.com/Saidat23/devops.pbl/assets/138054715/4471d557-cf80-4ef6-b12f-3f48c91574bd)
 
 12. Create a new **admin user** in MySQL with username: **myuser** and password: **password**
 
 * INSERT INTO **users** (**ID**, **username**, **password**, **email**, **user_type**, **status**)
-* VALUES (**1**, **myuser**, **5f4dcc3b5aa1**, **user@mail.com**, **admin**, **1**)
+* VALUES (**1**, **myuser**, **5f4dcc3b5aa765d61d8327deb882cf99**, **user@mail.com**, **admin**, **1**)
 
+![Screenshot 2024-01-05 045840](https://github.com/Saidat23/devops.pbl/assets/138054715/e58e2af4-d60e-4ce6-9ee2-8f858c1a5f42)
 
 
 Open the website in your browser **http://<Web-Server-Public-IP-Address-or-Public-DNS-Name>/index.php** and make sure you can login into the websute with **myuser** user.
 
 
+![Screenshot 2024-01-05 050050](https://github.com/Saidat23/devops.pbl/assets/138054715/8992e870-e26d-44e6-bd41-a022fefdd969)
 
+![Screenshot 2024-01-05 050742](https://github.com/Saidat23/devops.pbl/assets/138054715/4a006a28-ebcf-484e-af60-b57931e6039b)
 
 
 
