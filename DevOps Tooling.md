@@ -41,11 +41,11 @@ In this project, we will implement a tooling website solution which makes access
 For Rhel 8 server, use this **ami RHEL-8.6.0_HVM-20220503-x86_64-2-Hourly2-GP2 (ami-035c5dc086849b5de)**
 
 
-On the diagram below you can see a common pattern where several stateless Web Servers share a common database and also access the same files using Network File Sytem (NFS) as a shared file storage. Even though the NFS server might be located on a completely separate hardware - for Web Servers it look like a local file system from where they can serve the same files.
+On the diagram below you can see a common pattern where several stateless Web Servers share a common database and also access the same files using Network File Sytem (NFS) as a shared file storage. Though, the NFS server might be located on a completely separate hardware, for Web Servers it looks like a local file system from where they can serve the same files.
 
 ![Screenshot 2024-01-04 161025](https://github.com/Saidat23/devops.pbl/assets/138054715/6975ca03-b4a9-426d-b45c-6d0c6d2b42ef)
 
-It is important to know what storage solution is suitable for what use cases, for this - you need to answer following questions: what data will be stored, in what format, how this data will be accessed, by whom, from where, how frequently, etc. Base on this you will be able to choose the right storage system for your solution.
+It is important to know what storage solution is suitable for what use cases, what data will be stored, in what format, how this data will be accessed, by whom, from where, how frequently, etc. to be able to choose the right storage system for your solution.
 
 
 
@@ -56,10 +56,13 @@ It is important to know what storage solution is suitable for what use cases, fo
 
 
 2. Based on your **LVM** experience from  [WordPress Website](https://github.com/Saidat23/devops.pbl/blob/main/WordPress%20Website%20with%20LVM%20Storage%20Management.md), Configure LVM on the Server.
+![Screenshot 2024-01-05 011620](https://github.com/Saidat23/devops.pbl/assets/138054715/2ede55f6-d2d9-4a06-9bb6-9c7fb89fee1d)
 
 * Instead of formating the disks as **ext4** you will have to format them as **xfs**
 
 * Ensure there are 3 Logical Volumes. **lv-opt**, **lv-apps** and **lv-logs**
+![Screenshot 2024-01-05 012809](https://github.com/Saidat23/devops.pbl/assets/138054715/0183c1a9-1c83-484f-b2b9-82924d1f9d45)
+![Screenshot 2024-01-05 012855](https://github.com/Saidat23/devops.pbl/assets/138054715/b3581715-7bbe-4832-b19d-bb2816dd2f38)
 
 3. Create mount points on **/mnt** directory for the logical volumes as follow:
 
